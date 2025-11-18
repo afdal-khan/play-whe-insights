@@ -1,8 +1,8 @@
-/* This is src/pages/Dashboard.jsx (Final Polish: Context-Aware Logic) */
+/* This is src/pages/Dashboard.jsx (Responsive Fixes for Mobile Display) */
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 
-// --- Color Palettes ---
+// --- Color Palettes (kept the same) ---
 const LINE_COLORS = {
   '1 Line': 'bg-red-500/20 text-red-200 border border-red-500/30',
   '2 Line': 'bg-blue-500/20 text-blue-200 border border-blue-500/30',
@@ -56,13 +56,12 @@ function Dashboard() {
   const [filters, setFilters] = useState({ year: 'All', month: 'All', day: 'All' });
   const [uniqueValues, setUniqueValues] = useState({ times: [], years: [], months: [] });
 
-  // --- NEW: Generic "Selection" State (could be a number, a Line string, or a Suit string) ---
   const [selectedValue, setSelectedValue] = useState(null); 
   const [stats, setStats] = useState(null); 
 
   const scrollContainerRef = useRef(null);
 
-  // 1. Fetch data
+  // 1. Fetch data (Logic kept the same)
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -94,7 +93,7 @@ function Dashboard() {
     fetchData();
   }, []);
 
-  // 2. Filter Logic
+  // 2. Filter Logic (Logic kept the same)
   const filteredResults = useMemo(() => {
     return allResults.filter(result => {
         if (!result || !result.Date || !result.DayName) return false;
@@ -115,19 +114,18 @@ function Dashboard() {
 
   const drawTimes = uniqueValues.times.filter(t => t !== 'Unknown');
 
-  // --- 4. SMART LOGIC: Calculate Context-Aware Stats ---
+  // 4. SMART LOGIC: Calculate Context-Aware Stats (Logic kept the same)
   useEffect(() => {
     if (selectedValue === null) {
         setStats(null);
         return;
     }
     
-    const rawData = [...allResults].reverse(); // Oldest first
+    const rawData = [...allResults].reverse(); 
     let totalCount = 0;
     let followingCounts = {};
 
     rawData.forEach((result, index) => {
-        // Determine if this row matches the selection based on DisplayType
         let isMatch = false;
         if (displayType === 'Mark') isMatch = result.Mark === selectedValue;
         else if (displayType === 'Line') isMatch = result.Line === selectedValue;
@@ -135,11 +133,9 @@ function Dashboard() {
 
         if (isMatch) {
             totalCount++;
-            // Check the FOLLOWER
             const nextResult = rawData[index + 1];
             if (nextResult) {
                 let followerValue = null;
-                // We track the follower in the SAME category (Line follows Line)
                 if (displayType === 'Mark') followerValue = nextResult.Mark;
                 else if (displayType === 'Line') followerValue = nextResult.Line;
                 else if (displayType === 'Suit') followerValue = String(nextResult.Suit);
@@ -151,7 +147,6 @@ function Dashboard() {
         }
     });
 
-    // Find Winner
     let bestFollower = null;
     let maxFollowerCount = 0;
     Object.entries(followingCounts).forEach(([val, count]) => {
@@ -161,10 +156,8 @@ function Dashboard() {
         }
     });
     
-    // Format the output for the UI
     let formattedFollower = bestFollower;
     if (bestFollower && displayType === 'Suit') formattedFollower = `${bestFollower} Suit`;
-    // Lines already have " Line" in the string
 
     setStats({
         count: totalCount,
@@ -172,9 +165,18 @@ function Dashboard() {
         bestFollowerCount: maxFollowerCount
     });
 
-  }, [selectedValue, allResults, displayType]); // Recalculate if Type changes
+  }, [selectedValue, allResults, displayType]); 
 
-  // --- Handlers ---
+  // Auto-scroll (Logic kept the same)
+  useEffect(() => {
+    if (scrollContainerRef.current && !isLoading) {
+      setTimeout(() => {
+        if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+      }, 0);
+    }
+  }, [displayResults, isLoading]);
+
+  // Handlers (Logic kept the same)
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters(prev => ({ ...prev, [name]: value }));
@@ -183,7 +185,7 @@ function Dashboard() {
 
   const handleDisplayTypeChange = (type) => {
       setDisplayType(type);
-      setSelectedValue(null); // Reset selection when switching views to prevent confusion
+      setSelectedValue(null); 
   };
 
   const handleCellClick = (result) => {
@@ -196,21 +198,19 @@ function Dashboard() {
 
     if (valToSelect === undefined || valToSelect === null) return;
 
-    if (selectedValue === valToSelect) setSelectedValue(null); // Toggle off
+    if (selectedValue === valToSelect) setSelectedValue(null); 
     else setSelectedValue(valToSelect);
   };
 
-  // --- Visual Style Helper ---
+  // --- Visual Style Helper (Logic kept the same, applied style changes in render) ---
   const getCellStyle = (result) => {
       if (!result) return { base: 'text-gray-700', content: '-' };
 
-      // Determine what the cell value IS based on view
       let cellValue = null;
       if (displayType === 'Mark') cellValue = result.Mark;
       else if (displayType === 'Line') cellValue = result.Line;
       else if (displayType === 'Suit') cellValue = String(result.Suit);
 
-      // Compare with Selection
       const isMatch = selectedValue !== null && String(cellValue) === String(selectedValue);
       const isDimmed = selectedValue !== null && String(cellValue) !== String(selectedValue);
 
@@ -243,15 +243,6 @@ function Dashboard() {
 
       return { className: baseClass, content };
   };
-
-  // Auto-scroll
-  useEffect(() => {
-    if (scrollContainerRef.current && !isLoading) {
-      setTimeout(() => {
-        if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
-      }, 0);
-    }
-  }, [displayResults, isLoading]);
 
 
   if (isLoading) return <div className="p-10 text-center text-xl font-bold text-cyan-500 animate-pulse">Loading Chart...</div>;
@@ -346,17 +337,20 @@ function Dashboard() {
       {/* --- BODY: The Matrix Grid --- */}
       <div className="bg-gray-800 rounded-xl shadow-lg border border-gray-700 flex-1 overflow-hidden relative flex flex-col">
         
-        <div className="grid grid-cols-[120px_1fr] bg-gray-900 border-b border-gray-700 z-20">
-           <div className="p-3 text-left text-xs font-bold text-gray-400 uppercase tracking-wider border-r border-gray-700 pl-6">Date</div>
+        {/* Table Header (FIX: Reduced padding and grid size for better mobile width) */}
+        {/* Date column is now 80px wide */}
+        <div className="grid grid-cols-[80px_1fr] bg-gray-900 border-b border-gray-700 z-20">
+           <div className="p-1 text-left text-xs font-bold text-gray-400 uppercase tracking-wider border-r border-gray-700 pl-2">Date</div>
            <div className="grid" style={{ gridTemplateColumns: `repeat(${drawTimes.length}, 1fr)` }}>
               {drawTimes.map(time => (
-                <div key={time} className="p-3 text-center text-xs font-bold text-gray-400 uppercase tracking-wider border-r border-gray-800 last:border-none">
+                <div key={time} className="p-1 text-center text-xs font-bold text-gray-400 uppercase tracking-wider border-r border-gray-800 last:border-none">
                   {time}
                 </div>
               ))}
            </div>
         </div>
 
+        {/* Scrollable Table Body (FIX: Maximize vertical space) */}
         <div 
           ref={scrollContainerRef}
           className="overflow-y-auto flex-1 scroll-smooth custom-scrollbar"
@@ -373,10 +367,13 @@ function Dashboard() {
                    if (resultsForDate.length === 0) return null;
 
                    return (
-                     <div key={dateISO} className="grid grid-cols-[120px_1fr] hover:bg-gray-700/30 transition-colors group">
-                        <div className="p-3 text-left text-xs font-medium text-gray-300 border-r border-gray-700/50 flex items-center pl-6 bg-gray-800/50 group-hover:bg-transparent">
+                     <div key={dateISO} className="grid grid-cols-[80px_1fr] hover:bg-gray-700/30 transition-colors group">
+                        {/* Date Column (FIX: Reduced padding) */}
+                        <div className="p-1 text-left text-xs font-medium text-gray-300 border-r border-gray-700/50 flex items-center pl-2 bg-gray-800/50 group-hover:bg-transparent">
                            {formatDateHeader(dateISO)}
                         </div>
+                        
+                        {/* Marks Columns */}
                         <div className="grid" style={{ gridTemplateColumns: `repeat(${drawTimes.length}, 1fr)` }}>
                            {drawTimes.map(time => {
                               const result = resultsForDate.find(r => r && r.Time === time);
@@ -386,7 +383,7 @@ function Dashboard() {
                                 <div 
                                     key={time} 
                                     onClick={() => handleCellClick(result)} 
-                                    className="p-2 flex items-center justify-center border-r border-gray-700/20 last:border-none relative"
+                                    className="p-1 flex items-center justify-center border-r border-gray-700/20 last:border-none relative"
                                 >
                                    <span className={className}>
                                       {content}
