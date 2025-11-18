@@ -9,7 +9,7 @@ import DreamBook from './pages/DreamBook';
 import Statistics from './pages/Statistics'; // The OLD Dashboard (charts)
 
 function App() {
-  const [view, setView] = useState('dashboard'); // Default to the new Dashboard
+  const [view, setView] = useState('statistics'); // Default to the new Dashboard
 
   const NavLink = ({ page, title }) => {
     const isActive = view === page;
