@@ -23145,919 +23145,932 @@ Date,DrawNo,Time,Mark,Line,Suit
 17/02/2025,25379,Midday,33,6,3 suit
 17/02/2025,25380,Afternoon,15,6,5 suit
 17/02/2025,25381,Evening,1,1,1 suit
-18/02/2025,25382,Morning,23,5 Line,3 suit
-18/02/2025,25383,Midday,11,2 Line,1 suit
-18/02/2025,25384,Afternoon,8,8 Line,8 suit
-18/02/2025,25385,Evening,22,4 Line,2 suit
-19/02/2025,25386,Morning,4,4 Line,4 suit
-19/02/2025,25387,Midday,30,3 Line,0s
-19/02/2025,25388,Afternoon,12,3 Line,2 suit
-19/02/2025,25389,Evening,29,2 Line,9 suit
-20/02/2025,25390,Morning,32,5 Line,2 suit
-20/02/2025,25391,Midday,11,2 Line,1 suit
-20/02/2025,25392,Afternoon,28,1 Line,8 suit
-20/02/2025,25393,Evening,32,5 Line,2 suit
-21/02/2025,25394,Morning,31,4 Line,1 suit
-21/02/2025,25395,Midday,29,2 Line,9 suit
-21/02/2025,25396,Afternoon,32,5 Line,2 suit
-21/02/2025,25397,Evening,10,1 Line,0s
-22/02/2025,25398,Morning,28,1 Line,8 suit
-22/02/2025,25399,Midday,22,4 Line,2 suit
-22/02/2025,25400,Afternoon,27,9 Line,7 suit
-22/02/2025,25401,Evening,9,9 Line,9 suit
-24/02/2025,25402,Morning,11,2 Line,1 suit
-24/02/2025,25403,Midday,22,4 Line,2 suit
-24/02/2025,25404,Afternoon,13,4 Line,3 suit
-24/02/2025,25405,Evening,20,2 Line,0s
-25/02/2025,25406,Morning,15,6 Line,5 suit
-25/02/2025,25407,Midday,28,1 Line,8 suit
-25/02/2025,25408,Afternoon,31,4 Line,1 suit
-25/02/2025,25409,Evening,8,8 Line,8 suit
-26/02/2025,25410,Morning,11,2 Line,1 suit
-26/02/2025,25411,Midday,5,5 Line,5 suit
-26/02/2025,25412,Afternoon,18,9 Line,8 suit
-26/02/2025,25413,Evening,15,6 Line,5 suit
-27/02/2025,25414,Morning,29,2 Line,9 suit
-27/02/2025,25415,Midday,27,9 Line,7 suit
-27/02/2025,25416,Afternoon,26,8 Line,6 suit
-27/02/2025,25417,Evening,15,6 Line,5 suit
-28/02/2025,25418,Morning,13,4 Line,3 suit
-28/02/2025,25419,Midday,20,2 Line,0s
-28/02/2025,25420,Afternoon,34,7 Line,4 suit
-28/02/2025,25421,Evening,11,2 Line,1 suit
-01/03/2025,25422,Morning,8,8 Line,8 suit
-01/03/2025,25423,Midday,30,3 Line,0s
-01/03/2025,25424,Afternoon,5,5 Line,5 suit
-01/03/2025,25425,Evening,4,4 Line,4 suit
-03/03/2025,25426,Morning,19,1 Line,9 suit
-03/03/2025,25427,Midday,22,4 Line,2 suit
-03/03/2025,25428,Afternoon,25,7 Line,5 suit
-03/03/2025,25429,Evening,23,5 Line,3 suit
-04/03/2025,25430,Morning,4,4 Line,4 suit
-04/03/2025,25431,Midday,1,1 Line,1 suit
-04/03/2025,25432,Afternoon,18,9 Line,8 suit
-04/03/2025,25433,Evening,15,6 Line,5 suit
-05/03/2025,25434,Morning,24,6 Line,4 suit
-05/03/2025,25435,Midday,4,4 Line,4 suit
-05/03/2025,25436,Afternoon,11,2 Line,1 suit
-05/03/2025,25437,Evening,18,9 Line,8 suit
-06/03/2025,25438,Morning,36,9 Line,6 suit
-06/03/2025,25439,Midday,5,5 Line,5 suit
-06/03/2025,25440,Afternoon,19,1 Line,9 suit
-06/03/2025,25441,Evening,10,1 Line,0s
-07/03/2025,25442,Morning,1,1 Line,1 suit
-07/03/2025,25443,Midday,3,3 Line,3 suit
-07/03/2025,25444,Afternoon,23,5 Line,3 suit
-07/03/2025,25445,Evening,27,9 Line,7 suit
-08/03/2025,25446,Morning,21,3 Line,1 suit
-08/03/2025,25447,Midday,3,3 Line,3 suit
-08/03/2025,25448,Afternoon,23,5 Line,3 suit
-08/03/2025,25449,Evening,22,4 Line,2 suit
-10/03/2025,25450,Morning,35,8 Line,5 suit
-10/03/2025,25451,Midday,11,2 Line,1 suit
-10/03/2025,25452,Afternoon,19,1 Line,9 suit
-10/03/2025,25453,Evening,18,9 Line,8 suit
-11/03/2025,25454,Morning,33,6 Line,3 suit
-11/03/2025,25455,Midday,17,8 Line,7 suit
-11/03/2025,25456,Afternoon,9,9 Line,9 suit
-11/03/2025,25457,Evening,29,2 Line,9 suit
-12/03/2025,25458,Morning,1,1 Line,1 suit
-12/03/2025,25459,Midday,29,2 Line,9 suit
-12/03/2025,25460,Afternoon,16,7 Line,6 suit
-12/03/2025,25461,Evening,24,6 Line,4 suit
-13/03/2025,25462,Morning,29,2 Line,9 suit
-13/03/2025,25463,Midday,3,3 Line,3 suit
-13/03/2025,25464,Afternoon,3,3 Line,3 suit
-13/03/2025,25465,Evening,19,1 Line,9 suit
-14/03/2025,25466,Morning,31,4 Line,1 suit
-14/03/2025,25467,Midday,2,2 Line,2 suit
-14/03/2025,25468,Afternoon,16,7 Line,6 suit
-14/03/2025,25469,Evening,34,7 Line,4 suit
-15/03/2025,25470,Morning,20,2 Line,0s
-15/03/2025,25471,Midday,11,2 Line,1 suit
-15/03/2025,25472,Afternoon,14,5 Line,4 suit
-15/03/2025,25473,Evening,6,6 Line,6 suit
-17/03/2025,25474,Morning,14,5 Line,4 suit
-17/03/2025,25475,Midday,5,5 Line,5 suit
-17/03/2025,25476,Afternoon,25,7 Line,5 suit
-17/03/2025,25477,Evening,10,1 Line,0s
-18/03/2025,25478,Morning,28,1 Line,8 suit
-18/03/2025,25479,Midday,28,1 Line,8 suit
-18/03/2025,25480,Afternoon,12,3 Line,2 suit
-18/03/2025,25481,Evening,30,3 Line,0s
-19/03/2025,25482,Morning,26,8 Line,6 suit
-19/03/2025,25483,Midday,18,9 Line,8 suit
-19/03/2025,25484,Afternoon,16,7 Line,6 suit
-19/03/2025,25485,Evening,32,5 Line,2 suit
-20/03/2025,25486,Morning,9,9 Line,9 suit
-20/03/2025,25487,Midday,24,6 Line,4 suit
-20/03/2025,25488,Afternoon,3,3 Line,3 suit
-20/03/2025,25489,Evening,21,3 Line,1 suit
-21/03/2025,25490,Morning,31,4 Line,1 suit
-21/03/2025,25491,Midday,32,5 Line,2 suit
-21/03/2025,25492,Afternoon,24,6 Line,4 suit
-21/03/2025,25493,Evening,28,1 Line,8 suit
-22/03/2025,25494,Morning,11,2 Line,1 suit
-22/03/2025,25495,Midday,31,4 Line,1 suit
-22/03/2025,25496,Afternoon,30,3 Line,0s
-22/03/2025,25497,Evening,2,2 Line,2 suit
-24/03/2025,25498,Morning,21,3 Line,1 suit
-24/03/2025,25499,Midday,15,6 Line,5 suit
-24/03/2025,25500,Afternoon,19,1 Line,9 suit
-24/03/2025,25501,Evening,24,6 Line,4 suit
-25/03/2025,25502,Morning,28,1 Line,8 suit
-25/03/2025,25503,Midday,11,2 Line,1 suit
-25/03/2025,25504,Afternoon,13,4 Line,3 suit
-25/03/2025,25505,Evening,23,5 Line,3 suit
-26/03/2025,25506,Morning,6,6 Line,6 suit
-26/03/2025,25507,Midday,33,6 Line,3 suit
-26/03/2025,25508,Afternoon,22,4 Line,2 suit
-26/03/2025,25509,Evening,1,1 Line,1 suit
-27/03/2025,25510,Morning,24,6 Line,4 suit
-27/03/2025,25511,Midday,17,8 Line,7 suit
-27/03/2025,25512,Afternoon,33,6 Line,3 suit
-27/03/2025,25513,Evening,4,4 Line,4 suit
-28/03/2025,25514,Morning,26,8 Line,6 suit
-28/03/2025,25515,Midday,19,1 Line,9 suit
-28/03/2025,25516,Afternoon,17,8 Line,7 suit
-28/03/2025,25517,Evening,3,3 Line,3 suit
-29/03/2025,25518,Morning,7,7 Line,7 suit
-29/03/2025,25519,Midday,18,9 Line,8 suit
-29/03/2025,25520,Afternoon,22,4 Line,2 suit
-29/03/2025,25521,Evening,16,7 Line,6 suit
-02/04/2025,25522,Morning,9,9 Line,9 suit
-02/04/2025,25523,Midday,14,5 Line,4 suit
-02/04/2025,25524,Afternoon,15,6 Line,5 suit
-02/04/2025,25525,Evening,17,8 Line,7 suit
-03/04/2025,25526,Morning,23,5 Line,3 suit
-03/04/2025,25527,Midday,15,6 Line,5 suit
-03/04/2025,25528,Afternoon,17,8 Line,7 suit
-03/04/2025,25529,Evening,20,2 Line,0s
-04/04/2025,25530,Morning,4,4 Line,4 suit
-04/04/2025,25531,Midday,32,5 Line,2 suit
-04/04/2025,25532,Afternoon,34,7 Line,4 suit
-04/04/2025,25533,Evening,19,1 Line,9 suit
-05/04/2025,25534,Morning,21,3 Line,1 suit
-05/04/2025,25535,Midday,13,4 Line,3 suit
-05/04/2025,25536,Afternoon,4,4 Line,4 suit
-05/04/2025,25537,Evening,24,6 Line,4 suit
-07/04/2025,25538,Morning,7,7 Line,7 suit
-07/04/2025,25539,Midday,29,2 Line,9 suit
-07/04/2025,25540,Afternoon,5,5 Line,5 suit
-07/04/2025,25541,Evening,32,5 Line,2 suit
-08/04/2025,25542,Morning,13,4 Line,3 suit
-08/04/2025,25543,Midday,2,2 Line,2 suit
-08/04/2025,25544,Afternoon,4,4 Line,4 suit
-08/04/2025,25545,Evening,21,3 Line,1 suit
-09/04/2025,25546,Morning,3,3 Line,3 suit
-09/04/2025,25547,Midday,9,9 Line,9 suit
-09/04/2025,25548,Afternoon,1,1 Line,1 suit
-09/04/2025,25549,Evening,11,2 Line,1 suit
-10/04/2025,25550,Morning,1,1 Line,1 suit
-10/04/2025,25551,Midday,10,1 Line,0s
-10/04/2025,25552,Afternoon,8,8 Line,8 suit
-10/04/2025,25553,Evening,13,4 Line,3 suit
-11/04/2025,25554,Morning,35,8 Line,5 suit
-11/04/2025,25555,Midday,31,4 Line,1 suit
-11/04/2025,25556,Afternoon,11,2 Line,1 suit
-11/04/2025,25557,Evening,28,1 Line,8 suit
-12/04/2025,25558,Morning,9,9 Line,9 suit
-12/04/2025,25559,Midday,13,4 Line,3 suit
-12/04/2025,25560,Afternoon,13,4 Line,3 suit
-12/04/2025,25561,Evening,32,5 Line,2 suit
-14/04/2025,25562,Morning,26,8 Line,6 suit
-14/04/2025,25563,Midday,14,5 Line,4 suit
-14/04/2025,25564,Afternoon,27,9 Line,7 suit
-14/04/2025,25565,Evening,14,5 Line,4 suit
-15/04/2025,25566,Morning,35,8 Line,5 suit
-15/04/2025,25567,Midday,18,9 Line,8 suit
-15/04/2025,25568,Afternoon,31,4 Line,1 suit
-15/04/2025,25569,Evening,16,7 Line,6 suit
-16/04/2025,25570,Morning,11,2 Line,1 suit
-16/04/2025,25571,Midday,1,1 Line,1 suit
-16/04/2025,25572,Afternoon,8,8 Line,8 suit
-16/04/2025,25573,Evening,26,8 Line,6 suit
-17/04/2025,25574,Morning,2,2 Line,2 suit
-17/04/2025,25575,Midday,5,5 Line,5 suit
-17/04/2025,25576,Afternoon,25,7 Line,5 suit
-17/04/2025,25577,Evening,35,8 Line,5 suit
-19/04/2025,25578,Morning,24,6 Line,4 suit
-19/04/2025,25579,Midday,6,6 Line,6 suit
-19/04/2025,25580,Afternoon,25,7 Line,5 suit
-19/04/2025,25581,Evening,3,3 Line,3 suit
-21/04/2025,25582,Morning,18,9 Line,8 suit
-21/04/2025,25583,Midday,36,9 Line,6 suit
-21/04/2025,25584,Afternoon,11,2 Line,1 suit
-21/04/2025,25585,Evening,30,3 Line,0s
-22/04/2025,25586,Morning,35,8 Line,5 suit
-22/04/2025,25587,Midday,28,1 Line,8 suit
-22/04/2025,25588,Afternoon,26,8 Line,6 suit
-22/04/2025,25589,Evening,27,9 Line,7 suit
-23/04/2025,25590,Morning,20,2 Line,0s
-23/04/2025,25591,Midday,19,1 Line,9 suit
-23/04/2025,25592,Afternoon,8,8 Line,8 suit
-23/04/2025,25593,Evening,19,1 Line,9 suit
-24/04/2025,25594,Morning,35,8 Line,5 suit
-24/04/2025,25595,Midday,29,2 Line,9 suit
-24/04/2025,25596,Afternoon,16,7 Line,6 suit
-24/04/2025,25597,Evening,33,6 Line,3 suit
-25/04/2025,25598,Morning,7,7 Line,7 suit
-25/04/2025,25599,Midday,34,7 Line,4 suit
-25/04/2025,25600,Afternoon,16,7 Line,6 suit
-25/04/2025,25601,Evening,35,8 Line,5 suit
-26/04/2025,25602,Morning,35,8 Line,5 suit
-26/04/2025,25603,Midday,17,8 Line,7 suit
-26/04/2025,25604,Afternoon,31,4 Line,1 suit
-26/04/2025,25605,Evening,7,7 Line,7 suit
-28/04/2025,25606,Morning,23,5 Line,3 suit
-28/04/2025,25607,Midday,13,4 Line,3 suit
-28/04/2025,25608,Afternoon,27,9 Line,7 suit
-28/04/2025,25609,Evening,13,4 Line,3 suit
-29/04/2025,25610,Morning,9,9 Line,9 suit
-29/04/2025,25611,Midday,4,4 Line,4 suit
-29/04/2025,25612,Afternoon,28,1 Line,8 suit
-29/04/2025,25613,Evening,24,6 Line,4 suit
-30/04/2025,25614,Morning,17,8 Line,7 suit
-30/04/2025,25615,Midday,4,4 Line,4 suit
-30/04/2025,25616,Afternoon,35,8 Line,5 suit
-30/04/2025,25617,Evening,23,5 Line,3 suit
-01/05/2025,25618,Morning,5,5 Line,5 suit
-01/05/2025,25619,Midday,25,7 Line,5 suit
-01/05/2025,25620,Afternoon,30,3 Line,0s
-01/05/2025,25621,Evening,2,2 Line,2 suit
-02/05/2025,25622,Morning,15,6 Line,5 suit
-02/05/2025,25623,Midday,26,8 Line,6 suit
-02/05/2025,25624,Afternoon,16,7 Line,6 suit
-02/05/2025,25625,Evening,35,8 Line,5 suit
-03/05/2025,25626,Morning,31,4 Line,1 suit
-03/05/2025,25627,Midday,6,6 Line,6 suit
-03/05/2025,25628,Afternoon,12,3 Line,2 suit
-03/05/2025,25629,Evening,24,6 Line,4 suit
-05/05/2025,25630,Morning,6,6 Line,6 suit
-05/05/2025,25631,Midday,24,6 Line,4 suit
-05/05/2025,25632,Afternoon,4,4 Line,4 suit
-05/05/2025,25633,Evening,32,5 Line,2 suit
-06/05/2025,25634,Morning,29,2 Line,9 suit
-06/05/2025,25635,Midday,20,2 Line,0s
-06/05/2025,25636,Afternoon,9,9 Line,9 suit
-06/05/2025,25637,Evening,20,2 Line,0s
-07/05/2025,25638,Morning,16,7 Line,6 suit
-07/05/2025,25639,Midday,19,1 Line,9 suit
-07/05/2025,25640,Afternoon,14,5 Line,4 suit
-07/05/2025,25641,Evening,10,1 Line,0s
-08/05/2025,25642,Morning,30,3 Line,0s
-08/05/2025,25643,Midday,33,6 Line,3 suit
-08/05/2025,25644,Afternoon,31,4 Line,1 suit
-08/05/2025,25645,Evening,24,6 Line,4 suit
-09/05/2025,25646,Morning,22,4 Line,2 suit
-09/05/2025,25647,Midday,11,2 Line,1 suit
-09/05/2025,25648,Afternoon,21,3 Line,1 suit
-09/05/2025,25649,Evening,31,4 Line,1 suit
-10/05/2025,25650,Morning,34,7 Line,4 suit
-10/05/2025,25651,Midday,17,8 Line,7 suit
-10/05/2025,25652,Afternoon,1,1 Line,1 suit
-10/05/2025,25653,Evening,24,6 Line,4 suit
-12/05/2025,25654,Morning,33,6 Line,3 suit
-12/05/2025,25655,Midday,28,1 Line,8 suit
-12/05/2025,25656,Afternoon,32,5 Line,2 suit
-12/05/2025,25657,Evening,16,7 Line,6 suit
-13/05/2025,25658,Morning,14,5 Line,4 suit
-13/05/2025,25659,Midday,36,9 Line,6 suit
-13/05/2025,25660,Afternoon,21,3 Line,1 suit
-13/05/2025,25661,Evening,36,9 Line,6 suit
-14/05/2025,25662,Morning,4,4 Line,4 suit
-14/05/2025,25663,Midday,34,7 Line,4 suit
-14/05/2025,25664,Afternoon,36,9 Line,6 suit
-14/05/2025,25665,Evening,30,3 Line,0s
-15/05/2025,25666,Morning,4,4 Line,4 suit
-15/05/2025,25667,Midday,24,6 Line,4 suit
-15/05/2025,25668,Afternoon,20,2 Line,0s
-15/05/2025,25669,Evening,35,8 Line,5 suit
-16/05/2025,25670,Morning,22,4 Line,2 suit
-16/05/2025,25671,Midday,17,8 Line,7 suit
-16/05/2025,25672,Afternoon,16,7 Line,6 suit
-16/05/2025,25673,Evening,5,5 Line,5 suit
-17/05/2025,25674,Morning,17,8 Line,7 suit
-17/05/2025,25675,Midday,7,7 Line,7 suit
-17/05/2025,25676,Afternoon,28,1 Line,8 suit
-17/05/2025,25677,Evening,28,1 Line,8 suit
-19/05/2025,25678,Morning,6,6 Line,6 suit
-19/05/2025,25679,Midday,12,3 Line,2 suit
-19/05/2025,25680,Afternoon,7,7 Line,7 suit
-19/05/2025,25681,Evening,27,9 Line,7 suit
-20/05/2025,25682,Morning,32,5 Line,2 suit
-20/05/2025,25683,Midday,11,2 Line,1 suit
-20/05/2025,25684,Afternoon,18,9 Line,8 suit
-20/05/2025,25685,Evening,10,1 Line,0s
-21/05/2025,25686,Morning,9,9 Line,9 suit
-21/05/2025,25687,Midday,16,7 Line,6 suit
-21/05/2025,25688,Afternoon,33,6 Line,3 suit
-21/05/2025,25689,Evening,16,7 Line,6 suit
-22/05/2025,25690,Morning,3,3 Line,3 suit
-22/05/2025,25691,Midday,9,9 Line,9 suit
-22/05/2025,25692,Afternoon,35,8 Line,5 suit
-22/05/2025,25693,Evening,34,7 Line,4 suit
-23/05/2025,25694,Morning,12,3 Line,2 suit
-23/05/2025,25695,Midday,16,7 Line,6 suit
-23/05/2025,25696,Afternoon,17,8 Line,7 suit
-23/05/2025,25697,Evening,12,3 Line,2 suit
-24/05/2025,25698,Morning,16,7 Line,6 suit
-24/05/2025,25699,Midday,12,3 Line,2 suit
-24/05/2025,25700,Afternoon,10,1 Line,0s
-24/05/2025,25701,Evening,31,4 Line,1 suit
-26/05/2025,25702,Morning,22,4 Line,2 suit
-26/05/2025,25703,Midday,27,9 Line,7 suit
-26/05/2025,25704,Afternoon,32,5 Line,2 suit
-26/05/2025,25705,Evening,32,5 Line,2 suit
-27/05/2025,25706,Morning,15,6 Line,5 suit
-27/05/2025,25707,Midday,5,5 Line,5 suit
-27/05/2025,25708,Afternoon,2,2 Line,2 suit
-27/05/2025,25709,Evening,22,4 Line,2 suit
-28/05/2025,25710,Morning,18,9 Line,8 suit
-28/05/2025,25711,Midday,9,9 Line,9 suit
-28/05/2025,25712,Afternoon,9,9 Line,9 suit
-28/05/2025,25713,Evening,17,8 Line,7 suit
-29/05/2025,25714,Morning,13,4 Line,3 suit
-29/05/2025,25715,Midday,16,7 Line,6 suit
-29/05/2025,25716,Afternoon,21,3 Line,1 suit
-29/05/2025,25717,Evening,28,1 Line,8 suit
-30/05/2025,25718,Morning,33,6 Line,3 suit
-30/05/2025,25719,Midday,32,5 Line,2 suit
-30/05/2025,25720,Afternoon,31,4 Line,1 suit
-30/05/2025,25721,Evening,11,2 Line,1 suit
-31/05/2025,25722,Morning,33,6 Line,3 suit
-31/05/2025,25723,Midday,25,7 Line,5 suit
-31/05/2025,25724,Afternoon,7,7 Line,7 suit
-31/05/2025,25725,Evening,10,1 Line,0s
-02/06/2025,25726,Morning,27,9 Line,7 suit
-02/06/2025,25727,Midday,6,6 Line,6 suit
-02/06/2025,25728,Afternoon,20,2 Line,0s
-02/06/2025,25729,Evening,14,5 Line,4 suit
-03/06/2025,25730,Morning,5,5 Line,5 suit
-03/06/2025,25731,Midday,10,1 Line,0s
-03/06/2025,25732,Afternoon,32,5 Line,2 suit
-03/06/2025,25733,Evening,19,1 Line,9 suit
-04/06/2025,25734,Morning,13,4 Line,3 suit
-04/06/2025,25735,Midday,16,7 Line,6 suit
-04/06/2025,25736,Afternoon,14,5 Line,4 suit
-04/06/2025,25737,Evening,26,8 Line,6 suit
-05/06/2025,25738,Morning,2,2 Line,2 suit
-05/06/2025,25739,Midday,3,3 Line,3 suit
-05/06/2025,25740,Afternoon,9,9 Line,9 suit
-05/06/2025,25741,Evening,26,8 Line,6 suit
-06/06/2025,25742,Morning,1,1 Line,1 suit
-06/06/2025,25743,Midday,2,2 Line,2 suit
-06/06/2025,25744,Afternoon,13,4 Line,3 suit
-06/06/2025,25745,Evening,29,2 Line,9 suit
-07/06/2025,25746,Morning,17,8 Line,7 suit
-07/06/2025,25747,Midday,32,5 Line,2 suit
-07/06/2025,25748,Afternoon,36,9 Line,6 suit
-07/06/2025,25749,Evening,12,3 Line,2 suit
-09/06/2025,25750,Morning,8,8 Line,8 suit
-09/06/2025,25751,Midday,23,5 Line,3 suit
-09/06/2025,25752,Afternoon,26,8 Line,6 suit
-09/06/2025,25753,Evening,19,1 Line,9 suit
-10/06/2025,25754,Morning,30,3 Line,0s
-10/06/2025,25755,Midday,29,2 Line,9 suit
-10/06/2025,25756,Afternoon,35,8 Line,5 suit
-10/06/2025,25757,Evening,5,5 Line,5 suit
-11/06/2025,25758,Morning,9,9 Line,9 suit
-11/06/2025,25759,Midday,33,6 Line,3 suit
-11/06/2025,25760,Afternoon,30,3 Line,0s
-11/06/2025,25761,Evening,7,7 Line,7 suit
-12/06/2025,25762,Morning,4,4 Line,4 suit
-12/06/2025,25763,Midday,29,2 Line,9 suit
-12/06/2025,25764,Afternoon,28,1 Line,8 suit
-12/06/2025,25765,Evening,12,3 Line,2 suit
-13/06/2025,25766,Morning,16,7 Line,6 suit
-13/06/2025,25767,Midday,1,1 Line,1 suit
-13/06/2025,25768,Afternoon,27,9 Line,7 suit
-13/06/2025,25769,Evening,21,3 Line,1 suit
-14/06/2025,25770,Morning,14,5 Line,4 suit
-14/06/2025,25771,Midday,20,2 Line,0s
-14/06/2025,25772,Afternoon,11,2 Line,1 suit
-14/06/2025,25773,Evening,24,6 Line,4 suit
-16/06/2025,25774,Morning,23,5 Line,3 suit
-16/06/2025,25775,Midday,28,1 Line,8 suit
-16/06/2025,25776,Afternoon,28,1 Line,8 suit
-16/06/2025,25777,Evening,36,9 Line,6 suit
-17/06/2025,25778,Morning,4,4 Line,4 suit
-17/06/2025,25779,Midday,10,1 Line,0s
-17/06/2025,25780,Afternoon,8,8 Line,8 suit
-17/06/2025,25781,Evening,28,1 Line,8 suit
-18/06/2025,25782,Morning,31,4 Line,1 suit
-18/06/2025,25783,Midday,33,6 Line,3 suit
-18/06/2025,25784,Afternoon,21,3 Line,1 suit
-18/06/2025,25785,Evening,13,4 Line,3 suit
-20/06/2025,25786,Morning,18,9 Line,8 suit
-20/06/2025,25787,Midday,11,2 Line,1 suit
-20/06/2025,25788,Afternoon,11,2 Line,1 suit
-20/06/2025,25789,Evening,23,5 Line,3 suit
-21/06/2025,25790,Morning,10,1 Line,0s
-21/06/2025,25791,Midday,1,1 Line,1 suit
-21/06/2025,25792,Afternoon,30,3 Line,0s
-21/06/2025,25793,Evening,20,2 Line,0s
-23/06/2025,25794,Morning,7,7 Line,7 suit
-23/06/2025,25795,Midday,11,2 Line,1 suit
-23/06/2025,25796,Afternoon,15,6 Line,5 suit
-23/06/2025,25797,Evening,6,6 Line,6 suit
-24/06/2025,25798,Morning,2,2 Line,2 suit
-24/06/2025,25799,Midday,33,6 Line,3 suit
-24/06/2025,25800,Afternoon,23,5 Line,3 suit
-24/06/2025,25801,Evening,35,8 Line,5 suit
-25/06/2025,25802,Morning,16,7 Line,6 suit
-25/06/2025,25803,Midday,2,2 Line,2 suit
-25/06/2025,25804,Afternoon,32,5 Line,2 suit
-25/06/2025,25805,Evening,32,5 Line,2 suit
-26/06/2025,25806,Morning,21,3 Line,1 suit
-26/06/2025,25807,Midday,31,4 Line,1 suit
-26/06/2025,25808,Afternoon,13,4 Line,3 suit
-26/06/2025,25809,Evening,8,8 Line,8 suit
-27/06/2025,25810,Morning,32,5 Line,2 suit
-27/06/2025,25811,Midday,13,4 Line,3 suit
-27/06/2025,25812,Afternoon,21,3 Line,1 suit
-27/06/2025,25813,Evening,25,7 Line,5 suit
-28/06/2025,25814,Morning,27,9 Line,7 suit
-28/06/2025,25815,Midday,12,3 Line,2 suit
-28/06/2025,25816,Afternoon,30,3 Line,0s
-28/06/2025,25817,Evening,3,3 Line,3 suit
-30/06/2025,25818,Morning,8,8 Line,8 suit
-30/06/2025,25819,Midday,10,1 Line,0s
-30/06/2025,25820,Afternoon,8,8 Line,8 suit
-30/06/2025,25821,Evening,5,5 Line,5 suit
-01/07/2025,25822,Morning,23,5 Line,3 suit
-01/07/2025,25823,Midday,12,3 Line,2 suit
-01/07/2025,25824,Afternoon,27,9 Line,7 suit
-01/07/2025,25825,Evening,18,9 Line,8 suit
-02/07/2025,25826,Morning,17,8 Line,7 suit
-02/07/2025,25827,Midday,27,9 Line,7 suit
-02/07/2025,25828,Afternoon,31,4 Line,1 suit
-02/07/2025,25829,Evening,35,8 Line,5 suit
-03/07/2025,25830,Morning,36,9 Line,6 suit
-03/07/2025,25831,Midday,18,9 Line,8 suit
-03/07/2025,25832,Afternoon,7,7 Line,7 suit
-03/07/2025,25833,Evening,23,5 Line,3 suit
-04/07/2025,25834,Morning,29,2 Line,9 suit
-04/07/2025,25835,Midday,11,2 Line,1 suit
-04/07/2025,25836,Afternoon,35,8 Line,5 suit
-04/07/2025,25837,Evening,24,6 Line,4 suit
-05/07/2025,25838,Morning,10,1 Line,0s
-05/07/2025,25839,Midday,12,3 Line,2 suit
-05/07/2025,25840,Afternoon,4,4 Line,4 suit
-05/07/2025,25841,Evening,17,8 Line,7 suit
-07/07/2025,25842,Morning,24,6 Line,4 suit
-07/07/2025,25843,Midday,9,9 Line,9 suit
-07/07/2025,25844,Afternoon,22,4 Line,2 suit
-07/07/2025,25845,Evening,14,5 Line,4 suit
-08/07/2025,25846,Morning,7,7 Line,7 suit
-08/07/2025,25847,Midday,27,9 Line,7 suit
-08/07/2025,25848,Afternoon,20,2 Line,0s
-08/07/2025,25849,Evening,20,2 Line,0s
-09/07/2025,25850,Morning,6,6 Line,6 suit
-09/07/2025,25851,Midday,36,9 Line,6 suit
-09/07/2025,25852,Afternoon,11,2 Line,1 suit
-09/07/2025,25853,Evening,10,1 Line,0s
-10/07/2025,25854,Morning,6,6 Line,6 suit
-10/07/2025,25855,Midday,34,7 Line,4 suit
-10/07/2025,25856,Afternoon,17,8 Line,7 suit
-10/07/2025,25857,Evening,32,5 Line,2 suit
-11/07/2025,25858,Morning,5,5 Line,5 suit
-11/07/2025,25859,Midday,30,3 Line,0s
-11/07/2025,25860,Afternoon,16,7 Line,6 suit
-11/07/2025,25861,Evening,2,2 Line,2 suit
-12/07/2025,25862,Morning,10,1 Line,0s
-12/07/2025,25863,Midday,8,8 Line,8 suit
-12/07/2025,25864,Afternoon,18,9 Line,8 suit
-12/07/2025,25865,Evening,33,6 Line,3 suit
-14/07/2025,25866,Morning,9,9 Line,9 suit
-14/07/2025,25867,Midday,36,9 Line,6 suit
-14/07/2025,25868,Afternoon,27,9 Line,7 suit
-14/07/2025,25869,Evening,1,1 Line,1 suit
-15/07/2025,25870,Morning,31,4 Line,1 suit
-15/07/2025,25871,Midday,14,5 Line,4 suit
-15/07/2025,25872,Afternoon,20,2 Line,0s
-15/07/2025,25873,Evening,17,8 Line,7 suit
-16/07/2025,25874,Morning,9,9 Line,9 suit
-16/07/2025,25875,Midday,16,7 Line,6 suit
-16/07/2025,25876,Afternoon,16,7 Line,6 suit
-16/07/2025,25877,Evening,11,2 Line,1 suit
-17/07/2025,25878,Morning,34,7 Line,4 suit
-17/07/2025,25879,Midday,29,2 Line,9 suit
-17/07/2025,25880,Afternoon,25,7 Line,5 suit
-17/07/2025,25881,Evening,12,3 Line,2 suit
-18/07/2025,25882,Morning,11,2 Line,1 suit
-18/07/2025,25883,Midday,24,6 Line,4 suit
-18/07/2025,25884,Afternoon,29,2 Line,9 suit
-18/07/2025,25885,Evening,5,5 Line,5 suit
-19/07/2025,25886,Morning,25,7 Line,5 suit
-19/07/2025,25887,Midday,16,7 Line,6 suit
-19/07/2025,25888,Afternoon,15,6 Line,5 suit
-19/07/2025,25889,Evening,8,8 Line,8 suit
-21/07/2025,25890,Morning,35,8 Line,5 suit
-21/07/2025,25891,Midday,32,5 Line,2 suit
-21/07/2025,25892,Afternoon,13,4 Line,3 suit
-21/07/2025,25893,Evening,4,4 Line,4 suit
-22/07/2025,25894,Morning,16,7 Line,6 suit
-22/07/2025,25895,Midday,14,5 Line,4 suit
-22/07/2025,25896,Afternoon,23,5 Line,3 suit
-22/07/2025,25897,Evening,30,3 Line,0s
-23/07/2025,25898,Morning,25,7 Line,5 suit
-23/07/2025,25899,Midday,7,7 Line,7 suit
-23/07/2025,25900,Afternoon,3,3 Line,3 suit
-23/07/2025,25901,Evening,8,8 Line,8 suit
-24/07/2025,25902,Morning,35,8 Line,5 suit
-24/07/2025,25903,Midday,7,7 Line,7 suit
-24/07/2025,25904,Afternoon,33,6 Line,3 suit
-24/07/2025,25905,Evening,34,7 Line,4 suit
-25/07/2025,25906,Morning,15,6 Line,5 suit
-25/07/2025,25907,Midday,7,7 Line,7 suit
-25/07/2025,25908,Afternoon,5,5 Line,5 suit
-25/07/2025,25909,Evening,21,3 Line,1 suit
-26/07/2025,25910,Morning,5,5 Line,5 suit
-26/07/2025,25911,Midday,24,6 Line,4 suit
-26/07/2025,25912,Afternoon,24,6 Line,4 suit
-26/07/2025,25913,Evening,14,5 Line,4 suit
-28/07/2025,25914,Morning,16,7 Line,6 suit
-28/07/2025,25915,Midday,19,1 Line,9 suit
-28/07/2025,25916,Afternoon,20,2 Line,0s
-28/07/2025,25917,Evening,16,7 Line,6 suit
-29/07/2025,25918,Morning,14,5 Line,4 suit
-29/07/2025,25919,Midday,33,6 Line,3 suit
-29/07/2025,25920,Afternoon,26,8 Line,6 suit
-29/07/2025,25921,Evening,33,6 Line,3 suit
-30/07/2025,25922,Morning,3,3 Line,3 suit
-30/07/2025,25923,Midday,11,2 Line,1 suit
-30/07/2025,25924,Afternoon,9,9 Line,9 suit
-30/07/2025,25925,Evening,5,5 Line,5 suit
-31/07/2025,25926,Morning,14,5 Line,4 suit
-31/07/2025,25927,Midday,7,7 Line,7 suit
-31/07/2025,25928,Afternoon,8,8 Line,8 suit
-31/07/2025,25929,Evening,3,3 Line,3 suit
-01/08/2025,25930,Morning,17,8 Line,7 suit
-01/08/2025,25931,Midday,23,5 Line,3 suit
-01/08/2025,25932,Afternoon,11,2 Line,1 suit
-01/08/2025,25933,Evening,26,8 Line,6 suit
-02/08/2025,25934,Morning,5,5 Line,5 suit
-02/08/2025,25935,Midday,16,7 Line,6 suit
-02/08/2025,25936,Afternoon,6,6 Line,6 suit
-02/08/2025,25937,Evening,18,9 Line,8 suit
-04/08/2025,25938,Morning,28,1 Line,8 suit
-04/08/2025,25939,Midday,21,3 Line,1 suit
-04/08/2025,25940,Afternoon,18,9 Line,8 suit
-04/08/2025,25941,Evening,24,6 Line,4 suit
-05/08/2025,25942,Morning,18,9 Line,8 suit
-05/08/2025,25943,Midday,32,5 Line,2 suit
-05/08/2025,25944,Afternoon,3,3 Line,3 suit
-05/08/2025,25945,Evening,36,9 Line,6 suit
-06/08/2025,25946,Morning,23,5 Line,3 suit
-06/08/2025,25947,Midday,28,1 Line,8 suit
-06/08/2025,25948,Afternoon,16,7 Line,6 suit
-06/08/2025,25949,Evening,6,6 Line,6 suit
-07/08/2025,25950,Morning,7,7 Line,7 suit
-07/08/2025,25951,Midday,35,8 Line,5 suit
-07/08/2025,25952,Afternoon,19,1 Line,9 suit
-07/08/2025,25953,Evening,27,9 Line,7 suit
-08/08/2025,25954,Morning,20,2 Line,0s
-08/08/2025,25955,Midday,24,6 Line,4 suit
-08/08/2025,25956,Afternoon,7,7 Line,7 suit
-08/08/2025,25957,Evening,11,2 Line,1 suit
-09/08/2025,25958,Morning,28,1 Line,8 suit
-09/08/2025,25959,Midday,24,6 Line,4 suit
-09/08/2025,25960,Afternoon,19,1 Line,9 suit
-09/08/2025,25961,Evening,10,1 Line,0s
-11/08/2025,25962,Morning,14,5 Line,4 suit
-11/08/2025,25963,Midday,31,4 Line,1 suit
-11/08/2025,25964,Afternoon,32,5 Line,2 suit
-11/08/2025,25965,Evening,8,8 Line,8 suit
-12/08/2025,25966,Morning,31,4 Line,1 suit
-12/08/2025,25967,Midday,20,2 Line,0s
-12/08/2025,25968,Afternoon,26,8 Line,6 suit
-12/08/2025,25969,Evening,23,5 Line,3 suit
-13/08/2025,25970,Morning,32,5 Line,2 suit
-13/08/2025,25971,Midday,32,5 Line,2 suit
-13/08/2025,25972,Afternoon,23,5 Line,3 suit
-13/08/2025,25973,Evening,24,6 Line,4 suit
-14/08/2025,25974,Morning,33,6 Line,3 suit
-14/08/2025,25975,Midday,21,3 Line,1 suit
-14/08/2025,25976,Afternoon,14,5 Line,4 suit
-14/08/2025,25977,Evening,27,9 Line,7 suit
-15/08/2025,25978,Morning,35,8 Line,5 suit
-15/08/2025,25979,Midday,31,4 Line,1 suit
-15/08/2025,25980,Afternoon,16,7 Line,6 suit
-15/08/2025,25981,Evening,9,9 Line,9 suit
-16/08/2025,25982,Morning,22,4 Line,2 suit
-16/08/2025,25983,Midday,19,1 Line,9 suit
-16/08/2025,25984,Afternoon,20,2 Line,0s
-16/08/2025,25985,Evening,32,5 Line,2 suit
-18/08/2025,25986,Morning,27,9 Line,7 suit
-18/08/2025,25987,Midday,6,6 Line,6 suit
-18/08/2025,25988,Afternoon,21,3 Line,1 suit
-18/08/2025,25989,Evening,23,5 Line,3 suit
-19/08/2025,25990,Morning,25,7 Line,5 suit
-19/08/2025,25991,Midday,15,6 Line,5 suit
-19/08/2025,25992,Afternoon,34,7 Line,4 suit
-19/08/2025,25993,Evening,36,9 Line,6 suit
-20/08/2025,25994,Morning,30,3 Line,0s
-20/08/2025,25995,Midday,14,5 Line,4 suit
-20/08/2025,25996,Afternoon,16,7 Line,6 suit
-20/08/2025,25997,Evening,12,3 Line,2 suit
-21/08/2025,25998,Morning,27,9 Line,7 suit
-21/08/2025,25999,Midday,6,6 Line,6 suit
-21/08/2025,26000,Afternoon,26,8 Line,6 suit
-21/08/2025,26001,Evening,7,7 Line,7 suit
-22/08/2025,26002,Morning,20,2 Line,0s
-22/08/2025,26003,Midday,8,8 Line,8 suit
-22/08/2025,26004,Afternoon,20,2 Line,0s
-22/08/2025,26005,Evening,31,4 Line,1 suit
-23/08/2025,26006,Morning,24,6 Line,4 suit
-23/08/2025,26007,Midday,36,9 Line,6 suit
-23/08/2025,26008,Afternoon,6,6 Line,6 suit
-23/08/2025,26009,Evening,35,8 Line,5 suit
-25/08/2025,26010,Morning,25,7 Line,5 suit
-25/08/2025,26011,Midday,16,7 Line,6 suit
-25/08/2025,26012,Afternoon,18,9 Line,8 suit
-25/08/2025,26013,Evening,17,8 Line,7 suit
-26/08/2025,26014,Morning,26,8 Line,6 suit
-26/08/2025,26015,Midday,4,4 Line,4 suit
-26/08/2025,26016,Afternoon,26,8 Line,6 suit
-26/08/2025,26017,Evening,14,5 Line,4 suit
-27/08/2025,26018,Morning,21,3 Line,1 suit
-27/08/2025,26019,Midday,1,1 Line,1 suit
-27/08/2025,26020,Afternoon,14,5 Line,4 suit
-27/08/2025,26021,Evening,21,3 Line,1 suit
-28/08/2025,26022,Morning,36,9 Line,6 suit
-28/08/2025,26023,Midday,4,4 Line,4 suit
-28/08/2025,26024,Afternoon,28,1 Line,8 suit
-28/08/2025,26025,Evening,27,9 Line,7 suit
-29/08/2025,26026,Morning,32,5 Line,2 suit
-29/08/2025,26027,Midday,9,9 Line,9 suit
-29/08/2025,26028,Afternoon,5,5 Line,5 suit
-29/08/2025,26029,Evening,31,4 Line,1 suit
-30/08/2025,26030,Morning,29,2 Line,9 suit
-30/08/2025,26031,Midday,30,3 Line,0s
-30/08/2025,26032,Afternoon,12,3 Line,2 suit
-30/08/2025,26033,Evening,9,9 Line,9 suit
-01/09/2025,26034,Morning,21,3 Line,1 suit
-01/09/2025,26035,Midday,19,1 Line,9 suit
-01/09/2025,26036,Afternoon,36,9 Line,6 suit
-01/09/2025,26037,Evening,8,8 Line,8 suit
-02/09/2025,26038,Morning,10,1 Line,0s
-02/09/2025,26039,Midday,26,8 Line,6 suit
-02/09/2025,26040,Afternoon,16,7 Line,6 suit
-02/09/2025,26041,Evening,15,6 Line,5 suit
-03/09/2025,26042,Morning,8,8 Line,8 suit
-03/09/2025,26043,Midday,21,3 Line,1 suit
-03/09/2025,26044,Afternoon,13,4 Line,3 suit
-03/09/2025,26045,Evening,4,4 Line,4 suit
-04/09/2025,26046,Morning,5,5 Line,5 suit
-04/09/2025,26047,Midday,1,1 Line,1 suit
-04/09/2025,26048,Afternoon,20,2 Line,0s
-04/09/2025,26049,Evening,34,7 Line,4 suit
-05/09/2025,26050,Morning,15,6 Line,5 suit
-05/09/2025,26051,Midday,7,7 Line,7 suit
-05/09/2025,26052,Afternoon,18,9 Line,8 suit
-05/09/2025,26053,Evening,30,3 Line,0s
-06/09/2025,26054,Morning,1,1 Line,1 suit
-06/09/2025,26055,Midday,23,5 Line,3 suit
-06/09/2025,26056,Afternoon,32,5 Line,2 suit
-06/09/2025,26057,Evening,27,9 Line,7 suit
-08/09/2025,26058,Morning,15,6 Line,5 suit
-08/09/2025,26059,Midday,26,8 Line,6 suit
-08/09/2025,26060,Afternoon,34,7 Line,4 suit
-08/09/2025,26061,Evening,35,8 Line,5 suit
-09/09/2025,26062,Morning,24,6 Line,4 suit
-09/09/2025,26063,Midday,20,2 Line,0s
-09/09/2025,26064,Afternoon,4,4 Line,4 suit
-09/09/2025,26065,Evening,34,7 Line,4 suit
-10/09/2025,26066,Morning,35,8 Line,5 suit
-10/09/2025,26067,Midday,31,4 Line,1 suit
-10/09/2025,26068,Afternoon,25,7 Line,5 suit
-10/09/2025,26069,Evening,30,3 Line,0s
-11/09/2025,26070,Morning,14,5 Line,4 suit
-11/09/2025,26071,Midday,16,7 Line,6 suit
-11/09/2025,26072,Afternoon,13,4 Line,3 suit
-11/09/2025,26073,Evening,32,5 Line,2 suit
-12/09/2025,26074,Morning,8,8 Line,8 suit
-12/09/2025,26075,Midday,8,8 Line,8 suit
-12/09/2025,26076,Afternoon,20,2 Line,0s
-12/09/2025,26077,Evening,13,4 Line,3 suit
-13/09/2025,26078,Morning,12,3 Line,2 suit
-13/09/2025,26079,Midday,32,5 Line,2 suit
-13/09/2025,26080,Afternoon,22,4 Line,2 suit
-13/09/2025,26081,Evening,20,2 Line,0s
-15/09/2025,26082,Morning,20,2 Line,0s
-15/09/2025,26083,Midday,22,4 Line,2 suit
-15/09/2025,26084,Afternoon,26,8 Line,6 suit
-15/09/2025,26085,Evening,16,7 Line,6 suit
-16/09/2025,26086,Morning,9,9 Line,9 suit
-16/09/2025,26087,Midday,10,1 Line,0s
-16/09/2025,26088,Afternoon,9,9 Line,9 suit
-16/09/2025,26089,Evening,8,8 Line,8 suit
-17/09/2025,26090,Morning,12,3 Line,2 suit
-17/09/2025,26091,Midday,25,7 Line,5 suit
-17/09/2025,26092,Afternoon,1,1 Line,1 suit
-17/09/2025,26093,Evening,13,4 Line,3 suit
-18/09/2025,26094,Morning,32,5 Line,2 suit
-18/09/2025,26095,Midday,32,5 Line,2 suit
-18/09/2025,26096,Afternoon,11,2 Line,1 suit
-18/09/2025,26097,Evening,11,2 Line,1 suit
-19/09/2025,26098,Morning,2,2 Line,2 suit
-19/09/2025,26099,Midday,24,6 Line,4 suit
-19/09/2025,26100,Afternoon,26,8 Line,6 suit
-19/09/2025,26101,Evening,2,2 Line,2 suit
-20/09/2025,26102,Morning,26,8 Line,6 suit
-20/09/2025,26103,Midday,4,4 Line,4 suit
-20/09/2025,26104,Afternoon,1,1 Line,1 suit
-20/09/2025,26105,Evening,13,4 Line,3 suit
-22/09/2025,26106,Morning,32,5 Line,2 suit
-22/09/2025,26107,Midday,22,4 Line,2 suit
-22/09/2025,26108,Afternoon,3,3 Line,3 suit
-22/09/2025,26109,Evening,22,4 Line,2 suit
-23/09/2025,26110,Morning,11,2 Line,1 suit
-23/09/2025,26111,Midday,23,5 Line,3 suit
-23/09/2025,26112,Afternoon,19,1 Line,9 suit
-23/09/2025,26113,Evening,21,3 Line,1 suit
-24/09/2025,26114,Morning,31,4 Line,1 suit
-24/09/2025,26115,Midday,12,3 Line,2 suit
-24/09/2025,26116,Afternoon,25,7 Line,5 suit
-24/09/2025,26117,Evening,25,7 Line,5 suit
-25/09/2025,26118,Morning,13,4 Line,3 suit
-25/09/2025,26119,Midday,31,4 Line,1 suit
-25/09/2025,26120,Afternoon,5,5 Line,5 suit
-25/09/2025,26121,Evening,36,9 Line,6 suit
-26/09/2025,26122,Morning,4,4 Line,4 suit
-26/09/2025,26123,Midday,16,7 Line,6 suit
-26/09/2025,26124,Afternoon,7,7 Line,7 suit
-26/09/2025,26125,Evening,16,7 Line,6 suit
-27/09/2025,26126,Morning,36,9 Line,6 suit
-27/09/2025,26127,Midday,12,3 Line,2 suit
-27/09/2025,26128,Afternoon,17,8 Line,7 suit
-27/09/2025,26129,Evening,11,2 Line,1 suit
-29/09/2025,26130,Morning,12,3 Line,2 suit
-29/09/2025,26131,Midday,26,8 Line,6 suit
-29/09/2025,26132,Afternoon,14,5 Line,4 suit
-29/09/2025,26133,Evening,19,1 Line,9 suit
-30/09/2025,26134,Morning,11,2 Line,1 suit
-30/09/2025,26135,Midday,17,8 Line,7 suit
-30/09/2025,26136,Afternoon,14,5 Line,4 suit
-30/09/2025,26137,Evening,6,6 Line,6 suit
-01/10/2025,26138,Morning,25,7 Line,5 suit
-01/10/2025,26139,Midday,29,2 Line,9 suit
-01/10/2025,26140,Afternoon,35,8 Line,5 suit
-01/10/2025,26141,Evening,16,7 Line,6 suit
-02/10/2025,26142,Morning,12,3 Line,2 suit
-02/10/2025,26143,Midday,5,5 Line,5 suit
-02/10/2025,26144,Afternoon,29,2 Line,9 suit
-02/10/2025,26145,Evening,35,8 Line,5 suit
-03/10/2025,26146,Morning,23,5 Line,3 suit
-03/10/2025,26147,Midday,19,1 Line,9 suit
-03/10/2025,26148,Afternoon,19,1 Line,9 suit
-03/10/2025,26149,Evening,4,4 Line,4 suit
-04/10/2025,26150,Morning,36,9 Line,6 suit
-04/10/2025,26151,Midday,22,4 Line,2 suit
-04/10/2025,26152,Afternoon,18,9 Line,8 suit
-04/10/2025,26153,Evening,4,4 Line,4 suit
-06/10/2025,26154,Morning,19,1 Line,9 suit
-06/10/2025,26155,Midday,16,7 Line,6 suit
-06/10/2025,26156,Afternoon,7,7 Line,7 suit
-06/10/2025,26157,Evening,11,2 Line,1 suit
-07/10/2025,26158,Morning,21,3 Line,1 suit
-07/10/2025,26159,Midday,17,8 Line,7 suit
-07/10/2025,26160,Afternoon,9,9 Line,9 suit
-07/10/2025,26161,Evening,7,7 Line,7 suit
-08/10/2025,26162,Morning,16,7 Line,6 suit
-08/10/2025,26163,Midday,13,4 Line,3 suit
-08/10/2025,26164,Afternoon,11,2 Line,1 suit
-08/10/2025,26165,Evening,30,3 Line,0s
-09/10/2025,26166,Morning,25,7 Line,5 suit
-09/10/2025,26167,Midday,25,7 Line,5 suit
-09/10/2025,26168,Afternoon,27,9 Line,7 suit
-09/10/2025,26169,Evening,6,6 Line,6 suit
-10/10/2025,26170,Morning,19,1 Line,9 suit
-10/10/2025,26171,Midday,36,9 Line,6 suit
-10/10/2025,26172,Afternoon,6,6 Line,6 suit
-10/10/2025,26173,Evening,22,4 Line,2 suit
-11/10/2025,26174,Morning,3,3 Line,3 suit
-11/10/2025,26175,Midday,12,3 Line,2 suit
-11/10/2025,26176,Afternoon,5,5 Line,5 suit
-11/10/2025,26177,Evening,27,9 Line,7 suit
-13/10/2025,26178,Morning,4,4 Line,4 suit
-13/10/2025,26179,Midday,26,8 Line,6 suit
-13/10/2025,26180,Afternoon,31,4 Line,1 suit
-13/10/2025,26181,Evening,32,5 Line,2 suit
-14/10/2025,26182,Morning,30,3 Line,0s
-14/10/2025,26183,Midday,26,8 Line,6 suit
-14/10/2025,26184,Afternoon,34,7 Line,4 suit
-14/10/2025,26185,Evening,10,1 Line,0s
-15/10/2025,26186,Morning,35,8 Line,5 suit
-15/10/2025,26187,Midday,19,1 Line,9 suit
-15/10/2025,26188,Afternoon,14,5 Line,4 suit
-15/10/2025,26189,Evening,25,7 Line,5 suit
-16/10/2025,26190,Morning,3,3 Line,3 suit
-16/10/2025,26191,Midday,14,5 Line,4 suit
-16/10/2025,26192,Afternoon,16,7 Line,6 suit
-16/10/2025,26193,Evening,29,2 Line,9 suit
-17/10/2025,26194,Morning,2,2 Line,2 suit
-17/10/2025,26195,Midday,9,9 Line,9 suit
-17/10/2025,26196,Afternoon,20,2 Line,0s
-17/10/2025,26197,Evening,8,8 Line,8 suit
-18/10/2025,26198,Morning,23,5 Line,3 suit
-18/10/2025,26199,Midday,9,9 Line,9 suit
-18/10/2025,26200,Afternoon,27,9 Line,7 suit
-18/10/2025,26201,Evening,22,4 Line,2 suit
-21/10/2025,26202,Morning,7,7 Line,7 suit
-21/10/2025,26203,Midday,9,9 Line,9 suit
-21/10/2025,26204,Afternoon,13,4 Line,3 suit
-21/10/2025,26205,Evening,35,8 Line,5 suit
-22/10/2025,26206,Morning,27,9 Line,7 suit
-22/10/2025,26207,Midday,12,3 Line,2 suit
-22/10/2025,26208,Afternoon,13,4 Line,3 suit
-22/10/2025,26209,Evening,33,6 Line,3 suit
-23/10/2025,26210,Morning,15,6 Line,5 suit
-23/10/2025,26211,Midday,22,4 Line,2 suit
-23/10/2025,26212,Afternoon,33,6 Line,3 suit
-23/10/2025,26213,Evening,31,4 Line,1 suit
-24/10/2025,26214,Morning,18,9 Line,8 suit
-24/10/2025,26215,Midday,21,3 Line,1 suit
-24/10/2025,26216,Afternoon,29,2 Line,9 suit
-24/10/2025,26217,Evening,20,2 Line,0s
-25/10/2025,26218,Morning,7,7 Line,7 suit
-25/10/2025,26219,Midday,10,1 Line,0s
-25/10/2025,26220,Afternoon,14,5 Line,4 suit
-25/10/2025,26221,Evening,2,2 Line,2 suit
-27/10/2025,26222,Morning,1,1 Line,1 suit
-27/10/2025,26223,Midday,4,4 Line,4 suit
-27/10/2025,26224,Afternoon,31,4 Line,1 suit
-27/10/2025,26225,Evening,1,1 Line,1 suit
-28/10/2025,26226,Morning,4,4 Line,4 suit
-28/10/2025,26227,Midday,16,7 Line,6 suit
-28/10/2025,26228,Afternoon,3,3 Line,3 suit
-28/10/2025,26229,Evening,6,6 Line,6 suit
-29/10/2025,26230,Morning,31,4 Line,1 suit
-29/10/2025,26231,Midday,1,1 Line,1 suit
-29/10/2025,26232,Afternoon,32,5 Line,2 suit
-29/10/2025,26233,Evening,1,1 Line,1 suit
-30/10/2025,26234,Morning,8,8 Line,8 suit
-30/10/2025,26235,Midday,16,7 Line,6 suit
-30/10/2025,26236,Afternoon,12,3 Line,2 suit
-30/10/2025,26237,Evening,6,6 Line,6 suit
-31/10/2025,26238,Morning,22,4 Line,2 suit
-31/10/2025,26239,Midday,11,2 Line,1 suit
-31/10/2025,26240,Afternoon,1,1 Line,1 suit
-31/10/2025,26241,Evening,11,2 Line,1 suit
-01/11/2025,26242,Morning,21,3 Line,1 suit
-01/11/2025,26243,Midday,26,8 Line,6 suit
-01/11/2025,26244,Afternoon,36,9 Line,6 suit
-01/11/2025,26245,Evening,24,6 Line,4 suit
-03/11/2025,26246,Morning,7,7 Line,7 suit
-03/11/2025,26247,Midday,13,4 Line,3 suit
-03/11/2025,26248,Afternoon,27,9 Line,7 suit
-03/11/2025,26249,Evening,22,4 Line,2 suit
-04/11/2025,26250,Morning,24,6 Line,4 suit
-04/11/2025,26251,Midday,30,3 Line,0s
-04/11/2025,26252,Afternoon,22,4 Line,2 suit
-04/11/2025,26253,Evening,34,7 Line,4 suit
-05/11/2025,26254,Morning,15,6 Line,5 suit
-05/11/2025,26255,Midday,2,2 Line,2 suit
-05/11/2025,26256,Afternoon,23,5 Line,3 suit
-05/11/2025,26257,Evening,6,6 Line,6 suit
-06/11/2025,26258,Morning,24,6 Line,4 suit
-06/11/2025,26259,Midday,2,2 Line,2 suit
-06/11/2025,26260,Afternoon,7,7 Line,7 suit
-06/11/2025,26261,Evening,6,6 Line,6 suit
-07/11/2025,26262,Morning,32,5 Line,2 suit
-07/11/2025,26263,Midday,27,9 Line,7 suit
-07/11/2025,26264,Afternoon,23,5 Line,3 suit
-07/11/2025,26265,Evening,26,8 Line,6 suit
-08/11/2025,26266,Morning,32,5 Line,2 suit
-08/11/2025,26267,Midday,29,2 Line,9 suit
-08/11/2025,26268,Afternoon,6,6 Line,6 suit
-08/11/2025,26269,Evening,31,4 Line,1 suit
-10/11/2025,26270,Morning,14,5 Line,4 suit
-10/11/2025,26271,Midday,14,5 Line,4 suit
-10/11/2025,26272,Afternoon,29,2 Line,9 suit
-10/11/2025,26273,Evening,18,9 Line,8 suit
-11/11/2025,26274,Morning,9,9 Line,9 suit
-11/11/2025,26275,Midday,28,1 Line,8 suit
-11/11/2025,26276,Afternoon,6,6 Line,6 suit
-11/11/2025,26277,Evening,12,3 Line,2 suit
-12/11/2025,26278,Morning,8,8 Line,8 suit
-12/11/2025,26279,Midday,17,8 Line,7 suit
-12/11/2025,26280,Afternoon,27,9 Line,7 suit
-12/11/2025,26281,Evening,27,9 Line,7 suit
-13/11/2025,26282,Morning,21,3 Line,1 suit
-13/11/2025,26283,Midday,21,3 Line,1 suit
-13/11/2025,26284,Afternoon,24,6 Line,4 suit
-13/11/2025,26285,Evening,1,1 Line,1 suit
-14/11/2025,26286,Morning,12,3 Line,2 suit
-14/11/2025,26287,Midday,20,2 Line,0s
-14/11/2025,26288,Afternoon,26,8 Line,6 suit
-14/11/2025,26289,Evening,36,9 Line,6 suit
-15/11/2025,26290,Morning,18,9 Line,8 suit
-15/11/2025,26291,Midday,30,3 Line,0s
-15/11/2025,26292,Afternoon,5,5 Line,5 suit
-15/11/2025,26293,Evening,31,4 Line,1 suit
-17/11/2025,26294,Morning,7,7 Line,7 suit
-17/11/2025,26295,Midday,9,9 Line,9 suit
-17/11/2025,26296,Afternoon,29,2 Line,9 suit
-17/11/2025,26297,Evening,20,2 Line,0s
+18/02/2025,25382,Morning,23,5,3 suit
+18/02/2025,25383,Midday,11,2,1 suit
+18/02/2025,25384,Afternoon,8,8,8 suit
+18/02/2025,25385,Evening,22,4,2 suit
+19/02/2025,25386,Morning,4,4,4 suit
+19/02/2025,25387,Midday,30,3,0s
+19/02/2025,25388,Afternoon,12,3,2 suit
+19/02/2025,25389,Evening,29,2,9 suit
+20/02/2025,25390,Morning,32,5,2 suit
+20/02/2025,25391,Midday,11,2,1 suit
+20/02/2025,25392,Afternoon,28,1,8 suit
+20/02/2025,25393,Evening,32,5,2 suit
+21/02/2025,25394,Morning,31,4,1 suit
+21/02/2025,25395,Midday,29,2,9 suit
+21/02/2025,25396,Afternoon,32,5,2 suit
+21/02/2025,25397,Evening,10,1,0s
+22/02/2025,25398,Morning,28,1,8 suit
+22/02/2025,25399,Midday,22,4,2 suit
+22/02/2025,25400,Afternoon,27,9,7 suit
+22/02/2025,25401,Evening,9,9,9 suit
+24/02/2025,25402,Morning,11,2,1 suit
+24/02/2025,25403,Midday,22,4,2 suit
+24/02/2025,25404,Afternoon,13,4,3 suit
+24/02/2025,25405,Evening,20,2,0s
+25/02/2025,25406,Morning,15,6,5 suit
+25/02/2025,25407,Midday,28,1,8 suit
+25/02/2025,25408,Afternoon,31,4,1 suit
+25/02/2025,25409,Evening,8,8,8 suit
+26/02/2025,25410,Morning,11,2,1 suit
+26/02/2025,25411,Midday,5,5,5 suit
+26/02/2025,25412,Afternoon,18,9,8 suit
+26/02/2025,25413,Evening,15,6,5 suit
+27/02/2025,25414,Morning,29,2,9 suit
+27/02/2025,25415,Midday,27,9,7 suit
+27/02/2025,25416,Afternoon,26,8,6 suit
+27/02/2025,25417,Evening,15,6,5 suit
+28/02/2025,25418,Morning,13,4,3 suit
+28/02/2025,25419,Midday,20,2,0s
+28/02/2025,25420,Afternoon,34,7,4 suit
+28/02/2025,25421,Evening,11,2,1 suit
+01/03/2025,25422,Morning,8,8,8 suit
+01/03/2025,25423,Midday,30,3,0s
+01/03/2025,25424,Afternoon,5,5,5 suit
+01/03/2025,25425,Evening,4,4,4 suit
+03/03/2025,25426,Morning,19,1,9 suit
+03/03/2025,25427,Midday,22,4,2 suit
+03/03/2025,25428,Afternoon,25,7,5 suit
+03/03/2025,25429,Evening,23,5,3 suit
+04/03/2025,25430,Morning,4,4,4 suit
+04/03/2025,25431,Midday,1,1,1 suit
+04/03/2025,25432,Afternoon,18,9,8 suit
+04/03/2025,25433,Evening,15,6,5 suit
+05/03/2025,25434,Morning,24,6,4 suit
+05/03/2025,25435,Midday,4,4,4 suit
+05/03/2025,25436,Afternoon,11,2,1 suit
+05/03/2025,25437,Evening,18,9,8 suit
+06/03/2025,25438,Morning,36,9,6 suit
+06/03/2025,25439,Midday,5,5,5 suit
+06/03/2025,25440,Afternoon,19,1,9 suit
+06/03/2025,25441,Evening,10,1,0s
+07/03/2025,25442,Morning,1,1,1 suit
+07/03/2025,25443,Midday,3,3,3 suit
+07/03/2025,25444,Afternoon,23,5,3 suit
+07/03/2025,25445,Evening,27,9,7 suit
+08/03/2025,25446,Morning,21,3,1 suit
+08/03/2025,25447,Midday,3,3,3 suit
+08/03/2025,25448,Afternoon,23,5,3 suit
+08/03/2025,25449,Evening,22,4,2 suit
+10/03/2025,25450,Morning,35,8,5 suit
+10/03/2025,25451,Midday,11,2,1 suit
+10/03/2025,25452,Afternoon,19,1,9 suit
+10/03/2025,25453,Evening,18,9,8 suit
+11/03/2025,25454,Morning,33,6,3 suit
+11/03/2025,25455,Midday,17,8,7 suit
+11/03/2025,25456,Afternoon,9,9,9 suit
+11/03/2025,25457,Evening,29,2,9 suit
+12/03/2025,25458,Morning,1,1,1 suit
+12/03/2025,25459,Midday,29,2,9 suit
+12/03/2025,25460,Afternoon,16,7,6 suit
+12/03/2025,25461,Evening,24,6,4 suit
+13/03/2025,25462,Morning,29,2,9 suit
+13/03/2025,25463,Midday,3,3,3 suit
+13/03/2025,25464,Afternoon,3,3,3 suit
+13/03/2025,25465,Evening,19,1,9 suit
+14/03/2025,25466,Morning,31,4,1 suit
+14/03/2025,25467,Midday,2,2,2 suit
+14/03/2025,25468,Afternoon,16,7,6 suit
+14/03/2025,25469,Evening,34,7,4 suit
+15/03/2025,25470,Morning,20,2,0s
+15/03/2025,25471,Midday,11,2,1 suit
+15/03/2025,25472,Afternoon,14,5,4 suit
+15/03/2025,25473,Evening,6,6,6 suit
+17/03/2025,25474,Morning,14,5,4 suit
+17/03/2025,25475,Midday,5,5,5 suit
+17/03/2025,25476,Afternoon,25,7,5 suit
+17/03/2025,25477,Evening,10,1,0s
+18/03/2025,25478,Morning,28,1,8 suit
+18/03/2025,25479,Midday,28,1,8 suit
+18/03/2025,25480,Afternoon,12,3,2 suit
+18/03/2025,25481,Evening,30,3,0s
+19/03/2025,25482,Morning,26,8,6 suit
+19/03/2025,25483,Midday,18,9,8 suit
+19/03/2025,25484,Afternoon,16,7,6 suit
+19/03/2025,25485,Evening,32,5,2 suit
+20/03/2025,25486,Morning,9,9,9 suit
+20/03/2025,25487,Midday,24,6,4 suit
+20/03/2025,25488,Afternoon,3,3,3 suit
+20/03/2025,25489,Evening,21,3,1 suit
+21/03/2025,25490,Morning,31,4,1 suit
+21/03/2025,25491,Midday,32,5,2 suit
+21/03/2025,25492,Afternoon,24,6,4 suit
+21/03/2025,25493,Evening,28,1,8 suit
+22/03/2025,25494,Morning,11,2,1 suit
+22/03/2025,25495,Midday,31,4,1 suit
+22/03/2025,25496,Afternoon,30,3,0s
+22/03/2025,25497,Evening,2,2,2 suit
+24/03/2025,25498,Morning,21,3,1 suit
+24/03/2025,25499,Midday,15,6,5 suit
+24/03/2025,25500,Afternoon,19,1,9 suit
+24/03/2025,25501,Evening,24,6,4 suit
+25/03/2025,25502,Morning,28,1,8 suit
+25/03/2025,25503,Midday,11,2,1 suit
+25/03/2025,25504,Afternoon,13,4,3 suit
+25/03/2025,25505,Evening,23,5,3 suit
+26/03/2025,25506,Morning,6,6,6 suit
+26/03/2025,25507,Midday,33,6,3 suit
+26/03/2025,25508,Afternoon,22,4,2 suit
+26/03/2025,25509,Evening,1,1,1 suit
+27/03/2025,25510,Morning,24,6,4 suit
+27/03/2025,25511,Midday,17,8,7 suit
+27/03/2025,25512,Afternoon,33,6,3 suit
+27/03/2025,25513,Evening,4,4,4 suit
+28/03/2025,25514,Morning,26,8,6 suit
+28/03/2025,25515,Midday,19,1,9 suit
+28/03/2025,25516,Afternoon,17,8,7 suit
+28/03/2025,25517,Evening,3,3,3 suit
+29/03/2025,25518,Morning,7,7,7 suit
+29/03/2025,25519,Midday,18,9,8 suit
+29/03/2025,25520,Afternoon,22,4,2 suit
+29/03/2025,25521,Evening,16,7,6 suit
+02/04/2025,25522,Morning,9,9,9 suit
+02/04/2025,25523,Midday,14,5,4 suit
+02/04/2025,25524,Afternoon,15,6,5 suit
+02/04/2025,25525,Evening,17,8,7 suit
+03/04/2025,25526,Morning,23,5,3 suit
+03/04/2025,25527,Midday,15,6,5 suit
+03/04/2025,25528,Afternoon,17,8,7 suit
+03/04/2025,25529,Evening,20,2,0s
+04/04/2025,25530,Morning,4,4,4 suit
+04/04/2025,25531,Midday,32,5,2 suit
+04/04/2025,25532,Afternoon,34,7,4 suit
+04/04/2025,25533,Evening,19,1,9 suit
+05/04/2025,25534,Morning,21,3,1 suit
+05/04/2025,25535,Midday,13,4,3 suit
+05/04/2025,25536,Afternoon,4,4,4 suit
+05/04/2025,25537,Evening,24,6,4 suit
+07/04/2025,25538,Morning,7,7,7 suit
+07/04/2025,25539,Midday,29,2,9 suit
+07/04/2025,25540,Afternoon,5,5,5 suit
+07/04/2025,25541,Evening,32,5,2 suit
+08/04/2025,25542,Morning,13,4,3 suit
+08/04/2025,25543,Midday,2,2,2 suit
+08/04/2025,25544,Afternoon,4,4,4 suit
+08/04/2025,25545,Evening,21,3,1 suit
+09/04/2025,25546,Morning,3,3,3 suit
+09/04/2025,25547,Midday,9,9,9 suit
+09/04/2025,25548,Afternoon,1,1,1 suit
+09/04/2025,25549,Evening,11,2,1 suit
+10/04/2025,25550,Morning,1,1,1 suit
+10/04/2025,25551,Midday,10,1,0s
+10/04/2025,25552,Afternoon,8,8,8 suit
+10/04/2025,25553,Evening,13,4,3 suit
+11/04/2025,25554,Morning,35,8,5 suit
+11/04/2025,25555,Midday,31,4,1 suit
+11/04/2025,25556,Afternoon,11,2,1 suit
+11/04/2025,25557,Evening,28,1,8 suit
+12/04/2025,25558,Morning,9,9,9 suit
+12/04/2025,25559,Midday,13,4,3 suit
+12/04/2025,25560,Afternoon,13,4,3 suit
+12/04/2025,25561,Evening,32,5,2 suit
+14/04/2025,25562,Morning,26,8,6 suit
+14/04/2025,25563,Midday,14,5,4 suit
+14/04/2025,25564,Afternoon,27,9,7 suit
+14/04/2025,25565,Evening,14,5,4 suit
+15/04/2025,25566,Morning,35,8,5 suit
+15/04/2025,25567,Midday,18,9,8 suit
+15/04/2025,25568,Afternoon,31,4,1 suit
+15/04/2025,25569,Evening,16,7,6 suit
+16/04/2025,25570,Morning,11,2,1 suit
+16/04/2025,25571,Midday,1,1,1 suit
+16/04/2025,25572,Afternoon,8,8,8 suit
+16/04/2025,25573,Evening,26,8,6 suit
+17/04/2025,25574,Morning,2,2,2 suit
+17/04/2025,25575,Midday,5,5,5 suit
+17/04/2025,25576,Afternoon,25,7,5 suit
+17/04/2025,25577,Evening,35,8,5 suit
+19/04/2025,25578,Morning,24,6,4 suit
+19/04/2025,25579,Midday,6,6,6 suit
+19/04/2025,25580,Afternoon,25,7,5 suit
+19/04/2025,25581,Evening,3,3,3 suit
+21/04/2025,25582,Morning,18,9,8 suit
+21/04/2025,25583,Midday,36,9,6 suit
+21/04/2025,25584,Afternoon,11,2,1 suit
+21/04/2025,25585,Evening,30,3,0s
+22/04/2025,25586,Morning,35,8,5 suit
+22/04/2025,25587,Midday,28,1,8 suit
+22/04/2025,25588,Afternoon,26,8,6 suit
+22/04/2025,25589,Evening,27,9,7 suit
+23/04/2025,25590,Morning,20,2,0s
+23/04/2025,25591,Midday,19,1,9 suit
+23/04/2025,25592,Afternoon,8,8,8 suit
+23/04/2025,25593,Evening,19,1,9 suit
+24/04/2025,25594,Morning,35,8,5 suit
+24/04/2025,25595,Midday,29,2,9 suit
+24/04/2025,25596,Afternoon,16,7,6 suit
+24/04/2025,25597,Evening,33,6,3 suit
+25/04/2025,25598,Morning,7,7,7 suit
+25/04/2025,25599,Midday,34,7,4 suit
+25/04/2025,25600,Afternoon,16,7,6 suit
+25/04/2025,25601,Evening,35,8,5 suit
+26/04/2025,25602,Morning,35,8,5 suit
+26/04/2025,25603,Midday,17,8,7 suit
+26/04/2025,25604,Afternoon,31,4,1 suit
+26/04/2025,25605,Evening,7,7,7 suit
+28/04/2025,25606,Morning,23,5,3 suit
+28/04/2025,25607,Midday,13,4,3 suit
+28/04/2025,25608,Afternoon,27,9,7 suit
+28/04/2025,25609,Evening,13,4,3 suit
+29/04/2025,25610,Morning,9,9,9 suit
+29/04/2025,25611,Midday,4,4,4 suit
+29/04/2025,25612,Afternoon,28,1,8 suit
+29/04/2025,25613,Evening,24,6,4 suit
+30/04/2025,25614,Morning,17,8,7 suit
+30/04/2025,25615,Midday,4,4,4 suit
+30/04/2025,25616,Afternoon,35,8,5 suit
+30/04/2025,25617,Evening,23,5,3 suit
+01/05/2025,25618,Morning,5,5,5 suit
+01/05/2025,25619,Midday,25,7,5 suit
+01/05/2025,25620,Afternoon,30,3,0s
+01/05/2025,25621,Evening,2,2,2 suit
+02/05/2025,25622,Morning,15,6,5 suit
+02/05/2025,25623,Midday,26,8,6 suit
+02/05/2025,25624,Afternoon,16,7,6 suit
+02/05/2025,25625,Evening,35,8,5 suit
+03/05/2025,25626,Morning,31,4,1 suit
+03/05/2025,25627,Midday,6,6,6 suit
+03/05/2025,25628,Afternoon,12,3,2 suit
+03/05/2025,25629,Evening,24,6,4 suit
+05/05/2025,25630,Morning,6,6,6 suit
+05/05/2025,25631,Midday,24,6,4 suit
+05/05/2025,25632,Afternoon,4,4,4 suit
+05/05/2025,25633,Evening,32,5,2 suit
+06/05/2025,25634,Morning,29,2,9 suit
+06/05/2025,25635,Midday,20,2,0s
+06/05/2025,25636,Afternoon,9,9,9 suit
+06/05/2025,25637,Evening,20,2,0s
+07/05/2025,25638,Morning,16,7,6 suit
+07/05/2025,25639,Midday,19,1,9 suit
+07/05/2025,25640,Afternoon,14,5,4 suit
+07/05/2025,25641,Evening,10,1,0s
+08/05/2025,25642,Morning,30,3,0s
+08/05/2025,25643,Midday,33,6,3 suit
+08/05/2025,25644,Afternoon,31,4,1 suit
+08/05/2025,25645,Evening,24,6,4 suit
+09/05/2025,25646,Morning,22,4,2 suit
+09/05/2025,25647,Midday,11,2,1 suit
+09/05/2025,25648,Afternoon,21,3,1 suit
+09/05/2025,25649,Evening,31,4,1 suit
+10/05/2025,25650,Morning,34,7,4 suit
+10/05/2025,25651,Midday,17,8,7 suit
+10/05/2025,25652,Afternoon,1,1,1 suit
+10/05/2025,25653,Evening,24,6,4 suit
+12/05/2025,25654,Morning,33,6,3 suit
+12/05/2025,25655,Midday,28,1,8 suit
+12/05/2025,25656,Afternoon,32,5,2 suit
+12/05/2025,25657,Evening,16,7,6 suit
+13/05/2025,25658,Morning,14,5,4 suit
+13/05/2025,25659,Midday,36,9,6 suit
+13/05/2025,25660,Afternoon,21,3,1 suit
+13/05/2025,25661,Evening,36,9,6 suit
+14/05/2025,25662,Morning,4,4,4 suit
+14/05/2025,25663,Midday,34,7,4 suit
+14/05/2025,25664,Afternoon,36,9,6 suit
+14/05/2025,25665,Evening,30,3,0s
+15/05/2025,25666,Morning,4,4,4 suit
+15/05/2025,25667,Midday,24,6,4 suit
+15/05/2025,25668,Afternoon,20,2,0s
+15/05/2025,25669,Evening,35,8,5 suit
+16/05/2025,25670,Morning,22,4,2 suit
+16/05/2025,25671,Midday,17,8,7 suit
+16/05/2025,25672,Afternoon,16,7,6 suit
+16/05/2025,25673,Evening,5,5,5 suit
+17/05/2025,25674,Morning,17,8,7 suit
+17/05/2025,25675,Midday,7,7,7 suit
+17/05/2025,25676,Afternoon,28,1,8 suit
+17/05/2025,25677,Evening,28,1,8 suit
+19/05/2025,25678,Morning,6,6,6 suit
+19/05/2025,25679,Midday,12,3,2 suit
+19/05/2025,25680,Afternoon,7,7,7 suit
+19/05/2025,25681,Evening,27,9,7 suit
+20/05/2025,25682,Morning,32,5,2 suit
+20/05/2025,25683,Midday,11,2,1 suit
+20/05/2025,25684,Afternoon,18,9,8 suit
+20/05/2025,25685,Evening,10,1,0s
+21/05/2025,25686,Morning,9,9,9 suit
+21/05/2025,25687,Midday,16,7,6 suit
+21/05/2025,25688,Afternoon,33,6,3 suit
+21/05/2025,25689,Evening,16,7,6 suit
+22/05/2025,25690,Morning,3,3,3 suit
+22/05/2025,25691,Midday,9,9,9 suit
+22/05/2025,25692,Afternoon,35,8,5 suit
+22/05/2025,25693,Evening,34,7,4 suit
+23/05/2025,25694,Morning,12,3,2 suit
+23/05/2025,25695,Midday,16,7,6 suit
+23/05/2025,25696,Afternoon,17,8,7 suit
+23/05/2025,25697,Evening,12,3,2 suit
+24/05/2025,25698,Morning,16,7,6 suit
+24/05/2025,25699,Midday,12,3,2 suit
+24/05/2025,25700,Afternoon,10,1,0s
+24/05/2025,25701,Evening,31,4,1 suit
+26/05/2025,25702,Morning,22,4,2 suit
+26/05/2025,25703,Midday,27,9,7 suit
+26/05/2025,25704,Afternoon,32,5,2 suit
+26/05/2025,25705,Evening,32,5,2 suit
+27/05/2025,25706,Morning,15,6,5 suit
+27/05/2025,25707,Midday,5,5,5 suit
+27/05/2025,25708,Afternoon,2,2,2 suit
+27/05/2025,25709,Evening,22,4,2 suit
+28/05/2025,25710,Morning,18,9,8 suit
+28/05/2025,25711,Midday,9,9,9 suit
+28/05/2025,25712,Afternoon,9,9,9 suit
+28/05/2025,25713,Evening,17,8,7 suit
+29/05/2025,25714,Morning,13,4,3 suit
+29/05/2025,25715,Midday,16,7,6 suit
+29/05/2025,25716,Afternoon,21,3,1 suit
+29/05/2025,25717,Evening,28,1,8 suit
+30/05/2025,25718,Morning,33,6,3 suit
+30/05/2025,25719,Midday,32,5,2 suit
+30/05/2025,25720,Afternoon,31,4,1 suit
+30/05/2025,25721,Evening,11,2,1 suit
+31/05/2025,25722,Morning,33,6,3 suit
+31/05/2025,25723,Midday,25,7,5 suit
+31/05/2025,25724,Afternoon,7,7,7 suit
+31/05/2025,25725,Evening,10,1,0s
+02/06/2025,25726,Morning,27,9,7 suit
+02/06/2025,25727,Midday,6,6,6 suit
+02/06/2025,25728,Afternoon,20,2,0s
+02/06/2025,25729,Evening,14,5,4 suit
+03/06/2025,25730,Morning,5,5,5 suit
+03/06/2025,25731,Midday,10,1,0s
+03/06/2025,25732,Afternoon,32,5,2 suit
+03/06/2025,25733,Evening,19,1,9 suit
+04/06/2025,25734,Morning,13,4,3 suit
+04/06/2025,25735,Midday,16,7,6 suit
+04/06/2025,25736,Afternoon,14,5,4 suit
+04/06/2025,25737,Evening,26,8,6 suit
+05/06/2025,25738,Morning,2,2,2 suit
+05/06/2025,25739,Midday,3,3,3 suit
+05/06/2025,25740,Afternoon,9,9,9 suit
+05/06/2025,25741,Evening,26,8,6 suit
+06/06/2025,25742,Morning,1,1,1 suit
+06/06/2025,25743,Midday,2,2,2 suit
+06/06/2025,25744,Afternoon,13,4,3 suit
+06/06/2025,25745,Evening,29,2,9 suit
+07/06/2025,25746,Morning,17,8,7 suit
+07/06/2025,25747,Midday,32,5,2 suit
+07/06/2025,25748,Afternoon,36,9,6 suit
+07/06/2025,25749,Evening,12,3,2 suit
+09/06/2025,25750,Morning,8,8,8 suit
+09/06/2025,25751,Midday,23,5,3 suit
+09/06/2025,25752,Afternoon,26,8,6 suit
+09/06/2025,25753,Evening,19,1,9 suit
+10/06/2025,25754,Morning,30,3,0s
+10/06/2025,25755,Midday,29,2,9 suit
+10/06/2025,25756,Afternoon,35,8,5 suit
+10/06/2025,25757,Evening,5,5,5 suit
+11/06/2025,25758,Morning,9,9,9 suit
+11/06/2025,25759,Midday,33,6,3 suit
+11/06/2025,25760,Afternoon,30,3,0s
+11/06/2025,25761,Evening,7,7,7 suit
+12/06/2025,25762,Morning,4,4,4 suit
+12/06/2025,25763,Midday,29,2,9 suit
+12/06/2025,25764,Afternoon,28,1,8 suit
+12/06/2025,25765,Evening,12,3,2 suit
+13/06/2025,25766,Morning,16,7,6 suit
+13/06/2025,25767,Midday,1,1,1 suit
+13/06/2025,25768,Afternoon,27,9,7 suit
+13/06/2025,25769,Evening,21,3,1 suit
+14/06/2025,25770,Morning,14,5,4 suit
+14/06/2025,25771,Midday,20,2,0s
+14/06/2025,25772,Afternoon,11,2,1 suit
+14/06/2025,25773,Evening,24,6,4 suit
+16/06/2025,25774,Morning,23,5,3 suit
+16/06/2025,25775,Midday,28,1,8 suit
+16/06/2025,25776,Afternoon,28,1,8 suit
+16/06/2025,25777,Evening,36,9,6 suit
+17/06/2025,25778,Morning,4,4,4 suit
+17/06/2025,25779,Midday,10,1,0s
+17/06/2025,25780,Afternoon,8,8,8 suit
+17/06/2025,25781,Evening,28,1,8 suit
+18/06/2025,25782,Morning,31,4,1 suit
+18/06/2025,25783,Midday,33,6,3 suit
+18/06/2025,25784,Afternoon,21,3,1 suit
+18/06/2025,25785,Evening,13,4,3 suit
+20/06/2025,25786,Morning,18,9,8 suit
+20/06/2025,25787,Midday,11,2,1 suit
+20/06/2025,25788,Afternoon,11,2,1 suit
+20/06/2025,25789,Evening,23,5,3 suit
+21/06/2025,25790,Morning,10,1,0s
+21/06/2025,25791,Midday,1,1,1 suit
+21/06/2025,25792,Afternoon,30,3,0s
+21/06/2025,25793,Evening,20,2,0s
+23/06/2025,25794,Morning,7,7,7 suit
+23/06/2025,25795,Midday,11,2,1 suit
+23/06/2025,25796,Afternoon,15,6,5 suit
+23/06/2025,25797,Evening,6,6,6 suit
+24/06/2025,25798,Morning,2,2,2 suit
+24/06/2025,25799,Midday,33,6,3 suit
+24/06/2025,25800,Afternoon,23,5,3 suit
+24/06/2025,25801,Evening,35,8,5 suit
+25/06/2025,25802,Morning,16,7,6 suit
+25/06/2025,25803,Midday,2,2,2 suit
+25/06/2025,25804,Afternoon,32,5,2 suit
+25/06/2025,25805,Evening,32,5,2 suit
+26/06/2025,25806,Morning,21,3,1 suit
+26/06/2025,25807,Midday,31,4,1 suit
+26/06/2025,25808,Afternoon,13,4,3 suit
+26/06/2025,25809,Evening,8,8,8 suit
+27/06/2025,25810,Morning,32,5,2 suit
+27/06/2025,25811,Midday,13,4,3 suit
+27/06/2025,25812,Afternoon,21,3,1 suit
+27/06/2025,25813,Evening,25,7,5 suit
+28/06/2025,25814,Morning,27,9,7 suit
+28/06/2025,25815,Midday,12,3,2 suit
+28/06/2025,25816,Afternoon,30,3,0s
+28/06/2025,25817,Evening,3,3,3 suit
+30/06/2025,25818,Morning,8,8,8 suit
+30/06/2025,25819,Midday,10,1,0s
+30/06/2025,25820,Afternoon,8,8,8 suit
+30/06/2025,25821,Evening,5,5,5 suit
+01/07/2025,25822,Morning,23,5,3 suit
+01/07/2025,25823,Midday,12,3,2 suit
+01/07/2025,25824,Afternoon,27,9,7 suit
+01/07/2025,25825,Evening,18,9,8 suit
+02/07/2025,25826,Morning,17,8,7 suit
+02/07/2025,25827,Midday,27,9,7 suit
+02/07/2025,25828,Afternoon,31,4,1 suit
+02/07/2025,25829,Evening,35,8,5 suit
+03/07/2025,25830,Morning,36,9,6 suit
+03/07/2025,25831,Midday,18,9,8 suit
+03/07/2025,25832,Afternoon,7,7,7 suit
+03/07/2025,25833,Evening,23,5,3 suit
+04/07/2025,25834,Morning,29,2,9 suit
+04/07/2025,25835,Midday,11,2,1 suit
+04/07/2025,25836,Afternoon,35,8,5 suit
+04/07/2025,25837,Evening,24,6,4 suit
+05/07/2025,25838,Morning,10,1,0s
+05/07/2025,25839,Midday,12,3,2 suit
+05/07/2025,25840,Afternoon,4,4,4 suit
+05/07/2025,25841,Evening,17,8,7 suit
+07/07/2025,25842,Morning,24,6,4 suit
+07/07/2025,25843,Midday,9,9,9 suit
+07/07/2025,25844,Afternoon,22,4,2 suit
+07/07/2025,25845,Evening,14,5,4 suit
+08/07/2025,25846,Morning,7,7,7 suit
+08/07/2025,25847,Midday,27,9,7 suit
+08/07/2025,25848,Afternoon,20,2,0s
+08/07/2025,25849,Evening,20,2,0s
+09/07/2025,25850,Morning,6,6,6 suit
+09/07/2025,25851,Midday,36,9,6 suit
+09/07/2025,25852,Afternoon,11,2,1 suit
+09/07/2025,25853,Evening,10,1,0s
+10/07/2025,25854,Morning,6,6,6 suit
+10/07/2025,25855,Midday,34,7,4 suit
+10/07/2025,25856,Afternoon,17,8,7 suit
+10/07/2025,25857,Evening,32,5,2 suit
+11/07/2025,25858,Morning,5,5,5 suit
+11/07/2025,25859,Midday,30,3,0s
+11/07/2025,25860,Afternoon,16,7,6 suit
+11/07/2025,25861,Evening,2,2,2 suit
+12/07/2025,25862,Morning,10,1,0s
+12/07/2025,25863,Midday,8,8,8 suit
+12/07/2025,25864,Afternoon,18,9,8 suit
+12/07/2025,25865,Evening,33,6,3 suit
+14/07/2025,25866,Morning,9,9,9 suit
+14/07/2025,25867,Midday,36,9,6 suit
+14/07/2025,25868,Afternoon,27,9,7 suit
+14/07/2025,25869,Evening,1,1,1 suit
+15/07/2025,25870,Morning,31,4,1 suit
+15/07/2025,25871,Midday,14,5,4 suit
+15/07/2025,25872,Afternoon,20,2,0s
+15/07/2025,25873,Evening,17,8,7 suit
+16/07/2025,25874,Morning,9,9,9 suit
+16/07/2025,25875,Midday,16,7,6 suit
+16/07/2025,25876,Afternoon,16,7,6 suit
+16/07/2025,25877,Evening,11,2,1 suit
+17/07/2025,25878,Morning,34,7,4 suit
+17/07/2025,25879,Midday,29,2,9 suit
+17/07/2025,25880,Afternoon,25,7,5 suit
+17/07/2025,25881,Evening,12,3,2 suit
+18/07/2025,25882,Morning,11,2,1 suit
+18/07/2025,25883,Midday,24,6,4 suit
+18/07/2025,25884,Afternoon,29,2,9 suit
+18/07/2025,25885,Evening,5,5,5 suit
+19/07/2025,25886,Morning,25,7,5 suit
+19/07/2025,25887,Midday,16,7,6 suit
+19/07/2025,25888,Afternoon,15,6,5 suit
+19/07/2025,25889,Evening,8,8,8 suit
+21/07/2025,25890,Morning,35,8,5 suit
+21/07/2025,25891,Midday,32,5,2 suit
+21/07/2025,25892,Afternoon,13,4,3 suit
+21/07/2025,25893,Evening,4,4,4 suit
+22/07/2025,25894,Morning,16,7,6 suit
+22/07/2025,25895,Midday,14,5,4 suit
+22/07/2025,25896,Afternoon,23,5,3 suit
+22/07/2025,25897,Evening,30,3,0s
+23/07/2025,25898,Morning,25,7,5 suit
+23/07/2025,25899,Midday,7,7,7 suit
+23/07/2025,25900,Afternoon,3,3,3 suit
+23/07/2025,25901,Evening,8,8,8 suit
+24/07/2025,25902,Morning,35,8,5 suit
+24/07/2025,25903,Midday,7,7,7 suit
+24/07/2025,25904,Afternoon,33,6,3 suit
+24/07/2025,25905,Evening,34,7,4 suit
+25/07/2025,25906,Morning,15,6,5 suit
+25/07/2025,25907,Midday,7,7,7 suit
+25/07/2025,25908,Afternoon,5,5,5 suit
+25/07/2025,25909,Evening,21,3,1 suit
+26/07/2025,25910,Morning,5,5,5 suit
+26/07/2025,25911,Midday,24,6,4 suit
+26/07/2025,25912,Afternoon,24,6,4 suit
+26/07/2025,25913,Evening,14,5,4 suit
+28/07/2025,25914,Morning,16,7,6 suit
+28/07/2025,25915,Midday,19,1,9 suit
+28/07/2025,25916,Afternoon,20,2,0s
+28/07/2025,25917,Evening,16,7,6 suit
+29/07/2025,25918,Morning,14,5,4 suit
+29/07/2025,25919,Midday,33,6,3 suit
+29/07/2025,25920,Afternoon,26,8,6 suit
+29/07/2025,25921,Evening,33,6,3 suit
+30/07/2025,25922,Morning,3,3,3 suit
+30/07/2025,25923,Midday,11,2,1 suit
+30/07/2025,25924,Afternoon,9,9,9 suit
+30/07/2025,25925,Evening,5,5,5 suit
+31/07/2025,25926,Morning,14,5,4 suit
+31/07/2025,25927,Midday,7,7,7 suit
+31/07/2025,25928,Afternoon,8,8,8 suit
+31/07/2025,25929,Evening,3,3,3 suit
+01/08/2025,25930,Morning,17,8,7 suit
+01/08/2025,25931,Midday,23,5,3 suit
+01/08/2025,25932,Afternoon,11,2,1 suit
+01/08/2025,25933,Evening,26,8,6 suit
+02/08/2025,25934,Morning,5,5,5 suit
+02/08/2025,25935,Midday,16,7,6 suit
+02/08/2025,25936,Afternoon,6,6,6 suit
+02/08/2025,25937,Evening,18,9,8 suit
+04/08/2025,25938,Morning,28,1,8 suit
+04/08/2025,25939,Midday,21,3,1 suit
+04/08/2025,25940,Afternoon,18,9,8 suit
+04/08/2025,25941,Evening,24,6,4 suit
+05/08/2025,25942,Morning,18,9,8 suit
+05/08/2025,25943,Midday,32,5,2 suit
+05/08/2025,25944,Afternoon,3,3,3 suit
+05/08/2025,25945,Evening,36,9,6 suit
+06/08/2025,25946,Morning,23,5,3 suit
+06/08/2025,25947,Midday,28,1,8 suit
+06/08/2025,25948,Afternoon,16,7,6 suit
+06/08/2025,25949,Evening,6,6,6 suit
+07/08/2025,25950,Morning,7,7,7 suit
+07/08/2025,25951,Midday,35,8,5 suit
+07/08/2025,25952,Afternoon,19,1,9 suit
+07/08/2025,25953,Evening,27,9,7 suit
+08/08/2025,25954,Morning,20,2,0s
+08/08/2025,25955,Midday,24,6,4 suit
+08/08/2025,25956,Afternoon,7,7,7 suit
+08/08/2025,25957,Evening,11,2,1 suit
+09/08/2025,25958,Morning,28,1,8 suit
+09/08/2025,25959,Midday,24,6,4 suit
+09/08/2025,25960,Afternoon,19,1,9 suit
+09/08/2025,25961,Evening,10,1,0s
+11/08/2025,25962,Morning,14,5,4 suit
+11/08/2025,25963,Midday,31,4,1 suit
+11/08/2025,25964,Afternoon,32,5,2 suit
+11/08/2025,25965,Evening,8,8,8 suit
+12/08/2025,25966,Morning,31,4,1 suit
+12/08/2025,25967,Midday,20,2,0s
+12/08/2025,25968,Afternoon,26,8,6 suit
+12/08/2025,25969,Evening,23,5,3 suit
+13/08/2025,25970,Morning,32,5,2 suit
+13/08/2025,25971,Midday,32,5,2 suit
+13/08/2025,25972,Afternoon,23,5,3 suit
+13/08/2025,25973,Evening,24,6,4 suit
+14/08/2025,25974,Morning,33,6,3 suit
+14/08/2025,25975,Midday,21,3,1 suit
+14/08/2025,25976,Afternoon,14,5,4 suit
+14/08/2025,25977,Evening,27,9,7 suit
+15/08/2025,25978,Morning,35,8,5 suit
+15/08/2025,25979,Midday,31,4,1 suit
+15/08/2025,25980,Afternoon,16,7,6 suit
+15/08/2025,25981,Evening,9,9,9 suit
+16/08/2025,25982,Morning,22,4,2 suit
+16/08/2025,25983,Midday,19,1,9 suit
+16/08/2025,25984,Afternoon,20,2,0s
+16/08/2025,25985,Evening,32,5,2 suit
+18/08/2025,25986,Morning,27,9,7 suit
+18/08/2025,25987,Midday,6,6,6 suit
+18/08/2025,25988,Afternoon,21,3,1 suit
+18/08/2025,25989,Evening,23,5,3 suit
+19/08/2025,25990,Morning,25,7,5 suit
+19/08/2025,25991,Midday,15,6,5 suit
+19/08/2025,25992,Afternoon,34,7,4 suit
+19/08/2025,25993,Evening,36,9,6 suit
+20/08/2025,25994,Morning,30,3,0s
+20/08/2025,25995,Midday,14,5,4 suit
+20/08/2025,25996,Afternoon,16,7,6 suit
+20/08/2025,25997,Evening,12,3,2 suit
+21/08/2025,25998,Morning,27,9,7 suit
+21/08/2025,25999,Midday,6,6,6 suit
+21/08/2025,26000,Afternoon,26,8,6 suit
+21/08/2025,26001,Evening,7,7,7 suit
+22/08/2025,26002,Morning,20,2,0s
+22/08/2025,26003,Midday,8,8,8 suit
+22/08/2025,26004,Afternoon,20,2,0s
+22/08/2025,26005,Evening,31,4,1 suit
+23/08/2025,26006,Morning,24,6,4 suit
+23/08/2025,26007,Midday,36,9,6 suit
+23/08/2025,26008,Afternoon,6,6,6 suit
+23/08/2025,26009,Evening,35,8,5 suit
+25/08/2025,26010,Morning,25,7,5 suit
+25/08/2025,26011,Midday,16,7,6 suit
+25/08/2025,26012,Afternoon,18,9,8 suit
+25/08/2025,26013,Evening,17,8,7 suit
+26/08/2025,26014,Morning,26,8,6 suit
+26/08/2025,26015,Midday,4,4,4 suit
+26/08/2025,26016,Afternoon,26,8,6 suit
+26/08/2025,26017,Evening,14,5,4 suit
+27/08/2025,26018,Morning,21,3,1 suit
+27/08/2025,26019,Midday,1,1,1 suit
+27/08/2025,26020,Afternoon,14,5,4 suit
+27/08/2025,26021,Evening,21,3,1 suit
+28/08/2025,26022,Morning,36,9,6 suit
+28/08/2025,26023,Midday,4,4,4 suit
+28/08/2025,26024,Afternoon,28,1,8 suit
+28/08/2025,26025,Evening,27,9,7 suit
+29/08/2025,26026,Morning,32,5,2 suit
+29/08/2025,26027,Midday,9,9,9 suit
+29/08/2025,26028,Afternoon,5,5,5 suit
+29/08/2025,26029,Evening,31,4,1 suit
+30/08/2025,26030,Morning,29,2,9 suit
+30/08/2025,26031,Midday,30,3,0s
+30/08/2025,26032,Afternoon,12,3,2 suit
+30/08/2025,26033,Evening,9,9,9 suit
+01/09/2025,26034,Morning,21,3,1 suit
+01/09/2025,26035,Midday,19,1,9 suit
+01/09/2025,26036,Afternoon,36,9,6 suit
+01/09/2025,26037,Evening,8,8,8 suit
+02/09/2025,26038,Morning,10,1,0s
+02/09/2025,26039,Midday,26,8,6 suit
+02/09/2025,26040,Afternoon,16,7,6 suit
+02/09/2025,26041,Evening,15,6,5 suit
+03/09/2025,26042,Morning,8,8,8 suit
+03/09/2025,26043,Midday,21,3,1 suit
+03/09/2025,26044,Afternoon,13,4,3 suit
+03/09/2025,26045,Evening,4,4,4 suit
+04/09/2025,26046,Morning,5,5,5 suit
+04/09/2025,26047,Midday,1,1,1 suit
+04/09/2025,26048,Afternoon,20,2,0s
+04/09/2025,26049,Evening,34,7,4 suit
+05/09/2025,26050,Morning,15,6,5 suit
+05/09/2025,26051,Midday,7,7,7 suit
+05/09/2025,26052,Afternoon,18,9,8 suit
+05/09/2025,26053,Evening,30,3,0s
+06/09/2025,26054,Morning,1,1,1 suit
+06/09/2025,26055,Midday,23,5,3 suit
+06/09/2025,26056,Afternoon,32,5,2 suit
+06/09/2025,26057,Evening,27,9,7 suit
+08/09/2025,26058,Morning,15,6,5 suit
+08/09/2025,26059,Midday,26,8,6 suit
+08/09/2025,26060,Afternoon,34,7,4 suit
+08/09/2025,26061,Evening,35,8,5 suit
+09/09/2025,26062,Morning,24,6,4 suit
+09/09/2025,26063,Midday,20,2,0s
+09/09/2025,26064,Afternoon,4,4,4 suit
+09/09/2025,26065,Evening,34,7,4 suit
+10/09/2025,26066,Morning,35,8,5 suit
+10/09/2025,26067,Midday,31,4,1 suit
+10/09/2025,26068,Afternoon,25,7,5 suit
+10/09/2025,26069,Evening,30,3,0s
+11/09/2025,26070,Morning,14,5,4 suit
+11/09/2025,26071,Midday,16,7,6 suit
+11/09/2025,26072,Afternoon,13,4,3 suit
+11/09/2025,26073,Evening,32,5,2 suit
+12/09/2025,26074,Morning,8,8,8 suit
+12/09/2025,26075,Midday,8,8,8 suit
+12/09/2025,26076,Afternoon,20,2,0s
+12/09/2025,26077,Evening,13,4,3 suit
+13/09/2025,26078,Morning,12,3,2 suit
+13/09/2025,26079,Midday,32,5,2 suit
+13/09/2025,26080,Afternoon,22,4,2 suit
+13/09/2025,26081,Evening,20,2,0s
+15/09/2025,26082,Morning,20,2,0s
+15/09/2025,26083,Midday,22,4,2 suit
+15/09/2025,26084,Afternoon,26,8,6 suit
+15/09/2025,26085,Evening,16,7,6 suit
+16/09/2025,26086,Morning,9,9,9 suit
+16/09/2025,26087,Midday,10,1,0s
+16/09/2025,26088,Afternoon,9,9,9 suit
+16/09/2025,26089,Evening,8,8,8 suit
+17/09/2025,26090,Morning,12,3,2 suit
+17/09/2025,26091,Midday,25,7,5 suit
+17/09/2025,26092,Afternoon,1,1,1 suit
+17/09/2025,26093,Evening,13,4,3 suit
+18/09/2025,26094,Morning,32,5,2 suit
+18/09/2025,26095,Midday,32,5,2 suit
+18/09/2025,26096,Afternoon,11,2,1 suit
+18/09/2025,26097,Evening,11,2,1 suit
+19/09/2025,26098,Morning,2,2,2 suit
+19/09/2025,26099,Midday,24,6,4 suit
+19/09/2025,26100,Afternoon,26,8,6 suit
+19/09/2025,26101,Evening,2,2,2 suit
+20/09/2025,26102,Morning,26,8,6 suit
+20/09/2025,26103,Midday,4,4,4 suit
+20/09/2025,26104,Afternoon,1,1,1 suit
+20/09/2025,26105,Evening,13,4,3 suit
+22/09/2025,26106,Morning,32,5,2 suit
+22/09/2025,26107,Midday,22,4,2 suit
+22/09/2025,26108,Afternoon,3,3,3 suit
+22/09/2025,26109,Evening,22,4,2 suit
+23/09/2025,26110,Morning,11,2,1 suit
+23/09/2025,26111,Midday,23,5,3 suit
+23/09/2025,26112,Afternoon,19,1,9 suit
+23/09/2025,26113,Evening,21,3,1 suit
+24/09/2025,26114,Morning,31,4,1 suit
+24/09/2025,26115,Midday,12,3,2 suit
+24/09/2025,26116,Afternoon,25,7,5 suit
+24/09/2025,26117,Evening,25,7,5 suit
+25/09/2025,26118,Morning,13,4,3 suit
+25/09/2025,26119,Midday,31,4,1 suit
+25/09/2025,26120,Afternoon,5,5,5 suit
+25/09/2025,26121,Evening,36,9,6 suit
+26/09/2025,26122,Morning,4,4,4 suit
+26/09/2025,26123,Midday,16,7,6 suit
+26/09/2025,26124,Afternoon,7,7,7 suit
+26/09/2025,26125,Evening,16,7,6 suit
+27/09/2025,26126,Morning,36,9,6 suit
+27/09/2025,26127,Midday,12,3,2 suit
+27/09/2025,26128,Afternoon,17,8,7 suit
+27/09/2025,26129,Evening,11,2,1 suit
+29/09/2025,26130,Morning,12,3,2 suit
+29/09/2025,26131,Midday,26,8,6 suit
+29/09/2025,26132,Afternoon,14,5,4 suit
+29/09/2025,26133,Evening,19,1,9 suit
+30/09/2025,26134,Morning,11,2,1 suit
+30/09/2025,26135,Midday,17,8,7 suit
+30/09/2025,26136,Afternoon,14,5,4 suit
+30/09/2025,26137,Evening,6,6,6 suit
+01/10/2025,26138,Morning,25,7,5 suit
+01/10/2025,26139,Midday,29,2,9 suit
+01/10/2025,26140,Afternoon,35,8,5 suit
+01/10/2025,26141,Evening,16,7,6 suit
+02/10/2025,26142,Morning,12,3,2 suit
+02/10/2025,26143,Midday,5,5,5 suit
+02/10/2025,26144,Afternoon,29,2,9 suit
+02/10/2025,26145,Evening,35,8,5 suit
+03/10/2025,26146,Morning,23,5,3 suit
+03/10/2025,26147,Midday,19,1,9 suit
+03/10/2025,26148,Afternoon,19,1,9 suit
+03/10/2025,26149,Evening,4,4,4 suit
+04/10/2025,26150,Morning,36,9,6 suit
+04/10/2025,26151,Midday,22,4,2 suit
+04/10/2025,26152,Afternoon,18,9,8 suit
+04/10/2025,26153,Evening,4,4,4 suit
+06/10/2025,26154,Morning,19,1,9 suit
+06/10/2025,26155,Midday,16,7,6 suit
+06/10/2025,26156,Afternoon,7,7,7 suit
+06/10/2025,26157,Evening,11,2,1 suit
+07/10/2025,26158,Morning,21,3,1 suit
+07/10/2025,26159,Midday,17,8,7 suit
+07/10/2025,26160,Afternoon,9,9,9 suit
+07/10/2025,26161,Evening,7,7,7 suit
+08/10/2025,26162,Morning,16,7,6 suit
+08/10/2025,26163,Midday,13,4,3 suit
+08/10/2025,26164,Afternoon,11,2,1 suit
+08/10/2025,26165,Evening,30,3,0s
+09/10/2025,26166,Morning,25,7,5 suit
+09/10/2025,26167,Midday,25,7,5 suit
+09/10/2025,26168,Afternoon,27,9,7 suit
+09/10/2025,26169,Evening,6,6,6 suit
+10/10/2025,26170,Morning,19,1,9 suit
+10/10/2025,26171,Midday,36,9,6 suit
+10/10/2025,26172,Afternoon,6,6,6 suit
+10/10/2025,26173,Evening,22,4,2 suit
+11/10/2025,26174,Morning,3,3,3 suit
+11/10/2025,26175,Midday,12,3,2 suit
+11/10/2025,26176,Afternoon,5,5,5 suit
+11/10/2025,26177,Evening,27,9,7 suit
+13/10/2025,26178,Morning,4,4,4 suit
+13/10/2025,26179,Midday,26,8,6 suit
+13/10/2025,26180,Afternoon,31,4,1 suit
+13/10/2025,26181,Evening,32,5,2 suit
+14/10/2025,26182,Morning,30,3,0s
+14/10/2025,26183,Midday,26,8,6 suit
+14/10/2025,26184,Afternoon,34,7,4 suit
+14/10/2025,26185,Evening,10,1,0s
+15/10/2025,26186,Morning,35,8,5 suit
+15/10/2025,26187,Midday,19,1,9 suit
+15/10/2025,26188,Afternoon,14,5,4 suit
+15/10/2025,26189,Evening,25,7,5 suit
+16/10/2025,26190,Morning,3,3,3 suit
+16/10/2025,26191,Midday,14,5,4 suit
+16/10/2025,26192,Afternoon,16,7,6 suit
+16/10/2025,26193,Evening,29,2,9 suit
+17/10/2025,26194,Morning,2,2,2 suit
+17/10/2025,26195,Midday,9,9,9 suit
+17/10/2025,26196,Afternoon,20,2,0s
+17/10/2025,26197,Evening,8,8,8 suit
+18/10/2025,26198,Morning,23,5,3 suit
+18/10/2025,26199,Midday,9,9,9 suit
+18/10/2025,26200,Afternoon,27,9,7 suit
+18/10/2025,26201,Evening,22,4,2 suit
+21/10/2025,26202,Morning,7,7,7 suit
+21/10/2025,26203,Midday,9,9,9 suit
+21/10/2025,26204,Afternoon,13,4,3 suit
+21/10/2025,26205,Evening,35,8,5 suit
+22/10/2025,26206,Morning,27,9,7 suit
+22/10/2025,26207,Midday,12,3,2 suit
+22/10/2025,26208,Afternoon,13,4,3 suit
+22/10/2025,26209,Evening,33,6,3 suit
+23/10/2025,26210,Morning,15,6,5 suit
+23/10/2025,26211,Midday,22,4,2 suit
+23/10/2025,26212,Afternoon,33,6,3 suit
+23/10/2025,26213,Evening,31,4,1 suit
+24/10/2025,26214,Morning,18,9,8 suit
+24/10/2025,26215,Midday,21,3,1 suit
+24/10/2025,26216,Afternoon,29,2,9 suit
+24/10/2025,26217,Evening,20,2,0s
+25/10/2025,26218,Morning,7,7,7 suit
+25/10/2025,26219,Midday,10,1,0s
+25/10/2025,26220,Afternoon,14,5,4 suit
+25/10/2025,26221,Evening,2,2,2 suit
+27/10/2025,26222,Morning,1,1,1 suit
+27/10/2025,26223,Midday,4,4,4 suit
+27/10/2025,26224,Afternoon,31,4,1 suit
+27/10/2025,26225,Evening,1,1,1 suit
+28/10/2025,26226,Morning,4,4,4 suit
+28/10/2025,26227,Midday,16,7,6 suit
+28/10/2025,26228,Afternoon,3,3,3 suit
+28/10/2025,26229,Evening,6,6,6 suit
+29/10/2025,26230,Morning,31,4,1 suit
+29/10/2025,26231,Midday,1,1,1 suit
+29/10/2025,26232,Afternoon,32,5,2 suit
+29/10/2025,26233,Evening,1,1,1 suit
+30/10/2025,26234,Morning,8,8,8 suit
+30/10/2025,26235,Midday,16,7,6 suit
+30/10/2025,26236,Afternoon,12,3,2 suit
+30/10/2025,26237,Evening,6,6,6 suit
+31/10/2025,26238,Morning,22,4,2 suit
+31/10/2025,26239,Midday,11,2,1 suit
+31/10/2025,26240,Afternoon,1,1,1 suit
+31/10/2025,26241,Evening,11,2,1 suit
+01/11/2025,26242,Morning,21,3,1 suit
+01/11/2025,26243,Midday,26,8,6 suit
+01/11/2025,26244,Afternoon,36,9,6 suit
+01/11/2025,26245,Evening,24,6,4 suit
+03/11/2025,26246,Morning,7,7,7 suit
+03/11/2025,26247,Midday,13,4,3 suit
+03/11/2025,26248,Afternoon,27,9,7 suit
+03/11/2025,26249,Evening,22,4,2 suit
+04/11/2025,26250,Morning,24,6,4 suit
+04/11/2025,26251,Midday,30,3,0s
+04/11/2025,26252,Afternoon,22,4,2 suit
+04/11/2025,26253,Evening,34,7,4 suit
+05/11/2025,26254,Morning,15,6,5 suit
+05/11/2025,26255,Midday,2,2,2 suit
+05/11/2025,26256,Afternoon,23,5,3 suit
+05/11/2025,26257,Evening,6,6,6 suit
+06/11/2025,26258,Morning,24,6,4 suit
+06/11/2025,26259,Midday,2,2,2 suit
+06/11/2025,26260,Afternoon,7,7,7 suit
+06/11/2025,26261,Evening,6,6,6 suit
+07/11/2025,26262,Morning,32,5,2 suit
+07/11/2025,26263,Midday,27,9,7 suit
+07/11/2025,26264,Afternoon,23,5,3 suit
+07/11/2025,26265,Evening,26,8,6 suit
+08/11/2025,26266,Morning,32,5,2 suit
+08/11/2025,26267,Midday,29,2,9 suit
+08/11/2025,26268,Afternoon,6,6,6 suit
+08/11/2025,26269,Evening,31,4,1 suit
+10/11/2025,26270,Morning,14,5,4 suit
+10/11/2025,26271,Midday,14,5,4 suit
+10/11/2025,26272,Afternoon,29,2,9 suit
+10/11/2025,26273,Evening,18,9,8 suit
+11/11/2025,26274,Morning,9,9,9 suit
+11/11/2025,26275,Midday,28,1,8 suit
+11/11/2025,26276,Afternoon,6,6,6 suit
+11/11/2025,26277,Evening,12,3,2 suit
+12/11/2025,26278,Morning,8,8,8 suit
+12/11/2025,26279,Midday,17,8,7 suit
+12/11/2025,26280,Afternoon,27,9,7 suit
+12/11/2025,26281,Evening,27,9,7 suit
+13/11/2025,26282,Morning,21,3,1 suit
+13/11/2025,26283,Midday,21,3,1 suit
+13/11/2025,26284,Afternoon,24,6,4 suit
+13/11/2025,26285,Evening,1,1,1 suit
+14/11/2025,26286,Morning,12,3,2 suit
+14/11/2025,26287,Midday,20,2,0s
+14/11/2025,26288,Afternoon,26,8,6 suit
+14/11/2025,26289,Evening,36,9,6 suit
+15/11/2025,26290,Morning,18,9,8 suit
+15/11/2025,26291,Midday,30,3,0s
+15/11/2025,26292,Afternoon,5,5,5 suit
+15/11/2025,26293,Evening,31,4,1 suit
+17/11/2025,26294,Morning,7,7,7 suit
+17/11/2025,26295,Midday,9,9,9 suit
+17/11/2025,26296,Afternoon,29,2,9 suit
+17/11/2025,26297,Evening,20,2,0s
+18/11/2025,26298,Morning,11,2,1 suit
+18/11/2025,26299,Midday,31,4,1 suit
+18/11/2025,26300,Afternoon,3,3,3 suit
+18/11/2025,26301,Evening,20,2,0s
+19/11/2025,26302,Morning,1,1,1 suit
+19/11/2025,26303,Midday,22,4,2 suit
+19/11/2025,26304,Afternoon,22,4,2 suit
+19/11/2025,26305,Evening,27,9,7 suit
+20/11/2025,26306,Morning,15,6,5 suit
+20/11/2025,26307,Midday,14,5,4 suit
+20/11/2025,26308,Afternoon,2,2,2 suit
+20/11/2025,26309,Evening,4,4,4 suit
+21/11/2025,26310,Morning,2,2,2 suit

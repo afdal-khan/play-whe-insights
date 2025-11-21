@@ -216580,7 +216580,7 @@
     "Time": "Afternoon",
     "Mark": 3,
     "MarkName": "Carriage",
-    "Line": "3 line Line",
+    "Line": "3 Line",
     "Suit": "3",
     "DrawNo": 26300
   },
@@ -216589,8 +216589,89 @@
     "Time": "Evening",
     "Mark": 20,
     "MarkName": "Dog",
-    "Line": "2 line Line",
+    "Line": "2 Line",
     "Suit": "0",
     "DrawNo": 26301
+  },
+  {
+    "Date": "2025-11-19",
+    "Time": "Morning",
+    "Mark": 1,
+    "MarkName": "Centipede",
+    "Line": "1 Line",
+    "Suit": "1",
+    "DrawNo": 26302
+  },
+  {
+    "Date": "2025-11-19",
+    "Time": "Midday",
+    "Mark": 22,
+    "MarkName": "Rat",
+    "Line": "4 Line",
+    "Suit": "2",
+    "DrawNo": 26303
+  },
+  {
+    "Date": "2025-11-19",
+    "Time": "Afternoon",
+    "Mark": 22,
+    "MarkName": "Rat",
+    "Line": "4 Line",
+    "Suit": "2",
+    "DrawNo": 26304
+  },
+  {
+    "Date": "2025-11-19",
+    "Time": "Evening",
+    "Mark": 27,
+    "MarkName": "Little Snake",
+    "Line": "9 Line",
+    "Suit": "7",
+    "DrawNo": 26305
+  },
+  {
+    "Date": "2025-11-20",
+    "Time": "Morning",
+    "Mark": 15,
+    "MarkName": "Sick Woman",
+    "Line": "6 Line",
+    "Suit": "5",
+    "DrawNo": 26306
+  },
+  {
+    "Date": "2025-11-20",
+    "Time": "Midday",
+    "Mark": 14,
+    "MarkName": "Money",
+    "Line": "5 Line",
+    "Suit": "4",
+    "DrawNo": 26307
+  },
+  {
+    "Date": "2025-11-20",
+    "Time": "Afternoon",
+    "Mark": 2,
+    "MarkName": "Old Lady",
+    "Line": "2 Line",
+    "Suit": "2",
+    "DrawNo": 26308
+  },
+  {
+    "Date": "2025-11-20",
+    "Time": "Evening",
+    "Mark": 4,
+    "MarkName": "Dead Man",
+    "Line": "4 Line",
+    "Suit": "4",
+    "DrawNo": 26309
+  },
+  {
+    "Date": "2025-11-21",
+    "Time": "Morning",
+    "Mark": 2,
+    "MarkName": "Old Lady",
+    "Line": "2 Line",
+    "Suit": "2",
+    "DrawNo": 26310
   }
 ]
