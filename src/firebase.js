@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+// --- FIX: Use the /lite module and import from the specific location for better bundler compatibility ---
+import { getFirestore } from 'firebase/firestore'; 
 
 // Configuration keys are loaded from the .env.local file
 const firebaseConfig = {
