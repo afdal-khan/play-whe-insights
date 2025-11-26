@@ -1,5 +1,13 @@
 import { initializeApp } from 'firebase/app';
-// We only need initializeApp here. We will move getFirestore to the pages.
+// We import all required Firestore functions here, where they are first resolved.
+import { 
+  getFirestore, 
+  collection, 
+  getDocs, 
+  query, 
+  orderBy, 
+  limit 
+} from 'firebase/firestore'; 
 
 // Configuration keys are loaded from the .env.local file
 const firebaseConfig = {
@@ -11,5 +19,9 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-// 1. Initialize and export the Firebase App instance
+// 1. Initialize the Firebase App instance
 export const app = initializeApp(firebaseConfig);
+
+// 2. Initialize Firestore and export the database functions
+export const db = getFirestore(app);
+export { collection, getDocs, query, orderBy, limit };

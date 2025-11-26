@@ -1,12 +1,11 @@
 /* This is src/pages/Dashboard.jsx (The COMPLETE, FINAL version with Build Fix) */
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-// --- FIX: Import everything we need directly here ---
-import { app } from '../firebase'; // Import the initialized app instance
-import { getFirestore, collection, getDocs, query, orderBy, limit } from 'firebase/firestore'; 
+// --- FIX: Import ALL Firestore tools from our centralized file ---
+import { db, collection, getDocs, query, orderBy, limit } from '../firebase'; 
 // --- END FIX ---
 
-// --- Color Palettes ---
+// --- Color Palettes (Rest of constants remain the same) ---
 const LINE_COLORS = {
   '1 Line': 'bg-red-500/20 text-red-200 border border-red-500/30',
   '2 Line': 'bg-blue-500/20 text-blue-200 border border-blue-500/30',
@@ -70,8 +69,7 @@ function Dashboard() {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        // --- NEW: Initialize DB here for local scope ---
-        const db = getFirestore(app);
+        // We use 'db' and the Firestore functions imported from '../firebase'
         
         // 1. Define the Firestore Query (Collection, Order by DrawNo DESC)
         const drawsCollectionRef = collection(db, 'draws');
@@ -261,7 +259,7 @@ function Dashboard() {
       }
       else if (displayType === 'Suit') {
         content = `${result.Suit} Suit`;
-        const color = SUIT_COLORS[String(result.Suit)] || SUIT_COLORS.default;
+        const color = SUIT_COLORS[String(result.Suit)] || SUID_COLORS.default;
         baseClass += `text-xs rounded px-1 py-0.5 font-medium border `;
         if (isMatch) baseClass += `bg-cyan-600 text-white border-cyan-400 scale-110 shadow-lg z-10 `;
         else if (isDimmed) baseClass += "opacity-20 grayscale ";
