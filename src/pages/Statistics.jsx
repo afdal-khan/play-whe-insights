@@ -1,9 +1,11 @@
-/* This is src/pages/Statistics.jsx (Updated to use Firebase Firestore - Full Build Fix) */
+/* This is src/pages/Statistics.jsx (Final Fix: Correct Imports) */
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { MARKS_LIST } from '../data/marks'; 
-// --- FIX: Import necessary functions directly from our file ---
+
+// --- FIX: Import EVERYTHING from the centralized firebase.js file ---
+// We use the exported 'db' instance and the re-exported functions.
 import { db, collection, getDocs, query, orderBy, limit } from '../firebase'; 
 // --- END FIX ---
 
@@ -26,7 +28,7 @@ const numericalSort = (a, b) => {
 };
 
 const RECENT_DRAWS_LIMIT = 100;
-const BAR_COLORS = ['#22d3ee', '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa']; // Cyan to Purple gradient
+const BAR_COLORS = ['#22d3ee', '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa']; 
 
 // A. The "Market Watch" Hero Card
 const MarketWatchCard = ({ title, icon, data, colorClass }) => (
@@ -44,13 +46,12 @@ const MarketWatchCard = ({ title, icon, data, colorClass }) => (
       )}
     </div>
     <div className="absolute right-[-20px] bottom-[-20px] text-gray-700 opacity-20 transform rotate-12 z-0">
-       {/* Background Icon Effect */}
        <span className="text-9xl font-bold">{icon}</span>
     </div>
   </div>
 );
 
-// B. The Refined Pressure Board (Kept for completeness)
+// B. The Refined Pressure Board
 const PressureBoard = ({ gapData }) => {
   const [view, setView] = useState('marks');
   const [showAll, setShowAll] = useState(false);
@@ -123,7 +124,7 @@ const PressureBoard = ({ gapData }) => {
 
 function Statistics() {
   const [isLoading, setIsLoading] = useState(true);
-  const [allResults, setAllResults] = useState([]); // Newest first
+  const [allResults, setAllResults] = useState([]); 
   
   const [filters, setFilters] = useState({ time: 'All', year: 'All', month: 'All' });
   const [uniqueValues, setUniqueValues] = useState({ times: [], lines: [], suits: [], years: [], months: [] });
@@ -135,9 +136,7 @@ function Statistics() {
      const fetchData = async () => {
           setIsLoading(true);
           try {
-              const db = getFirestore(app); // Get DB instance 
-              
-              // 1. Define the Firestore Query (Collection, Order by DrawNo DESC)
+              // Use the imported 'db' directly (already initialized)
               const drawsCollectionRef = collection(db, 'draws');
               const q = query(
                   drawsCollectionRef, 
@@ -145,17 +144,15 @@ function Statistics() {
                   limit(2000) 
               ); 
               
-              // 2. Fetch the documents and map to our structure
               const querySnapshot = await getDocs(q);
               const data = querySnapshot.docs.map(doc => ({
                   id: doc.id,
                   ...doc.data()
               }));
 
-              // Data is already newest-first due to orderBy('DrawNo', 'desc')
               setAllResults(data);
 
-              // 3. Calculate unique values for filters (Logic retained)
+              // Calculate unique values
               const validResults = data.filter(item => item && item.Time && item.Date && item.Line && item.Suit !== undefined && item.Suit !== null);
               const times = [...new Set(validResults.map(item => item.Time))].sort((a, b) => { const order={'Morning':1,'Midday':2,'Afternoon':3,'Evening':4}; return (order[a]||99)-(order[b]||99); });
               const lines = [...new Set(validResults.map(item => item.Line))].sort(numericalSort);
@@ -174,7 +171,7 @@ function Statistics() {
      fetchData();
   }, []);
 
-  // 2. Calculate GLOBAL Draw Gaps (for Pressure Board) (Logic retained)
+  // 2. Calculate GLOBAL Draw Gaps
   const globalDrawGapData = useMemo(() => {
       const results = allResults; 
       if (!Array.isArray(results) || results.length === 0 || uniqueValues.lines.length === 0) {
@@ -214,7 +211,7 @@ function Statistics() {
       };
   }, [allResults, uniqueValues.lines, uniqueValues.suits]);
 
-  // 3. Filter results (for Frequency Analyzer) (Logic retained)
+  // 3. Filter results
   const filteredResults = useMemo(() => {
       if (!Array.isArray(allResults)) return [];
       return allResults.filter(result => {
@@ -226,7 +223,7 @@ function Statistics() {
       });
   }, [allResults, filters]);
 
-  // 4. Calculate Frequency data (Dynamic Toggle) (Logic retained)
+  // 4. Calculate Frequency data
   const frequencyData = useMemo(() => {
       const recentResults = filteredResults.slice(0, RECENT_DRAWS_LIMIT);
       
@@ -272,9 +269,8 @@ function Statistics() {
       
       return { all: dataArray, hot: hot, cold: cold };
   }, [filteredResults, freqView, uniqueValues.lines, uniqueValues.suits]);
-  // --- END CALCULATIONS ---
 
-  // 5. New Logic: Calculate Hottest Line (for Hero Section) (Logic retained)
+  // 5. Calculate Hottest Line
   const powerLineData = useMemo(() => {
       const recentResults = filteredResults.slice(0, RECENT_DRAWS_LIMIT);
       
@@ -288,23 +284,19 @@ function Statistics() {
       });
 
       const dataArray = [...lineFreqMap.values()].sort((a, b) => b.count - a.count);
-      
-      // Return the top line (highest frequency)
       return dataArray.length > 0 ? dataArray[0] : null;
 
   }, [filteredResults, uniqueValues.lines]);
   
-  // 6. Hero Data Helpers (Based on existing logic structure)
+  // 6. Hero Data Helpers
   const topSleeper = globalDrawGapData.marks[0];
   const topHot = frequencyData.hot[0];
-
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters(prev => ({ ...prev, [name]: value }));
   };
 
-  // --- Render ---
   if (isLoading) { return <div className="text-center text-2xl font-bold p-10">Connecting to Live Data...</div>; }
 
   return (
@@ -316,9 +308,7 @@ function Statistics() {
         </div>
       </div>
 
-      {/* --- HERO SECTION: The Stickiness Factor --- */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        {/* 1. The Sleeper */}
         <MarketWatchCard 
           title="The Sleeper" 
           colorClass="text-red-400"
@@ -329,7 +319,6 @@ function Statistics() {
              detail: `Absent for ${topSleeper.gap} draws`
           } : null}
         />
-        {/* 2. The Hot Pick */}
         <MarketWatchCard 
           title={`Hot Pick (${freqView})`} 
           colorClass="text-cyan-400"
@@ -340,7 +329,6 @@ function Statistics() {
              detail: `Played ${topHot.count} times recently`
           } : null}
         />
-        {/* 3. The Power Line (UPDATED LOGIC) */}
         <MarketWatchCard 
           title="Current Power Line" 
           colorClass="text-green-400"
@@ -354,20 +342,13 @@ function Statistics() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        {/* --- LEFT COL: Pressure Board --- */}
         <div className="lg:col-span-1">
            <PressureBoard gapData={globalDrawGapData} />
         </div>
-
-        {/* --- RIGHT COL: Frequency Chart --- */}
         <div className="lg:col-span-2">
           <div className="bg-gray-800 rounded-xl shadow-lg p-6">
-             
              <div className="flex flex-wrap justify-between items-center mb-6 gap-4">
                 <h3 className="text-xl font-bold text-white">Frequency Analysis</h3>
-                
-                {/* Toggle View */}
                 <div className="flex bg-gray-700 rounded-lg p-1">
                   {['marks', 'lines', 'suits'].map((v) => (
                     <button
@@ -382,8 +363,6 @@ function Statistics() {
                   ))}
                 </div>
              </div>
-
-             {/* Filters Area */}
              <div className="grid grid-cols-3 gap-4 mb-6">
                 <select name="year" value={filters.year} onChange={(e) => setFilters({...filters, year: e.target.value})} className="p-2 bg-gray-900 border border-gray-600 rounded text-white text-sm">
                     <option value="All">All Years</option>
@@ -398,17 +377,12 @@ function Statistics() {
                     {uniqueValues.times.map(t => <option key={t} value={t}>{t}</option>)}
                 </select>
              </div>
-
-             {/* The Chart */}
              <div className="h-80 w-full">
                <ResponsiveContainer width="100%" height="100%">
                  <BarChart data={frequencyData.all.slice(0, 15)} margin={{ top: 5, right: 5, bottom: 5, left: -20 }}>
                     <XAxis dataKey="name" stroke="#9ca3af" fontSize={12} tickLine={false} />
                     <YAxis stroke="#9ca3af" allowDecimals={false} fontSize={12} tickLine={false} />
-                    <Tooltip 
-                      cursor={{fill: 'rgba(255,255,255,0.05)'}}
-                      contentStyle={{ backgroundColor: '#1f2937', border: '1px solid #374151', borderRadius: '8px', color: '#fff' }} 
-                    />
+                    <Tooltip cursor={{fill: 'rgba(255,255,255,0.05)'}} contentStyle={{ backgroundColor: '#1f2937', border: '1px solid #374151', borderRadius: '8px', color: '#fff' }} />
                     <Bar dataKey="count" radius={[4, 4, 0, 0]}>
                       {frequencyData.all.slice(0, 15).map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={BAR_COLORS[index % BAR_COLORS.length]} />
@@ -422,7 +396,6 @@ function Statistics() {
              </p>
           </div>
         </div>
-
       </div>
     </div>
   );
