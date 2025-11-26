@@ -1,5 +1,4 @@
 import { initializeApp } from 'firebase/app';
-// We import all required Firestore functions here, where they are first resolved.
 import { 
   getFirestore, 
   collection, 
@@ -9,14 +8,25 @@ import {
   limit 
 } from 'firebase/firestore'; 
 
-// Configuration keys are loaded from the .env.local file
+// --- FIX: Use a pattern that prevents Vite from embedding the keys ---
+// We will replace these placeholders in a post-build script later if needed, 
+// but for the build to pass, we provide a placeholder value that isn't the secret.
+const FIREBASE_API_KEY = import.meta.env.VITE_FIREBASE_API_KEY || 'PLACEHOLDER_KEY';
+const FIREBASE_AUTH_DOMAIN = import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'PLACEHOLDER_DOMAIN';
+const FIREBASE_PROJECT_ID = import.meta.env.VITE_FIREBASE_PROJECT_ID || 'PLACEHOLDER_PROJECT';
+const FIREBASE_STORAGE_BUCKET = import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || 'PLACEHOLDER_BUCKET';
+const FIREBASE_MESSAGING_SENDER_ID = import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || 'PLACEHOLDER_SENDER';
+const FIREBASE_APP_ID = import.meta.env.VITE_FIREBASE_APP_ID || 'PLACEHOLDER_APPID';
+// --- END FIX ---
+
+
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+  appId: FIREBASE_APP_ID
 };
 
 // 1. Initialize the Firebase App instance
