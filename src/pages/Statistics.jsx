@@ -1,12 +1,11 @@
-/* This is src/pages/Statistics.jsx (Updated to use Firebase Firestore) */
+/* This is src/pages/Statistics.jsx (Updated to use Firebase Firestore - Full Build Fix) */
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { MARKS_LIST } from '../data/marks'; 
-// --- NEW FIREBASE IMPORTS ---
-import { db } from '../firebase'; 
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'; 
-// --- END FIREBASE IMPORTS ---
+// --- FIX: Import necessary functions directly from our file ---
+import { db, collection, getDocs, query, orderBy, limit } from '../firebase'; 
+// --- END FIX ---
 
 // ========================================================================
 // SECTION 1: GLOBAL CONSTANTS & HELPER FUNCTIONS
@@ -28,8 +27,6 @@ const numericalSort = (a, b) => {
 
 const RECENT_DRAWS_LIMIT = 100;
 const BAR_COLORS = ['#22d3ee', '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa']; // Cyan to Purple gradient
-
-// ... (Rest of MarketWatchCard and PressureBoard components remain the same) ...
 
 // A. The "Market Watch" Hero Card
 const MarketWatchCard = ({ title, icon, data, colorClass }) => (
@@ -138,6 +135,8 @@ function Statistics() {
      const fetchData = async () => {
           setIsLoading(true);
           try {
+              const db = getFirestore(app); // Get DB instance 
+              
               // 1. Define the Firestore Query (Collection, Order by DrawNo DESC)
               const drawsCollectionRef = collection(db, 'draws');
               const q = query(
@@ -235,7 +234,7 @@ function Statistics() {
       
       switch (freqView) {
           case 'lines':
-              (uniqueValues.lines || []).forEach(line => freqMap.set(line, { name: line, subName: '', count: 0 }));
+              (uniqueValues.lines || []).forEach(line => freqMap.set(line, { name: line, count: 0 }));
               (recentResults || []).forEach(result => {
                   if (result && result.Line && freqMap.has(result.Line)) {
                       freqMap.get(result.Line).count++;
