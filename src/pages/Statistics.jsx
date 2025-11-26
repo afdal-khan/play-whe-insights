@@ -1,8 +1,12 @@
-/* This is src/pages/Statistics.jsx (FINAL VERSION with Robust Power Line Logic) */
+/* This is src/pages/Statistics.jsx (Updated to use Firebase Firestore) */
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { MARKS_LIST } from '../data/marks'; 
+// --- NEW FIREBASE IMPORTS ---
+import { db } from '../firebase'; 
+import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'; 
+// --- END FIREBASE IMPORTS ---
 
 // ========================================================================
 // SECTION 1: GLOBAL CONSTANTS & HELPER FUNCTIONS
@@ -25,18 +29,7 @@ const numericalSort = (a, b) => {
 const RECENT_DRAWS_LIMIT = 100;
 const BAR_COLORS = ['#22d3ee', '#38bdf8', '#60a5fa', '#818cf8', '#a78bfa']; // Cyan to Purple gradient
 
-const getPressureColor = (value) => {
-  if (isNaN(value)) value = 0;
-  const hue = (1 - value) * 240 + value * 0; // 240 (blue) to 0 (red)
-  const saturation = 70 + (value * 30); // 70% to 100%
-  const lightness = 50;
-  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-};
-
-
-// ========================================================================
-// SECTION 2: SUB-COMPONENTS (MarketWatchCard, PressureBoard)
-// ========================================================================
+// ... (Rest of MarketWatchCard and PressureBoard components remain the same) ...
 
 // A. The "Market Watch" Hero Card
 const MarketWatchCard = ({ title, icon, data, colorClass }) => (
@@ -60,7 +53,7 @@ const MarketWatchCard = ({ title, icon, data, colorClass }) => (
   </div>
 );
 
-// B. The Refined Pressure Board (Kept from previous refactor)
+// B. The Refined Pressure Board (Kept for completeness)
 const PressureBoard = ({ gapData }) => {
   const [view, setView] = useState('marks');
   const [showAll, setShowAll] = useState(false);
@@ -140,19 +133,31 @@ function Statistics() {
 
   const [freqView, setFreqView] = useState('marks'); 
 
-  // 1. Fetch data... (Logic kept the same)
+  // 1. Fetch data from FIREBASE
   useEffect(() => {
      const fetchData = async () => {
-         // ... (data fetching logic)
           setIsLoading(true);
           try {
-              const response = await fetch(`/play_whe_results.json?v=${new Date().getTime()}`);
-              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-              const data = await response.json();
-              const newestFirstData = data.slice().reverse();
-              setAllResults(newestFirstData);
+              // 1. Define the Firestore Query (Collection, Order by DrawNo DESC)
+              const drawsCollectionRef = collection(db, 'draws');
+              const q = query(
+                  drawsCollectionRef, 
+                  orderBy('DrawNo', 'desc'), 
+                  limit(2000) 
+              ); 
+              
+              // 2. Fetch the documents and map to our structure
+              const querySnapshot = await getDocs(q);
+              const data = querySnapshot.docs.map(doc => ({
+                  id: doc.id,
+                  ...doc.data()
+              }));
 
-              const validResults = newestFirstData.filter(item => item && item.Time && item.Date && item.Line && item.Suit !== undefined && item.Suit !== null);
+              // Data is already newest-first due to orderBy('DrawNo', 'desc')
+              setAllResults(data);
+
+              // 3. Calculate unique values for filters (Logic retained)
+              const validResults = data.filter(item => item && item.Time && item.Date && item.Line && item.Suit !== undefined && item.Suit !== null);
               const times = [...new Set(validResults.map(item => item.Time))].sort((a, b) => { const order={'Morning':1,'Midday':2,'Afternoon':3,'Evening':4}; return (order[a]||99)-(order[b]||99); });
               const lines = [...new Set(validResults.map(item => item.Line))].sort(numericalSort);
               const suits = [...new Set(validResults.map(item => String(item.Suit)))].sort(numericalSort);
@@ -162,15 +167,16 @@ function Statistics() {
 
               setUniqueValues({ times, lines, suits, years, months });
 
-          } catch (error) { console.error("Failed fetch/process:", error); }
+          } catch (error) { 
+              console.error("Firebase Fetch Error in Statistics:", error); 
+          }
           finally { setIsLoading(false); }
      };
      fetchData();
   }, []);
 
-  // 2. Calculate GLOBAL Draw Gaps (for Pressure Board) (Logic kept the same)
+  // 2. Calculate GLOBAL Draw Gaps (for Pressure Board) (Logic retained)
   const globalDrawGapData = useMemo(() => {
-     // ... (gap calculation logic)
       const results = allResults; 
       if (!Array.isArray(results) || results.length === 0 || uniqueValues.lines.length === 0) {
           return { marks: [], lines: [], suits: [], maxMarkGap: 1, maxLineGap: 1, maxSuitGap: 1 };
@@ -209,9 +215,8 @@ function Statistics() {
       };
   }, [allResults, uniqueValues.lines, uniqueValues.suits]);
 
-  // 3. Filter results (for Frequency Analyzer) (Logic kept the same)
+  // 3. Filter results (for Frequency Analyzer) (Logic retained)
   const filteredResults = useMemo(() => {
-     // ... (filtering logic)
       if (!Array.isArray(allResults)) return [];
       return allResults.filter(result => {
           if (!result || !result.Date || !result.Time) return false;
@@ -222,9 +227,8 @@ function Statistics() {
       });
   }, [allResults, filters]);
 
-  // 4. Calculate Frequency data (Dynamic Toggle) (Logic kept the same)
+  // 4. Calculate Frequency data (Dynamic Toggle) (Logic retained)
   const frequencyData = useMemo(() => {
-     // ... (frequency calculation logic)
       const recentResults = filteredResults.slice(0, RECENT_DRAWS_LIMIT);
       
       let freqMap = new Map();
@@ -271,7 +275,7 @@ function Statistics() {
   }, [filteredResults, freqView, uniqueValues.lines, uniqueValues.suits]);
   // --- END CALCULATIONS ---
 
-  // --- 5. New Logic: Calculate Hottest Line (for Hero Section) ---
+  // 5. New Logic: Calculate Hottest Line (for Hero Section) (Logic retained)
   const powerLineData = useMemo(() => {
       const recentResults = filteredResults.slice(0, RECENT_DRAWS_LIMIT);
       
@@ -290,9 +294,8 @@ function Statistics() {
       return dataArray.length > 0 ? dataArray[0] : null;
 
   }, [filteredResults, uniqueValues.lines]);
-  // --- END New Power Line Logic ---
   
-  // --- 6. Hero Data Helpers (Based on existing logic structure)
+  // 6. Hero Data Helpers (Based on existing logic structure)
   const topSleeper = globalDrawGapData.marks[0];
   const topHot = frequencyData.hot[0];
 
@@ -303,7 +306,7 @@ function Statistics() {
   };
 
   // --- Render ---
-  if (isLoading) { return <div className="text-center text-2xl font-bold p-10">Loading Statistics...</div>; }
+  if (isLoading) { return <div className="text-center text-2xl font-bold p-10">Connecting to Live Data...</div>; }
 
   return (
     <div className="pb-20">

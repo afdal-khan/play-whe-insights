@@ -1,8 +1,12 @@
-/* This is src/pages/Dashboard.jsx (Responsive Fixes for Mobile Display) */
+/* This is src/pages/Dashboard.jsx (Updated to use Firebase Firestore) */
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+// --- NEW FIREBASE IMPORTS ---
+import { db } from '../firebase'; // Import our database instance
+import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'; 
+// --- END FIREBASE IMPORTS ---
 
-// --- Color Palettes (kept the same) ---
+// --- Color Palettes ---
 const LINE_COLORS = {
   '1 Line': 'bg-red-500/20 text-red-200 border border-red-500/30',
   '2 Line': 'bg-blue-500/20 text-blue-200 border border-blue-500/30',
@@ -41,6 +45,7 @@ const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frid
 const formatDateHeader = (isoDate) => {
     if (!isoDate || typeof isoDate !== 'string') return 'Invalid Date';
     try {
+        // Use Z to treat date as UTC to avoid local timezone offset issues
         const date = new Date(isoDate + 'T00:00:00Z'); 
         return date.toLocaleDateString('en-US', { timeZone: 'UTC', weekday: 'short', day: '2-digit', month: 'short' });
     } catch (e) { return 'Invalid Date'; }
@@ -50,8 +55,8 @@ const MAX_ROWS_TO_DISPLAY = 100;
 
 function Dashboard() {
   const [isLoading, setIsLoading] = useState(true);
-  const [allResults, setAllResults] = useState([]);
-  const [displayType, setDisplayType] = useState('Mark'); // 'Mark', 'Line', or 'Suit'
+  const [allResults, setAllResults] = useState([]); // NEWEST-FIRST from Firestore Query
+  const [displayType, setDisplayType] = useState('Mark'); 
   
   const [filters, setFilters] = useState({ year: 'All', month: 'All', day: 'All' });
   const [uniqueValues, setUniqueValues] = useState({ times: [], years: [], months: [] });
@@ -61,24 +66,40 @@ function Dashboard() {
 
   const scrollContainerRef = useRef(null);
 
-  // 1. Fetch data (Logic kept the same)
+  // 1. Fetch data from FIREBASE
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`/play_whe_results.json?v=${new Date().getTime()}`);
-        if (!response.ok) throw new Error('Network Error');
-        const data = await response.json();
+        // 1. Define the Firestore Query (Collection, Order by DrawNo DESC)
+        const drawsCollectionRef = collection(db, 'draws');
+        const q = query(
+            drawsCollectionRef, 
+            orderBy('DrawNo', 'desc'), 
+            // Limiting the fetch to 2000 for performance/cost control, 
+            // assuming you have more than 100 results, but not millions.
+            limit(2000) 
+        ); 
         
-        const dataWithDay = data.map(result => {
+        // 2. Fetch the documents
+        const querySnapshot = await getDocs(q);
+        
+        // 3. Map documents to our data structure, adding DayName
+        const data = querySnapshot.docs.map(doc => {
+            const result = doc.data();
             const date = new Date(result.Date + 'T00:00:00Z');
-            return { ...result, DayName: DAY_NAMES[date.getUTCDay()] };
+            return { 
+                id: doc.id,
+                ...result,
+                DayName: DAY_NAMES[date.getUTCDay()] // 0 = Sunday, 1 = Monday, etc.
+            };
         });
 
-        const newestFirstData = dataWithDay.slice().reverse();
-        setAllResults(newestFirstData);
+        // Data is already newest-first due to orderBy('DrawNo', 'desc')
+        setAllResults(data); 
 
-        const validResults = newestFirstData.filter(item => item && item.Time && item.Date);
+        // 4. Calculate unique values for filters
+        const validResults = data.filter(item => item && item.Time && item.Date);
         const times = [...new Set(validResults.map(item => item.Time))].sort((a, b) => { const o={'Morning':1,'Midday':2,'Afternoon':3,'Evening':4}; return (o[a]||99)-(o[b]||99); });
         const dates = validResults.map(item => item.Date);
         const years = [...new Set(dates.map(d => d.split('-')[0]))].sort().reverse();
@@ -87,13 +108,15 @@ function Dashboard() {
 
         setUniqueValues({ times, years, months });
 
-      } catch (error) { console.error(error); } 
+      } catch (error) { 
+          console.error("Firebase Fetch Error:", error); 
+      } 
       finally { setIsLoading(false); }
     };
     fetchData();
   }, []);
 
-  // 2. Filter Logic (Logic kept the same)
+  // 2. Filter Logic (Logic retained)
   const filteredResults = useMemo(() => {
     return allResults.filter(result => {
         if (!result || !result.Date || !result.DayName) return false;
@@ -106,21 +129,23 @@ function Dashboard() {
 
   const displayResults = useMemo(() => filteredResults.slice(0, MAX_ROWS_TO_DISPLAY), [filteredResults]);
 
+  // 3. Unique Dates for Matrix (Logic retained)
   const uniqueDates = useMemo(() => {
     if (!Array.isArray(displayResults)) return [];
     const validDates = displayResults.map(r => r?.Date).filter(Boolean);
-    return [...new Set(validDates)].sort(); 
+    return [...new Set(validDates)].sort(); // Oldest first for the bottom-up chart
   }, [displayResults]);
 
   const drawTimes = uniqueValues.times.filter(t => t !== 'Unknown');
 
-  // 4. SMART LOGIC: Calculate Context-Aware Stats (Logic kept the same)
+  // 4. SMART LOGIC: Calculate Context-Aware Stats (Logic retained)
   useEffect(() => {
     if (selectedValue === null) {
         setStats(null);
         return;
     }
     
+    // We reverse the newest-first data to get the oldest-first data needed for sequential calculation
     const rawData = [...allResults].reverse(); 
     let totalCount = 0;
     let followingCounts = {};
@@ -167,7 +192,7 @@ function Dashboard() {
 
   }, [selectedValue, allResults, displayType]); 
 
-  // Auto-scroll (Logic kept the same)
+  // Auto-scroll (Logic retained)
   useEffect(() => {
     if (scrollContainerRef.current && !isLoading) {
       setTimeout(() => {
@@ -176,7 +201,7 @@ function Dashboard() {
     }
   }, [displayResults, isLoading]);
 
-  // Handlers (Logic kept the same)
+  // Handlers (Logic retained)
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters(prev => ({ ...prev, [name]: value }));
@@ -202,7 +227,7 @@ function Dashboard() {
     else setSelectedValue(valToSelect);
   };
 
-  // --- Visual Style Helper (Logic kept the same, applied style changes in render) ---
+  // Visual Style Helper (Logic retained)
   const getCellStyle = (result) => {
       if (!result) return { base: 'text-gray-700', content: '-' };
 
@@ -245,7 +270,7 @@ function Dashboard() {
   };
 
 
-  if (isLoading) return <div className="p-10 text-center text-xl font-bold text-cyan-500 animate-pulse">Loading Chart...</div>;
+  if (isLoading) return <div className="p-10 text-center text-xl font-bold text-cyan-500 animate-pulse">Connecting to Data Terminal...</div>;
 
   return (
     <div className="pb-10 h-[calc(100vh-100px)] flex flex-col">
@@ -337,8 +362,7 @@ function Dashboard() {
       {/* --- BODY: The Matrix Grid --- */}
       <div className="bg-gray-800 rounded-xl shadow-lg border border-gray-700 flex-1 overflow-hidden relative flex flex-col">
         
-        {/* Table Header (FIX: Reduced padding and grid size for better mobile width) */}
-        {/* Date column is now 80px wide */}
+        {/* Table Header */}
         <div className="grid grid-cols-[80px_1fr] bg-gray-900 border-b border-gray-700 z-20">
            <div className="p-1 text-left text-xs font-bold text-gray-400 uppercase tracking-wider border-r border-gray-700 pl-2">Date</div>
            <div className="grid" style={{ gridTemplateColumns: `repeat(${drawTimes.length}, 1fr)` }}>
@@ -350,15 +374,15 @@ function Dashboard() {
            </div>
         </div>
 
-        {/* Scrollable Table Body (FIX: Maximize vertical space) */}
+        {/* Scrollable Table Body */}
         <div 
           ref={scrollContainerRef}
           className="overflow-y-auto flex-1 scroll-smooth custom-scrollbar"
         >
-           {displayResults.length === 0 ? (
+           {allResults.length === 0 ? (
              <div className="flex flex-col items-center justify-center h-full text-gray-500">
-               <div className="text-4xl mb-2">📂</div>
-               <p>No results found.</p>
+               <div className="text-4xl mb-2">⚠️</div>
+               <p>No results loaded from database. Check console for errors.</p>
              </div>
            ) : (
              <div className="divide-y divide-gray-700/50">
@@ -368,12 +392,9 @@ function Dashboard() {
 
                    return (
                      <div key={dateISO} className="grid grid-cols-[80px_1fr] hover:bg-gray-700/30 transition-colors group">
-                        {/* Date Column (FIX: Reduced padding) */}
                         <div className="p-1 text-left text-xs font-medium text-gray-300 border-r border-gray-700/50 flex items-center pl-2 bg-gray-800/50 group-hover:bg-transparent">
                            {formatDateHeader(dateISO)}
                         </div>
-                        
-                        {/* Marks Columns */}
                         <div className="grid" style={{ gridTemplateColumns: `repeat(${drawTimes.length}, 1fr)` }}>
                            {drawTimes.map(time => {
                               const result = resultsForDate.find(r => r && r.Time === time);
