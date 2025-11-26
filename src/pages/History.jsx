@@ -1,19 +1,22 @@
-/* This is src/pages/History.jsx (Draw Auditor - Mark Correlation Added) */
+/* This is src/pages/History.jsx (Draw Auditor - Full Build Fix) */
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { MARKS_LIST } from '../data/marks'; // Assuming you have a MARKS_LIST array for lookup
+import { MARKS_LIST } from '../data/marks'; 
 
-const RESULTS_PER_PAGE = 50; 
+// --- FIX: Import necessary functions directly ---
+import { app } from '../firebase'; 
+import { getFirestore, collection, getDocs, query, orderBy, limit } from 'firebase/firestore'; 
+// --- END FIX ---
+
+const RESULTS_PER_PAGE = 50; // Show 50 results at a time
 
 const MONTH_NAMES = {
-  '01': 'January', '02': 'Oebruary', '03': 'March', '04': 'April',
-  '05': 'May', '06': 'June', '07': 'July', '08': 'August',
-  '09': 'September', '10': 'October', '11': 'November', '12': 'December',
+  '01': 'January', '02': 'February', '03': 'March', '04': 'April',
+  '05': 'May', '06': 'June', '07': 'July', '08': 'August',
+  '09': 'September', '10': 'October', '11': 'November', '12': 'December',
 };
 
-// Simple numerical sort helper (from original code)
 const numericalSort = (a, b) => {
-   // Logic to safely parse and sort numbers/strings
    if (a === null || a === undefined) return 1;
    if (b === null || b === undefined) return -1;
    const numA = parseInt(String(a).match(/\d+/)?.[0] || 0, 10);
@@ -36,35 +39,43 @@ function History() {
     times: [], lines: [], suits: [], years: [], months: [],
   });
 
-  // --- NEW CORRELATION STATE ---
+  // --- CORRELATION STATE ---
   const [markA, setMarkA] = useState(''); // Mark Number (e.g., 4)
   const [markB, setMarkB] = useState(''); // Mark Number (e.g., 14)
   const [proximity, setProximity] = useState(5); // Proximity (N draws)
-  // --- END NEW CORRELATION STATE ---
 
-
-  // 1. Fetch the data
+  // 1. Fetch the data from FIREBASE
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/play_whe_results.json?v=${new Date().getTime()}`);
-        const data = await response.json(); 
+        const db = getFirestore(app);
         
-        // **IMPORTANT:** We store the data chronologically (OLDEST FIRST)
-        // This is necessary for accurate sequential analysis (A followed by B)
-        const oldestFirstData = data.slice(); 
-        setAllResults(oldestFirstData);
+        // Fetch all draws, ordered by DrawNo ASC (OLDEST FIRST) for correlation calculation
+        const drawsCollectionRef = collection(db, 'draws');
+        const q = query(drawsCollectionRef, orderBy('DrawNo', 'asc')); 
+        
+        const querySnapshot = await getDocs(q);
+        const data = querySnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
 
-        const times = [...new Set(oldestFirstData.map(item => item.Time))].sort();
-        const lines = [...new Set(oldestFirstData.map(item => item.Line))].sort(numericalSort);
-        const suits = [...new Set(oldestFirstData.map(item => item.Suit))].sort(numericalSort);
-        const dates = oldestFirstData.map(item => item.Date);
+        // Data is OLDEST-FIRST, perfect for sequential analysis
+        setAllResults(data);
+
+        // --- Calculate unique values for filters ---
+        const newestFirstData = data.slice().reverse(); // Use reversed data for unique value finding
+        const times = [...new Set(newestFirstData.map(item => item.Time))].sort();
+        const lines = [...new Set(newestFirstData.map(item => item.Line))].sort(numericalSort);
+        const suits = [...new Set(newestFirstData.map(item => String(item.Suit)))].sort(numericalSort);
+        
+        const dates = newestFirstData.map(item => item.Date);
         const years = [...new Set(dates.map(d => d.split('-')[0]))].sort().reverse();
         const months = [...new Set(dates.map(d => d.split('-')[1]))].sort();
         
         setUniqueValues({ times, lines, suits, years, months });
       } catch (error) {
-        console.error("Failed to fetch results:", error);
+        console.error("Firebase Fetch Error in History:", error);
       } finally {
         setIsLoading(false);
       }
@@ -72,14 +83,14 @@ function History() {
     fetchData();
   }, []);
 
-  // 2. --- NEW: Correlation Calculation Logic ---
+  // 2. Correlation Calculation Logic (Logic retained)
   const correlationData = useMemo(() => {
     const A = parseInt(markA);
     const B = parseInt(markB);
     const N = parseInt(proximity);
 
     if (isNaN(A) || isNaN(B) || A === B || isNaN(N) || N < 1 || allResults.length === 0) {
-        return { count: 0, percentage: 0, totalA: 0 }; // Return empty data
+        return { count: 0, percentage: 0, totalA: 0 };
     }
     
     let hitCount = 0;
@@ -120,8 +131,10 @@ function History() {
   // 3. Memoized filtering (for the table)
   const filteredResults = useMemo(() => {
     const searchLower = filters.search.toLowerCase();
-    // NOTE: This table view is intentionally OLDEST FIRST to reflect raw history
-    return allResults.filter(result => {
+    // Use newestFirstData (reversed copy of allResults) for filtering
+    const newestFirstData = allResults.slice().reverse(); 
+    
+    return newestFirstData.filter(result => {
       const matchesSearch = filters.search === '' ||
         result.Mark.toString().includes(searchLower) ||
         result.MarkName.toLowerCase().includes(searchLower);
@@ -132,7 +145,7 @@ function History() {
       const matchesMonth = filters.month === 'All' || result.Date.split('-')[1] === filters.month;
 
       return matchesSearch && matchesTime && matchesLine && matchesSuit && matchesYear && matchesMonth;
-    }).slice().reverse(); // **REVERSE AGAIN** for the display table (Newest First)
+    });
   }, [allResults, filters]);
 
   // 4. Memoized pagination
@@ -164,14 +177,14 @@ function History() {
 
   // --- Render ---
   if (isLoading) {
-    return <div className="p-10 text-center text-xl font-bold text-cyan-500 animate-pulse">Loading all Draw History...</div>;
+    return <div className="p-10 text-center text-xl font-bold text-cyan-500 animate-pulse">Loading Draw History...</div>;
   }
 
   return (
     <div>
       <h2 className="text-3xl font-bold text-white mb-6">The Draw Auditor</h2>
 
-      {/* --- NEW: Correlation Finder Panel --- */}
+      {/* --- Correlation Finder Panel --- */}
       <div className="bg-gray-800 p-6 rounded-xl shadow-lg mb-6 border-t-4 border-cyan-500">
         <h3 className="text-xl font-bold text-white mb-4">Mark Correlation Finder (The "Rakeman")</h3>
         
@@ -242,9 +255,8 @@ function History() {
         </p>
       </div>
 
-      {/* --- Existing Filter Controls (Kept for completeness) --- */}
+      {/* --- Existing Filter Controls --- */}
       <div className="bg-gray-800 p-4 rounded-lg shadow-lg mb-6 grid grid-cols-1 md:grid-cols-6 gap-4">
-        {/* ... (Existing filters kept for completeness) ... */}
         <input type="text" name="search" value={filters.search} onChange={handleFilterChange} placeholder="Search mark..." className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white" />
         <select name="year" value={filters.year} onChange={handleFilterChange} className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white"> <option value="All">All Years</option> {uniqueValues.years.map(y => <option key={y} value={y}>{y}</option>)} </select>
         <select name="month" value={filters.month} onChange={handleFilterChange} className="w-full p-2 bg-gray-700 border border-gray-600 rounded-md text-white"> <option value="All">All Months</option> {uniqueValues.months.map(m => <option key={m} value={m}>{MONTH_NAMES[m] || m}</option>)} </select>

@@ -1,10 +1,10 @@
-/* This is src/pages/Dashboard.jsx (Updated to use Firebase Firestore) */
+/* This is src/pages/Dashboard.jsx (The COMPLETE, FINAL version with Build Fix) */
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-// --- NEW FIREBASE IMPORTS ---
-import { db } from '../firebase'; // Import our database instance
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'; 
-// --- END FIREBASE IMPORTS ---
+// --- FIX: Import everything we need directly here ---
+import { app } from '../firebase'; // Import the initialized app instance
+import { getFirestore, collection, getDocs, query, orderBy, limit } from 'firebase/firestore'; 
+// --- END FIX ---
 
 // --- Color Palettes ---
 const LINE_COLORS = {
@@ -45,7 +45,6 @@ const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frid
 const formatDateHeader = (isoDate) => {
     if (!isoDate || typeof isoDate !== 'string') return 'Invalid Date';
     try {
-        // Use Z to treat date as UTC to avoid local timezone offset issues
         const date = new Date(isoDate + 'T00:00:00Z'); 
         return date.toLocaleDateString('en-US', { timeZone: 'UTC', weekday: 'short', day: '2-digit', month: 'short' });
     } catch (e) { return 'Invalid Date'; }
@@ -71,13 +70,14 @@ function Dashboard() {
     const fetchData = async () => {
       setIsLoading(true);
       try {
+        // --- NEW: Initialize DB here for local scope ---
+        const db = getFirestore(app);
+        
         // 1. Define the Firestore Query (Collection, Order by DrawNo DESC)
         const drawsCollectionRef = collection(db, 'draws');
         const q = query(
             drawsCollectionRef, 
             orderBy('DrawNo', 'desc'), 
-            // Limiting the fetch to 2000 for performance/cost control, 
-            // assuming you have more than 100 results, but not millions.
             limit(2000) 
         ); 
         
@@ -116,7 +116,7 @@ function Dashboard() {
     fetchData();
   }, []);
 
-  // 2. Filter Logic (Logic retained)
+  // 2. Filter Logic
   const filteredResults = useMemo(() => {
     return allResults.filter(result => {
         if (!result || !result.Date || !result.DayName) return false;
@@ -129,7 +129,7 @@ function Dashboard() {
 
   const displayResults = useMemo(() => filteredResults.slice(0, MAX_ROWS_TO_DISPLAY), [filteredResults]);
 
-  // 3. Unique Dates for Matrix (Logic retained)
+  // 3. Unique Dates for Matrix
   const uniqueDates = useMemo(() => {
     if (!Array.isArray(displayResults)) return [];
     const validDates = displayResults.map(r => r?.Date).filter(Boolean);
@@ -138,7 +138,7 @@ function Dashboard() {
 
   const drawTimes = uniqueValues.times.filter(t => t !== 'Unknown');
 
-  // 4. SMART LOGIC: Calculate Context-Aware Stats (Logic retained)
+  // 4. SMART LOGIC: Calculate Context-Aware Stats
   useEffect(() => {
     if (selectedValue === null) {
         setStats(null);
@@ -192,16 +192,18 @@ function Dashboard() {
 
   }, [selectedValue, allResults, displayType]); 
 
-  // Auto-scroll (Logic retained)
+  // Auto-scroll
   useEffect(() => {
     if (scrollContainerRef.current && !isLoading) {
       setTimeout(() => {
-        if (scrollContainerRef.current) scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+        if (scrollContainerRef.current) {
+             scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+        }
       }, 0);
     }
   }, [displayResults, isLoading]);
 
-  // Handlers (Logic retained)
+  // Handlers
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters(prev => ({ ...prev, [name]: value }));
@@ -227,7 +229,7 @@ function Dashboard() {
     else setSelectedValue(valToSelect);
   };
 
-  // Visual Style Helper (Logic retained)
+  // Visual Style Helper
   const getCellStyle = (result) => {
       if (!result) return { base: 'text-gray-700', content: '-' };
 
