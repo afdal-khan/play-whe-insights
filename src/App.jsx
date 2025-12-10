@@ -1,12 +1,12 @@
-/* This is src/App.jsx (With Bet Planner Enabled) */
+/* This is src/App.jsx (Updated to use Supabase) */
 
 import React, { useState, useEffect } from 'react';
-import { db, collection, getDocs, query, orderBy, limit } from './firebase'; 
+import { supabase } from './supabase'; // Import the new client
 
 // Import Pages
 import Dashboard from './pages/Dashboard';
 import Statistics from './pages/Statistics';
-import BetPlanner from './pages/BetPlanner'; // Import the new page
+// import BetPlanner from './pages/BetPlanner'; 
 
 const DRAW_LIMIT = 300; 
 
@@ -17,25 +17,34 @@ function App() {
   const [globalData, setGlobalData] = useState([]); 
   const [isLoading, setIsLoading] = useState(true);
 
-  // --- FETCH ONCE ON LOAD ---
+  // --- FETCH ONCE ON LOAD (Supabase Version) ---
   useEffect(() => {
     const fetchGlobalData = async () => {
       setIsLoading(true);
       try {
-        const drawsRef = collection(db, 'draws');
-        const q = query(drawsRef, orderBy('DrawNo', 'desc'), limit(DRAW_LIMIT));
-        
-        const snapshot = await getDocs(q);
-        const data = snapshot.docs.map(doc => {
-            const r = doc.data();
+        // Supabase Query: Select all columns from 'draws', sort by DrawNo descending, limit to 300
+        const { data, error } = await supabase
+          .from('draws')
+          .select('*')
+          .order('DrawNo', { ascending: false })
+          .limit(DRAW_LIMIT);
+
+        if (error) throw error;
+
+        // Process data (Supabase returns an array of objects directly, much cleaner!)
+        const processedData = data.map(r => {
+            // Note: Supabase columns are case-sensitive. Ensure your DB columns are Capitalized (Date, Time) 
+            // matching your CSV headers. If they are lowercase (date, time), update this map.
             const date = new Date(r.Date + 'T00:00:00Z');
             const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            return { id: doc.id, ...r, DayName: dayNames[date.getUTCDay()] };
+            return { ...r, DayName: dayNames[date.getUTCDay()] };
         });
 
-        setGlobalData(data);
+        setGlobalData(processedData);
+        console.log(`Loaded ${data.length} draws from Supabase.`); 
+
       } catch (error) {
-        console.error("Global Fetch Error:", error);
+        console.error("Supabase Global Fetch Error:", error.message);
       } finally {
         setIsLoading(false);
       }
@@ -70,7 +79,7 @@ function App() {
           <div className="flex space-x-2 md:space-x-4">
             <NavLink page="dashboard" title="Play Chart" />
             <NavLink page="statistics" title="Statistics" />
-            <NavLink page="planner" title="Bet Planner" /> 
+            {/* <NavLink page="planner" title="Bet Planner" /> */}
           </div>
         </nav>
       </header>
@@ -86,8 +95,7 @@ function App() {
             <Statistics data={globalData} loading={isLoading} />
         )}
         
-        {/* Render the Bet Planner */}
-        {view === 'planner' && <BetPlanner />} 
+        {/* view === 'planner' && <BetPlanner /> */} 
 
       </main>
     </div>
