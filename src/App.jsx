@@ -66,7 +66,7 @@ function App() {
       {/* Header */}
       <header className="bg-[#050505]/95 backdrop-blur shadow-lg sticky top-0 z-50 border-b border-white/10">
         <nav className="container mx-auto max-w-7xl px-4 py-3 flex justify-between items-center">
-          <h1 className="text-xl font-black text-white tracking-tighter">IZI SYSTEMS</h1>
+          <h1 className="text-xl font-black text-white tracking-tighter">WAJUL SYSTEMS</h1>
           
           <div className="flex space-x-2">
             {/* CHANGE 2: Updated Navigation Order */}

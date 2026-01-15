@@ -16,15 +16,22 @@ const Statistics = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
+
+      // --- THE FIX: SORT BY ID DESCENDING ---
+      // 'id' is the primary key. The highest ID is ALWAYS the latest entry.
+      // We stop relying on Date or DrawNo which might have format issues.
       const { data, error } = await supabase
         .from('draws')
         .select('*')
-        .order('Date', { ascending: false }) 
+        .order('id', { ascending: false }) // <--- THIS IS THE KEY FIX
         .limit(2000);
 
       if (error) throw error;
 
-      const processed = data.map(d => {
+      // Double check in Javascript just to be safe
+      const sortedData = data.sort((a, b) => b.id - a.id);
+
+      const processed = sortedData.map(d => {
         const dateObj = new Date(d.Date);
         const dayName = dateObj.toLocaleDateString('en-US', { weekday: 'long', timeZone: 'UTC' });
         return { ...d, dayName };
@@ -53,40 +60,41 @@ const Statistics = () => {
     const markGaps = {};
     const lineGaps = {};
     const suitGaps = {};
-    
     const markMeta = {};
     const markFrequency = {};
 
-    // Init Frequency for Marks (1-36)
+    // Init Frequency
     for (let i = 1; i <= 36; i++) markFrequency[i] = 0;
 
-    // --- SCAN HISTORY (DIRECT COLUMN ACCESS) ---
+    // --- SCAN HISTORY ---
+    // History is now strictly Newest (Index 0) -> Oldest (Index 2000)
     history.forEach((draw, index) => {
-        // A. MARK GAP
+        
+        // A. MARK GAP 
         if (markGaps[draw.Mark] === undefined) {
-            markGaps[draw.Mark] = index;
-            // Store Metadata for display
+            markGaps[draw.Mark] = index; // Index 0 = Just Played
             markMeta[draw.Mark] = { name: draw.MarkName };
         }
 
-        // B. LINE GAP (Directly from DB Column)
+        // B. LINE GAP 
+        // We look for the FIRST time this Line appears in the history.
         if (draw.Line && lineGaps[draw.Line] === undefined) {
             lineGaps[draw.Line] = index;
         }
 
-        // C. SUIT GAP (Directly from DB Column)
+        // C. SUIT GAP 
+        // We look for the FIRST time this Suit appears.
         if (draw.Suit && suitGaps[draw.Suit] === undefined) {
             suitGaps[draw.Suit] = index;
         }
 
-        // D. Frequency (Last 50 draws)
+        // Frequency
         if (index < 50) markFrequency[draw.Mark]++;
     });
 
-    // Helper to format the list for the Grid
+    // Helper to format
     const createList = (type) => {
         if (type === 'marks') {
-            // Fill in missing marks with "Total Draws" (Never played in filter)
             for (let i = 1; i <= 36; i++) {
                 if (markGaps[i] === undefined) markGaps[i] = totalDraws;
             }
@@ -100,7 +108,7 @@ const Statistics = () => {
         else if (type === 'lines') {
             return Object.keys(lineGaps).map(l => ({
                 id: l, 
-                label: l, // e.g., "8 Line"
+                label: l, 
                 sub: 'Line Group', 
                 gap: lineGaps[l]
             }));
@@ -108,7 +116,7 @@ const Statistics = () => {
         else { // Suits
             return Object.keys(suitGaps).map(s => ({
                 id: s, 
-                label: s, // e.g., "7 Suit"
+                label: s, 
                 sub: 'Suit Group', 
                 gap: suitGaps[s]
             }));
@@ -116,7 +124,7 @@ const Statistics = () => {
     };
 
     // Generate Lists
-    const marks = createList('marks').sort((a, b) => b.gap - a.gap); // Coldest First
+    const marks = createList('marks').sort((a, b) => b.gap - a.gap);
     const lines = createList('lines').sort((a, b) => b.gap - a.gap);
     const suits = createList('suits').sort((a, b) => b.gap - a.gap);
 
@@ -130,7 +138,6 @@ const Statistics = () => {
         .sort((a, b) => b.hits - a.hits)
         .slice(0, 5); 
 
-    // Determine active list
     let currentList = [];
     if (activeView === 'marks') currentList = marks;
     else if (activeView === 'lines') currentList = lines;
@@ -151,8 +158,8 @@ const Statistics = () => {
     let textClass = "text-slate-500";
     let gapClass = "bg-slate-800 text-slate-400";
     
-    const isHigh = item.gap > 35; // Cold
-    const isLow = item.gap < 5;   // Recent
+    const isHigh = item.gap > 35; 
+    const isLow = item.gap < 5;   
 
     if (isHigh) {
         borderClass = "border-red-500/40 bg-red-900/10 hover:bg-red-900/20";
