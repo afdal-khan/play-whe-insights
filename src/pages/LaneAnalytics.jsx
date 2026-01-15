@@ -170,7 +170,7 @@ const LaneAnalytics = () => {
             <div className="flex flex-col md:flex-row items-center gap-1 md:gap-2 mb-2 p-2 border-b border-slate-800">
                 <span className="text-emerald-500 text-lg">🎯</span>
                 <span className="text-[9px] md:text-xs font-bold text-slate-300 uppercase tracking-widest text-center md:text-left">
-                    <span className="hidden md:inline">IZI </span>Due
+                    <span className="hidden md:inline">WAJUL </span>Due
                 </span>
             </div>
 
@@ -214,8 +214,8 @@ const LaneAnalytics = () => {
           
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-xl md:text-2xl font-bold text-white tracking-tight">IZI ANALYTICS</h1>
-              <p className="text-[10px] text-slate-500 font-mono">POWERED BY IZI SYSTEM</p>
+              <h1 className="text-xl md:text-2xl font-bold text-white tracking-tight">WAJUL ANALYTICS</h1>
+              <p className="text-[10px] text-slate-500 font-mono">POWERED BY THE WAJUL SYSTEM</p>
             </div>
             
             <div className="flex gap-2">
