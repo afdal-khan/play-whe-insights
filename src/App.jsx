@@ -7,8 +7,8 @@ import Statistics from './pages/Statistics';
 const DRAW_LIMIT = 300; 
 
 function App() {
-  // CHANGE 1: Set default view to 'lanes'
-  const [view, setView] = useState('lanes');
+  // 1. Default page is now 'statistics'
+  const [view, setView] = useState('statistics');
   
   const [globalData, setGlobalData] = useState([]); 
   const [isLoading, setIsLoading] = useState(true);
@@ -44,17 +44,18 @@ function App() {
     fetchGlobalData();
   }, []); 
 
-  const NavLink = ({ page, title }) => {
+  const NavLink = ({ page, title, icon }) => {
     const isActive = view === page;
     return (
       <button
         onClick={() => setView(page)}
-        className={`px-3 py-2 rounded-md text-sm font-bold transition-colors uppercase tracking-wider ${
+        className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-all uppercase tracking-wider ${
           isActive
-            ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-900/50'
+            ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-900/50 scale-105'
             : 'text-gray-400 hover:bg-gray-800 hover:text-white'
         }`}
       >
+        <span>{icon}</span>
         {title}
       </button>
     );
@@ -65,14 +66,14 @@ function App() {
       
       {/* Header */}
       <header className="bg-[#050505]/95 backdrop-blur shadow-lg sticky top-0 z-50 border-b border-white/10">
-        <nav className="container mx-auto max-w-7xl px-4 py-3 flex justify-between items-center">
+        <nav className="container mx-auto max-w-7xl px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
           <h1 className="text-xl font-black text-white tracking-tighter">WAJUL SYSTEMS</h1>
           
-          <div className="flex space-x-2">
-            {/* CHANGE 2: Updated Navigation Order */}
-            <NavLink page="lanes" title="Lane Chart" />
-            <NavLink page="statistics" title="Statistics" />
-            <NavLink page="dashboard" title="Play Chart" />
+          {/* 2. Navigation - Only the 3 requested tabs */}
+          <div className="flex flex-wrap justify-center gap-2">
+            <NavLink page="statistics" title="Statistics" icon="📈" />
+            <NavLink page="lanes" title="Lane Chart" icon="📊" />
+            <NavLink page="dashboard" title="Play Chart" icon="🎲" />
           </div>
         </nav>
       </header>
@@ -80,13 +81,12 @@ function App() {
       {/* Main Content */}
       <main className="container mx-auto max-w-7xl p-0 md:p-6">
         
-        {/* Renders Lane Analytics (Default) */}
-        {view === 'lanes' && (
-            <LaneAnalytics />
-        )}
-
         {view === 'statistics' && (
             <Statistics data={globalData} loading={isLoading} />
+        )}
+
+        {view === 'lanes' && (
+            <LaneAnalytics />
         )}
 
         {view === 'dashboard' && (
