@@ -63,10 +63,9 @@ const Statistics = () => {
     const groups = {};
     const nameMap = {}; 
     
-    // STEP 1: CALCULATE GAP FOR EVERY INDIVIDUAL MARK FIRST (1-36)
-    // We need this to calculate "Pressure" (Sum of gaps)
+    // STEP 1: CALCULATE GAP FOR EVERY INDIVIDUAL MARK FIRST
     const markWaits = {};
-    const markFound = {}; // Helper to stop searching once found
+    const markFound = {}; 
 
     draws.forEach((draw, index) => {
         const m = parseInt(draw.Mark);
@@ -103,13 +102,11 @@ const Statistics = () => {
     });
 
     const processed = Object.values(groups).map(group => {
-      // Calculate Items Array with their Individual Gaps
       const itemsWithGaps = Array.from(group.items).map(num => ({
           val: num,
-          gap: markWaits[num] !== undefined ? markWaits[num] : 999 // 999 if never seen
+          gap: markWaits[num] !== undefined ? markWaits[num] : 999 
       })).sort((a,b) => a.val - b.val);
 
-      // Calculate Total Pressure (Sum of gaps)
       const totalPressure = itemsWithGaps.reduce((sum, item) => sum + (item.gap === 999 ? 0 : item.gap), 0);
       
       return {
@@ -121,12 +118,11 @@ const Statistics = () => {
       };
     });
 
-    // SORTING LOGIC
     processed.sort((a, b) => {
         if (sortMode === 'pressure' && mode !== 'mark') {
-            return b.pressure - a.pressure; // Highest Pressure first
+            return b.pressure - a.pressure; 
         }
-        return b.wait - a.wait; // Default: Longest wait first
+        return b.wait - a.wait; 
     });
 
     setStats(processed);
@@ -149,94 +145,99 @@ const Statistics = () => {
   return (
     <div className="min-h-screen pb-20 flex flex-col font-sans text-gray-100">
       
-      {/* HEADER & CONTROLS */}
-      <div className="bg-gray-800 rounded-xl shadow-lg p-4 mb-4 border-b border-gray-700 shrink-0 mx-4 mt-4">
-        
-        {/* ROW 1: Title & Toggles */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
-            <div>
-                <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-                    <span>Gap Table</span>
-                    <button 
-                        onClick={() => {
-                            const next = sortMode === 'wait' ? 'pressure' : 'wait';
-                            setSortMode(next);
-                            // Re-trigger view update to apply sort
-                            updateView(rawData, historyOffset, viewMode);
-                        }}
-                        className="px-2 py-0.5 text-[10px] uppercase bg-cyan-900 text-cyan-300 rounded border border-cyan-700 hover:bg-cyan-800 transition-colors"
-                    >
-                        Sorted by: {sortMode === 'wait' ? 'MISSING' : 'PRESSURE 🔥'}
-                    </button>
-                </h1>
-            </div>
-
-            <div className="bg-gray-700 p-1 rounded-lg flex">
-                {['mark', 'line', 'suit'].map((type) => ( 
-                    <button 
-                        key={type} 
-                        onClick={() => switchMode(type)} 
-                        className={`px-4 py-1.5 text-xs font-bold uppercase rounded-md transition-all duration-200 ${ 
-                            viewMode === type 
-                            ? 'bg-cyan-600 text-white shadow-md' 
-                            : 'text-gray-400 hover:text-white hover:bg-gray-600' 
-                        }`}
-                    > 
-                        {type}s
-                    </button> 
-                ))}
-            </div>
-        </div>
-
-        {/* ROW 2: TIME MACHINE CONTROLS */}
-        <div className="flex flex-col sm:flex-row items-center justify-between bg-gray-900/50 p-3 rounded-lg border border-gray-700">
-            <div className="flex items-center gap-3">
-                <button 
-                    onClick={() => changeOffset(historyOffset + 1)}
-                    className="w-10 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded text-white font-bold transition-colors"
-                >◀</button>
-
-                <div className="text-center min-w-[120px]">
-                    <div className="text-[10px] text-gray-500 uppercase font-bold tracking-widest">
-                        {historyOffset === 0 ? <span className="text-green-400 animate-pulse">● LIVE DATA</span> : 'HISTORICAL VIEW'}
-                    </div>
-                    <div className="text-sm font-bold text-white">
-                        {historyOffset === 0 ? 'Current Draw' : `${historyOffset} Draws Ago`}
-                    </div>
+      {/* --- STICKY HEADER CONTAINER --- 
+          "top-[60px]" assumes the main App header is about 60px high. 
+          Adjust this value if your main header is taller/shorter.
+          z-40 ensures it floats above the table rows.
+      */}
+      <div className="sticky top-[60px] z-40 bg-[#050505] pb-2 pt-4 px-4 shadow-xl border-b border-gray-800">
+          
+          <div className="bg-gray-800 rounded-xl shadow-lg p-4 border border-gray-700 max-w-5xl mx-auto">
+            {/* ROW 1: Title & Toggles */}
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+                <div>
+                    <h1 className="text-xl font-bold text-white flex items-center gap-2">
+                        <span>Gap Table</span>
+                        <button 
+                            onClick={() => {
+                                const next = sortMode === 'wait' ? 'pressure' : 'wait';
+                                setSortMode(next);
+                                updateView(rawData, historyOffset, viewMode);
+                            }}
+                            className="px-2 py-0.5 text-[10px] uppercase bg-cyan-900 text-cyan-300 rounded border border-cyan-700 hover:bg-cyan-800 transition-colors"
+                        >
+                            Sorted by: {sortMode === 'wait' ? 'MISSING' : 'PRESSURE 🔥'}
+                        </button>
+                    </h1>
                 </div>
 
-                <button 
-                    onClick={() => changeOffset(historyOffset - 1)}
-                    disabled={historyOffset === 0}
-                    className={`w-10 h-8 flex items-center justify-center rounded font-bold transition-colors ${
-                        historyOffset === 0 
-                        ? 'bg-gray-800 text-gray-600 cursor-not-allowed' 
-                        : 'bg-gray-700 hover:bg-gray-600 text-white'
-                    }`}
-                >▶</button>
+                <div className="bg-gray-700 p-1 rounded-lg flex">
+                    {['mark', 'line', 'suit'].map((type) => ( 
+                        <button 
+                            key={type} 
+                            onClick={() => switchMode(type)} 
+                            className={`px-4 py-1.5 text-xs font-bold uppercase rounded-md transition-all duration-200 ${ 
+                                viewMode === type 
+                                ? 'bg-cyan-600 text-white shadow-md' 
+                                : 'text-gray-400 hover:text-white hover:bg-gray-600' 
+                            }`}
+                        > 
+                            {type}s
+                        </button> 
+                    ))}
+                </div>
             </div>
 
-            <div className="flex items-center gap-4 mt-3 sm:mt-0 w-full sm:w-auto">
-                 <input 
-                    type="range" 
-                    min="0" 
-                    max="100" 
-                    value={historyOffset} 
-                    onChange={(e) => changeOffset(parseInt(e.target.value))}
-                    className="w-full sm:w-32 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
-                 />
-                 <div className="text-right">
-                    <div className="text-[10px] text-cyan-500 font-bold uppercase">Viewing Draw</div>
-                    <div className="text-sm font-bold text-white leading-none">
-                        #{lastDrawStats?.DrawNo}
+            {/* ROW 2: TIME MACHINE CONTROLS */}
+            <div className="flex flex-col sm:flex-row items-center justify-between bg-gray-900/50 p-2 rounded-lg border border-gray-700">
+                <div className="flex items-center gap-3">
+                    <button 
+                        onClick={() => changeOffset(historyOffset + 1)}
+                        className="w-10 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded text-white font-bold transition-colors"
+                    >◀</button>
+
+                    <div className="text-center min-w-[120px]">
+                        <div className="text-[10px] text-gray-500 uppercase font-bold tracking-widest">
+                            {historyOffset === 0 ? <span className="text-green-400 animate-pulse">● LIVE DATA</span> : 'HISTORICAL VIEW'}
+                        </div>
+                        <div className="text-sm font-bold text-white">
+                            {historyOffset === 0 ? 'Current Draw' : `${historyOffset} Draws Ago`}
+                        </div>
                     </div>
-                 </div>
+
+                    <button 
+                        onClick={() => changeOffset(historyOffset - 1)}
+                        disabled={historyOffset === 0}
+                        className={`w-10 h-8 flex items-center justify-center rounded font-bold transition-colors ${
+                            historyOffset === 0 
+                            ? 'bg-gray-800 text-gray-600 cursor-not-allowed' 
+                            : 'bg-gray-700 hover:bg-gray-600 text-white'
+                        }`}
+                    >▶</button>
+                </div>
+
+                <div className="flex items-center gap-4 mt-3 sm:mt-0 w-full sm:w-auto">
+                     <input 
+                        type="range" 
+                        min="0" 
+                        max="100" 
+                        value={historyOffset} 
+                        onChange={(e) => changeOffset(parseInt(e.target.value))}
+                        className="w-full sm:w-32 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
+                     />
+                     <div className="text-right">
+                        <div className="text-[10px] text-cyan-500 font-bold uppercase">Viewing Draw</div>
+                        <div className="text-sm font-bold text-white leading-none">
+                            #{lastDrawStats?.DrawNo}
+                        </div>
+                     </div>
+                </div>
             </div>
-        </div>
+          </div>
       </div>
 
       {/* TABLE CONTAINER */}
-      <div className="px-4 max-w-5xl mx-auto w-full">
+      <div className="px-4 max-w-5xl mx-auto w-full mt-4">
         <div className="bg-gray-800 rounded-lg shadow-xl border border-gray-700 overflow-hidden">
             
             {/* TABLE HEADER */}
@@ -249,7 +250,7 @@ const Statistics = () => {
 
             {/* TABLE BODY */}
             <div className="divide-y divide-gray-700/50">
-                {stats.map((item) => {
+                {stats.map((item, index) => {
                     const threshold = viewMode === 'mark' ? 60 : (viewMode === 'line' ? 20 : 12);
                     const percentage = Math.min((item.wait / (threshold * 1.5)) * 100, 100);
                     
@@ -258,14 +259,15 @@ const Statistics = () => {
                             key={item.id} 
                             className={`grid grid-cols-12 items-center py-3 px-4 transition-colors ${getRowStyle(item.wait, viewMode)}`}
                         >
-                            {/* COL 1: ID */}
-                            <div className="col-span-2">
+                            {/* COL 1: RANK & ID (Now shows #1 4) */}
+                            <div className="col-span-2 flex items-center gap-2">
+                                <span className="text-xs text-gray-500 font-mono">#{index + 1}</span>
                                 <span className={`text-lg font-bold ${item.wait > threshold ? 'text-red-400' : 'text-white'}`}>
                                     {item.id}
                                 </span>
                             </div>
 
-                            {/* COL 2: DETAILS (WITH PRESSURE) */}
+                            {/* COL 2: DETAILS */}
                             <div className="col-span-4 pr-4">
                                 {viewMode === 'mark' ? (
                                     <span className="text-sm text-gray-300 font-medium">{item.name}</span>
