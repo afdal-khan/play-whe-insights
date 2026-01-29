@@ -10,8 +10,12 @@ const Statistics = () => {
   // VIEW MODE: 'mark', 'line', 'suit'
   const [viewMode, setViewMode] = useState('mark');
 
-  // SORT MODE: 'wait' (Time since line played), 'pressure' (Sum of individual gaps)
+  // SORT MODE: 'wait', 'pressure'
   const [sortMode, setSortMode] = useState('wait');
+
+  // FILTERS (NEW)
+  const [timeFilter, setTimeFilter] = useState('All');
+  const [dayFilter, setDayFilter] = useState('All');
 
   // TIME TRAVEL STATE
   const [historyOffset, setHistoryOffset] = useState(0); 
@@ -38,7 +42,15 @@ const Statistics = () => {
     fetchHistory();
   }, []);
 
+  // When filters change, re-run the view update
+  useEffect(() => {
+    if (rawData.length > 0) {
+        updateView(rawData, historyOffset, viewMode);
+    }
+  }, [timeFilter, dayFilter]); // Trigger when filters change
+
   const updateView = (allData, offset, mode) => {
+    // 1. Slice for Time Travel (Global History)
     const activeData = allData.slice(offset);
 
     if (activeData.length > 0) {
@@ -59,15 +71,38 @@ const Statistics = () => {
       updateView(rawData, newOffset, viewMode);
   };
 
+  // --- HELPER: GET DAY NAME ---
+  const getDayName = (dateStr) => {
+      const date = new Date(dateStr);
+      // Fix for timezone issues if dateStr is YYYY-MM-DD
+      const dayIndex = new Date(dateStr + 'T00:00:00').getDay();
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      return days[dayIndex];
+  };
+
   const processData = (draws, mode) => {
+    // --- STEP 0: APPLY FILTERS ---
+    // We filter the dataset BEFORE calculating gaps.
+    // This ensures "Draws Ago" means "Evening Draws Ago" (if filtered).
+    const filteredDraws = draws.filter(d => {
+        const tMatch = timeFilter === 'All' || d.Time === timeFilter;
+        
+        // Check Day Match (Handle case where DayName might be missing in DB)
+        const dName = d.DayName || getDayName(d.Date);
+        const dMatch = dayFilter === 'All' || dName === dayFilter;
+
+        return tMatch && dMatch;
+    });
+
     const groups = {};
     const nameMap = {}; 
     
-    // STEP 1: CALCULATE GAP FOR EVERY INDIVIDUAL MARK FIRST
+    // --- STEP 1: CALCULATE GAP FOR EVERY INDIVIDUAL MARK FIRST ---
+    // We iterate through the FILTERED list. 
     const markWaits = {};
     const markFound = {}; 
 
-    draws.forEach((draw, index) => {
+    filteredDraws.forEach((draw, index) => {
         const m = parseInt(draw.Mark);
         if (m && markFound[m] === undefined) {
             markWaits[m] = index;
@@ -75,8 +110,8 @@ const Statistics = () => {
         }
     });
 
-    // STEP 2: PROCESS GROUPS
-    draws.forEach((draw, index) => {
+    // --- STEP 2: PROCESS GROUPS ---
+    filteredDraws.forEach((draw, index) => {
       let key = null;
       if (mode === 'mark') key = draw.Mark;
       if (mode === 'line') key = draw.Line; 
@@ -145,17 +180,14 @@ const Statistics = () => {
   return (
     <div className="min-h-screen pb-20 flex flex-col font-sans text-gray-100">
       
-      {/* --- STICKY HEADER CONTAINER --- 
-          "top-[60px]" assumes the main App header is about 60px high. 
-          Adjust this value if your main header is taller/shorter.
-          z-40 ensures it floats above the table rows.
-      */}
+      {/* --- STICKY HEADER --- */}
       <div className="sticky top-[60px] z-40 bg-[#050505] pb-2 pt-4 px-4 shadow-xl border-b border-gray-800">
           
           <div className="bg-gray-800 rounded-xl shadow-lg p-4 border border-gray-700 max-w-5xl mx-auto">
-            {/* ROW 1: Title & Toggles */}
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
-                <div>
+            
+            {/* ROW 1: Title, Sort, & View Toggles */}
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-4">
+                <div className="flex items-center gap-4 w-full lg:w-auto justify-between">
                     <h1 className="text-xl font-bold text-white flex items-center gap-2">
                         <span>Gap Table</span>
                         <button 
@@ -171,7 +203,7 @@ const Statistics = () => {
                     </h1>
                 </div>
 
-                <div className="bg-gray-700 p-1 rounded-lg flex">
+                <div className="bg-gray-700 p-1 rounded-lg flex shrink-0">
                     {['mark', 'line', 'suit'].map((type) => ( 
                         <button 
                             key={type} 
@@ -188,50 +220,62 @@ const Statistics = () => {
                 </div>
             </div>
 
-            {/* ROW 2: TIME MACHINE CONTROLS */}
-            <div className="flex flex-col sm:flex-row items-center justify-between bg-gray-900/50 p-2 rounded-lg border border-gray-700">
-                <div className="flex items-center gap-3">
-                    <button 
-                        onClick={() => changeOffset(historyOffset + 1)}
-                        className="w-10 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded text-white font-bold transition-colors"
-                    >◀</button>
+            {/* ROW 2: FILTERS & TIME MACHINE */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                
+                {/* FILTER CONTROLS (NEW) */}
+                <div className="flex gap-2 bg-gray-900/50 p-2 rounded-lg border border-gray-700">
+                     <select 
+                        value={timeFilter} 
+                        onChange={(e) => setTimeFilter(e.target.value)}
+                        className="bg-gray-800 text-white text-xs font-bold rounded px-2 py-1 border border-gray-600 focus:border-cyan-500 outline-none w-full"
+                     >
+                        <option value="All">All Times</option>
+                        <option value="Morning">Morning</option>
+                        <option value="Midday">Midday</option>
+                        <option value="Afternoon">Afternoon</option>
+                        <option value="Evening">Evening</option>
+                     </select>
 
-                    <div className="text-center min-w-[120px]">
-                        <div className="text-[10px] text-gray-500 uppercase font-bold tracking-widest">
-                            {historyOffset === 0 ? <span className="text-green-400 animate-pulse">● LIVE DATA</span> : 'HISTORICAL VIEW'}
+                     <select 
+                        value={dayFilter} 
+                        onChange={(e) => setDayFilter(e.target.value)}
+                        className="bg-gray-800 text-white text-xs font-bold rounded px-2 py-1 border border-gray-600 focus:border-cyan-500 outline-none w-full"
+                     >
+                        <option value="All">All Days</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                     </select>
+                </div>
+
+                {/* TIME MACHINE CONTROLS */}
+                <div className="flex items-center justify-between bg-gray-900/50 p-2 rounded-lg border border-gray-700">
+                    <button onClick={() => changeOffset(historyOffset + 1)} className="px-2 text-gray-400 hover:text-white">◀</button>
+                    
+                    <div className="text-center">
+                        <div className="text-[9px] text-gray-500 uppercase font-bold tracking-widest">
+                            {historyOffset === 0 ? <span className="text-green-400">● LIVE</span> : 'HISTORY'}
                         </div>
-                        <div className="text-sm font-bold text-white">
-                            {historyOffset === 0 ? 'Current Draw' : `${historyOffset} Draws Ago`}
-                        </div>
+                        <input 
+                            type="range" min="0" max="100" value={historyOffset} 
+                            onChange={(e) => changeOffset(parseInt(e.target.value))}
+                            className="w-24 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
+                        />
                     </div>
 
-                    <button 
-                        onClick={() => changeOffset(historyOffset - 1)}
-                        disabled={historyOffset === 0}
-                        className={`w-10 h-8 flex items-center justify-center rounded font-bold transition-colors ${
-                            historyOffset === 0 
-                            ? 'bg-gray-800 text-gray-600 cursor-not-allowed' 
-                            : 'bg-gray-700 hover:bg-gray-600 text-white'
-                        }`}
-                    >▶</button>
+                    <button onClick={() => changeOffset(historyOffset - 1)} disabled={historyOffset===0} className="px-2 text-gray-400 hover:text-white disabled:opacity-30">▶</button>
+                    
+                    <div className="text-right border-l border-gray-700 pl-2 ml-1">
+                        <div className="text-[9px] text-cyan-500 font-bold uppercase">Draw</div>
+                        <div className="text-xs font-bold text-white">#{lastDrawStats?.DrawNo}</div>
+                    </div>
                 </div>
 
-                <div className="flex items-center gap-4 mt-3 sm:mt-0 w-full sm:w-auto">
-                     <input 
-                        type="range" 
-                        min="0" 
-                        max="100" 
-                        value={historyOffset} 
-                        onChange={(e) => changeOffset(parseInt(e.target.value))}
-                        className="w-full sm:w-32 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
-                     />
-                     <div className="text-right">
-                        <div className="text-[10px] text-cyan-500 font-bold uppercase">Viewing Draw</div>
-                        <div className="text-sm font-bold text-white leading-none">
-                            #{lastDrawStats?.DrawNo}
-                        </div>
-                     </div>
-                </div>
             </div>
           </div>
       </div>
@@ -250,73 +294,75 @@ const Statistics = () => {
 
             {/* TABLE BODY */}
             <div className="divide-y divide-gray-700/50">
-                {stats.map((item, index) => {
-                    const threshold = viewMode === 'mark' ? 60 : (viewMode === 'line' ? 20 : 12);
-                    const percentage = Math.min((item.wait / (threshold * 1.5)) * 100, 100);
-                    
-                    return (
-                        <div 
-                            key={item.id} 
-                            className={`grid grid-cols-12 items-center py-3 px-4 transition-colors ${getRowStyle(item.wait, viewMode)}`}
-                        >
-                            {/* COL 1: RANK & ID (Now shows #1 4) */}
-                            <div className="col-span-2 flex items-center gap-2">
-                                <span className="text-xs text-gray-500 font-mono">#{index + 1}</span>
-                                <span className={`text-lg font-bold ${item.wait > threshold ? 'text-red-400' : 'text-white'}`}>
-                                    {item.id}
-                                </span>
-                            </div>
+                {stats.length === 0 ? (
+                    <div className="p-8 text-center text-gray-500 col-span-12">No draws found for this filter.</div>
+                ) : (
+                    stats.map((item, index) => {
+                        const threshold = viewMode === 'mark' ? 60 : (viewMode === 'line' ? 20 : 12);
+                        // Scale meter if filtered? Optional. For now keeping raw scale.
+                        const percentage = Math.min((item.wait / (threshold * 1.5)) * 100, 100);
+                        
+                        return (
+                            <div 
+                                key={item.id} 
+                                className={`grid grid-cols-12 items-center py-3 px-4 transition-colors ${getRowStyle(item.wait, viewMode)}`}
+                            >
+                                {/* COL 1: RANK & ID */}
+                                <div className="col-span-2 flex items-center gap-2">
+                                    <span className="text-xs text-gray-500 font-mono">#{index + 1}</span>
+                                    <span className={`text-lg font-bold ${item.wait > threshold ? 'text-red-400' : 'text-white'}`}>
+                                        {item.id}
+                                    </span>
+                                </div>
 
-                            {/* COL 2: DETAILS */}
-                            <div className="col-span-4 pr-4">
-                                {viewMode === 'mark' ? (
-                                    <span className="text-sm text-gray-300 font-medium">{item.name}</span>
-                                ) : (
-                                    <div className="flex flex-col gap-1">
-                                        {/* PRESSURE BADGE */}
-                                        <div className="flex items-center gap-2 mb-1">
-                                            <span className="text-[10px] uppercase font-bold text-gray-500">Pressure:</span>
-                                            <span className={`text-xs font-black px-1.5 rounded ${item.pressure > 100 ? 'bg-red-900/50 text-red-400' : 'bg-gray-900 text-gray-300'}`}>
-                                                🔥 {item.pressure}
-                                            </span>
+                                {/* COL 2: DETAILS */}
+                                <div className="col-span-4 pr-4">
+                                    {viewMode === 'mark' ? (
+                                        <span className="text-sm text-gray-300 font-medium">{item.name}</span>
+                                    ) : (
+                                        <div className="flex flex-col gap-1">
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <span className="text-[10px] uppercase font-bold text-gray-500">Pressure:</span>
+                                                <span className={`text-xs font-black px-1.5 rounded ${item.pressure > 100 ? 'bg-red-900/50 text-red-400' : 'bg-gray-900 text-gray-300'}`}>
+                                                    🔥 {item.pressure}
+                                                </span>
+                                            </div>
+                                            <div className="flex flex-wrap gap-1">
+                                                {item.items.map(n => (
+                                                    <div key={n.val} className="flex items-center bg-gray-900 rounded border border-gray-700 px-1.5 py-0.5" title={`${n.val} hasn't played in ${n.gap} draws`}>
+                                                        <span className="text-[10px] text-gray-300 font-bold mr-1">{n.val}</span>
+                                                        <span className={`text-[9px] ${n.gap > 40 ? 'text-red-400' : 'text-gray-500'}`}>({n.gap})</span>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
-                                        {/* NUMBER BUBBLES */}
-                                        <div className="flex flex-wrap gap-1">
-                                            {item.items.map(n => (
-                                                <div key={n.val} className="flex items-center bg-gray-900 rounded border border-gray-700 px-1.5 py-0.5" title={`${n.val} hasn't played in ${n.gap} draws`}>
-                                                    <span className="text-[10px] text-gray-300 font-bold mr-1">{n.val}</span>
-                                                    <span className={`text-[9px] ${n.gap > 40 ? 'text-red-400' : 'text-gray-500'}`}>({n.gap})</span>
-                                                </div>
-                                            ))}
-                                        </div>
+                                    )}
+                                </div>
+
+                                {/* COL 3: METER */}
+                                <div className="col-span-4 pr-6">
+                                    <div className="w-full h-2 bg-gray-900 rounded-full overflow-hidden border border-gray-700">
+                                        <div 
+                                            className={`h-full rounded-full transition-all duration-500 ${getMeterColor(item.wait, viewMode)}`}
+                                            style={{ width: `${percentage}%` }}
+                                        ></div>
                                     </div>
-                                )}
-                            </div>
+                                </div>
 
-                            {/* COL 3: METER */}
-                            <div className="col-span-4 pr-6">
-                                <div className="w-full h-2 bg-gray-900 rounded-full overflow-hidden border border-gray-700">
-                                    <div 
-                                        className={`h-full rounded-full transition-all duration-500 ${getMeterColor(item.wait, viewMode)}`}
-                                        style={{ width: `${percentage}%` }}
-                                    ></div>
+                                {/* COL 4: MISSING COUNT */}
+                                <div className="col-span-2 text-right">
+                                    <span className={`text-xl font-black ${item.wait > threshold ? 'text-red-500' : 'text-cyan-400'}`}>
+                                        {item.wait}
+                                    </span>
+                                    <span className="text-[9px] text-gray-500 uppercase ml-1">Draws</span>
                                 </div>
                             </div>
-
-                            {/* COL 4: MISSING COUNT */}
-                            <div className="col-span-2 text-right">
-                                <span className={`text-xl font-black ${item.wait > threshold ? 'text-red-500' : 'text-cyan-400'}`}>
-                                    {item.wait}
-                                </span>
-                                <span className="text-[9px] text-gray-500 uppercase ml-1">Draws</span>
-                            </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })
+                )}
             </div>
         </div>
         
-        {/* FOOTER STATS */}
         <div className="text-center mt-4 text-xs text-gray-500">
             Analysis based on {lastDrawStats?.MarkName} ({lastDrawStats?.Mark}) being the most recent draw.
         </div>
